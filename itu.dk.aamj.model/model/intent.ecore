@@ -3,59 +3,30 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intent" nsURI="http://intent/1.0" nsPrefix="intent">
   <eClassifiers xsi:type="ecore:EClass" name="Intent" instanceClassName="android.content.Intent">
     <eOperations name="setType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="#//CharSequence"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="#//Bundle"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="#//Parceable"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="#//Serializable"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
-    </eOperations>
-    <eOperations name="putExtra" upperBound="-1" eType="#//Intent">
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="value" eType="#//Serializable"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extras" upperBound="-1"
         eType="#//Bundle" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Data" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bundle" instanceClassName="android.os.Bundle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bundle" instanceClassName="android.os.Bundle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" instanceClassName="android.net.Uri"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Parceable" instanceClassName="android.os.Parcelable"
       serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CharSequence" instanceClassName="java.lang.CharSequence"
       serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Serializable" instanceClassName="java.io.Serializable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExplicitIntent" eSuperTypes="#//Intent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplicitIntent" eSuperTypes="#//Intent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleExtra" eSuperTypes="#//Bundle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntExtra" eSuperTypes="#//Bundle"/>
 </ecore:EPackage>
