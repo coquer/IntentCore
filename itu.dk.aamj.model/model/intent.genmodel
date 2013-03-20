@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/itu.dk.aamj.model/src" modelPluginID="itu.dk.aamj.model"
+    modelName="Intent" importerID="org.eclipse.emf.importer.ecore" copyrightFields="false">
+  <foreignModel>intent.ecore</foreignModel>
+  <genPackages prefix="Intent" disposableProviderFactory="true" ecorePackage="intent.ecore#/">
+    <genClasses ecoreClass="intent.ecore#//Intent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/extras"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/type"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//Bundle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/name"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//ExplicitIntent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ExplicitIntent/component"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//ImplicitIntent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ImplicitIntent/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ImplicitIntent/category"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//DoubleExtra"/>
+    <genClasses ecoreClass="intent.ecore#//IntExtra"/>
+    <genClasses ecoreClass="intent.ecore#//IntentFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//IntentFilter/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//IntentFilter/category"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//IntentFilter/datas"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/mimeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/pathPrefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/pathPattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/scheme"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//CharSequenceExtra"/>
+    <genClasses ecoreClass="intent.ecore#//CharExtra"/>
+    <genClasses ecoreClass="intent.ecore#//BundleExtra"/>
+    <genClasses ecoreClass="intent.ecore#//ParceableExtra"/>
+    <genClasses ecoreClass="intent.ecore#//SerializableExtra"/>
+    <genClasses ecoreClass="intent.ecore#//FloatExtra"/>
+    <genClasses ecoreClass="intent.ecore#//ByteExtra"/>
+    <genClasses ecoreClass="intent.ecore#//LongExtra"/>
+    <genClasses ecoreClass="intent.ecore#//StringExtra"/>
+  </genPackages>
+</genmodel:GenModel>

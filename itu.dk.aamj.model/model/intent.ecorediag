@@ -23,13 +23,13 @@
   <children xmi:type="notation:Node" xmi:id="_X3e_kIGgEeKHc-kMMC6Ieg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_X3fmoIGgEeKHc-kMMC6Ieg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_X3gNsIGgEeKHc-kMMC6Ieg" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_bQH0sIaVEeKayLK4EOJSjg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="intent.ecore#//Bundle/value"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_bQH0sYaVEeKayLK4EOJSjg"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_4heO4IaVEeKayLK4EOJSjg" type="2001">
         <element xmi:type="ecore:EAttribute" href="intent.ecore#//Bundle/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4heO4YaVEeKayLK4EOJSjg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_bQH0sIaVEeKayLK4EOJSjg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="intent.ecore#//Bundle/value"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_bQH0sYaVEeKayLK4EOJSjg"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_X3gNsYGgEeKHc-kMMC6Ieg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_X3gNsoGgEeKHc-kMMC6Ieg"/>
@@ -187,61 +187,6 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tNOHEYuxEeKT4Lq5WtqN3A" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Data"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tNOHEouxEeKT4Lq5WtqN3A" x="72" y="198"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_c2JgEIuzEeKT4Lq5WtqN3A" type="1005">
-    <children xmi:type="notation:Node" xmi:id="_c2KuMIuzEeKT4Lq5WtqN3A" type="4010"/>
-    <children xmi:type="notation:Node" xmi:id="_c2xLIIuzEeKT4Lq5WtqN3A" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_et1acIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/CharSequence"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_et1acYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_ggaLUIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/double"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ggaLUYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_hm-x0IuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/int"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_hm-x0YuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_h9cKAIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/char"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_h9cKAYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_iUKn8IuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/Bundle"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_iUKn8YuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_jQTgEIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/Parceable"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_jQTgEYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_jyiDYIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/Serializable"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_jyiDYYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_lNe-cIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/float"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_lNe-cYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_lmAzMIuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/byte"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_lmAzMYuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_mt-g0IuzEeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/long"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_mt-g0YuzEeKT4Lq5WtqN3A"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_Mrr_cIu6EeKT4Lq5WtqN3A" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//DataType/String"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Mrr_cYu6EeKT4Lq5WtqN3A"/>
-      </children>
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_c2xLIYuzEeKT4Lq5WtqN3A"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_c2xLIouzEeKT4Lq5WtqN3A"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_c2xLI4uzEeKT4Lq5WtqN3A"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_c2JgEYuzEeKT4Lq5WtqN3A" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="intent.ecore#//DataType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c2JgEouzEeKT4Lq5WtqN3A" x="72" y="360"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ub-DEIu6EeKT4Lq5WtqN3A" type="1001">
     <children xmi:type="notation:Node" xmi:id="_ub-qIIu6EeKT4Lq5WtqN3A" type="4001"/>
