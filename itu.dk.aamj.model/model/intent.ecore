@@ -5,6 +5,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="extras" upperBound="-1"
         eType="#//Bundle" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sucessCallback" eType="#//Callback"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bundle">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -47,4 +51,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ByteExtra" eSuperTypes="#//Bundle"/>
   <eClassifiers xsi:type="ecore:EClass" name="LongExtra" eSuperTypes="#//Bundle"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringExtra" eSuperTypes="#//Bundle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Callback">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
