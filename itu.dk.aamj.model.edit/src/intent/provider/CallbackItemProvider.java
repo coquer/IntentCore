@@ -3,8 +3,7 @@
 package intent.provider;
 
 
-import intent.IntentFactory;
-import intent.IntentFilter;
+import intent.Callback;
 import intent.IntentPackage;
 
 import java.util.Collection;
@@ -14,8 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -28,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link intent.IntentFilter} object.
+ * This is the item provider adapter for a {@link intent.Callback} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IntentFilterItemProvider
+public class CallbackItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +44,7 @@ public class IntentFilterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntentFilterItemProvider(AdapterFactory adapterFactory) {
+	public CallbackItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,26 +58,26 @@ public class IntentFilterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionPropertyDescriptor(object);
-			addCategoryPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IntentFilter_action_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IntentFilter_action_feature", "_UI_IntentFilter_type"),
-				 IntentPackage.Literals.INTENT_FILTER__ACTION,
+				 getString("_UI_Callback_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Callback_name_feature", "_UI_Callback_type"),
+				 IntentPackage.Literals.CALLBACK__NAME,
 				 true,
 				 false,
 				 false,
@@ -90,19 +87,19 @@ public class IntentFilterItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Category feature.
+	 * This adds a property descriptor for the Data feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCategoryPropertyDescriptor(Object object) {
+	protected void addDataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IntentFilter_category_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IntentFilter_category_feature", "_UI_IntentFilter_type"),
-				 IntentPackage.Literals.INTENT_FILTER__CATEGORY,
+				 getString("_UI_Callback_data_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Callback_data_feature", "_UI_Callback_type"),
+				 IntentPackage.Literals.CALLBACK__DATA,
 				 true,
 				 false,
 				 false,
@@ -112,41 +109,13 @@ public class IntentFilterItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Collection getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(IntentPackage.Literals.INTENT_FILTER__DATAS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns IntentFilter.gif.
+	 * This returns Callback.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/IntentFilter"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Callback"));
 	}
 
 	/**
@@ -156,10 +125,10 @@ public class IntentFilterItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((IntentFilter)object).getCategory();
+		String label = ((Callback)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_IntentFilter_type") :
-			getString("_UI_IntentFilter_type") + " " + label;
+			getString("_UI_Callback_type") :
+			getString("_UI_Callback_type") + " " + label;
 	}
 
 	/**
@@ -172,13 +141,10 @@ public class IntentFilterItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(IntentFilter.class)) {
-			case IntentPackage.INTENT_FILTER__ACTION:
-			case IntentPackage.INTENT_FILTER__CATEGORY:
+		switch (notification.getFeatureID(Callback.class)) {
+			case IntentPackage.CALLBACK__NAME:
+			case IntentPackage.CALLBACK__DATA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case IntentPackage.INTENT_FILTER__DATAS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -193,11 +159,6 @@ public class IntentFilterItemProvider
 	 */
 	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(IntentPackage.Literals.INTENT_FILTER__DATAS,
-				 IntentFactory.eINSTANCE.createData()));
 	}
 
 	/**

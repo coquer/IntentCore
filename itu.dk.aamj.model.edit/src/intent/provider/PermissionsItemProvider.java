@@ -3,32 +3,29 @@
 package intent.provider;
 
 
-import intent.ExplicitIntent;
-import intent.IntentPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link intent.ExplicitIntent} object.
+ * This is the item provider adapter for a {@link intent.Permissions} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExplicitIntentItemProvider
-	extends IntentItemProvider
+public class PermissionsItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -41,7 +38,7 @@ public class ExplicitIntentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExplicitIntentItemProvider(AdapterFactory adapterFactory) {
+	public PermissionsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,41 +52,18 @@ public class ExplicitIntentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExplicitIntent_component_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExplicitIntent_component_feature", "_UI_ExplicitIntent_type"),
-				 IntentPackage.Literals.EXPLICIT_INTENT__COMPONENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ExplicitIntent.gif.
+	 * This returns Permissions.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExplicitIntent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Permissions"));
 	}
 
 	/**
@@ -99,10 +73,7 @@ public class ExplicitIntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((ExplicitIntent)object).getExceptionName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ExplicitIntent_type") :
-			getString("_UI_ExplicitIntent_type") + " " + label;
+		return getString("_UI_Permissions_type");
 	}
 
 	/**
@@ -114,12 +85,6 @@ public class ExplicitIntentItemProvider
 	 */
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ExplicitIntent.class)) {
-			case IntentPackage.EXPLICIT_INTENT__COMPONENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -132,6 +97,16 @@ public class ExplicitIntentItemProvider
 	 */
 	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceLocator getResourceLocator() {
+		return IntentEditPlugin.INSTANCE;
 	}
 
 }

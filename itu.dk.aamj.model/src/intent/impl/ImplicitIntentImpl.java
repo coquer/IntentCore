@@ -18,34 +18,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link intent.impl.ImplicitIntentImpl#getAction <em>Action</em>}</li>
  *   <li>{@link intent.impl.ImplicitIntentImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link intent.impl.ImplicitIntentImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
-	/**
-	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected String action = ACTION_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCategory() <em>Category</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,6 +47,26 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	protected String category = CATEGORY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected String action = ACTION_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,27 +82,6 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 */
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.IMPLICIT_INTENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAction(String newAction) {
-		String oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.IMPLICIT_INTENT__ACTION, oldAction, action));
 	}
 
 	/**
@@ -131,12 +110,33 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getAction() {
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAction(String newAction) {
+		String oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.IMPLICIT_INTENT__ACTION, oldAction, action));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case IntentPackage.IMPLICIT_INTENT__ACTION:
-				return getAction();
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
 				return getCategory();
+			case IntentPackage.IMPLICIT_INTENT__ACTION:
+				return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,11 +148,11 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case IntentPackage.IMPLICIT_INTENT__ACTION:
-				setAction((String)newValue);
-				return;
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
 				setCategory((String)newValue);
+				return;
+			case IntentPackage.IMPLICIT_INTENT__ACTION:
+				setAction((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,11 +165,11 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case IntentPackage.IMPLICIT_INTENT__ACTION:
-				setAction(ACTION_EDEFAULT);
-				return;
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
 				setCategory(CATEGORY_EDEFAULT);
+				return;
+			case IntentPackage.IMPLICIT_INTENT__ACTION:
+				setAction(ACTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -182,10 +182,10 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case IntentPackage.IMPLICIT_INTENT__ACTION:
-				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
 				return CATEGORY_EDEFAULT == null ? category != null : !CATEGORY_EDEFAULT.equals(category);
+			case IntentPackage.IMPLICIT_INTENT__ACTION:
+				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -199,10 +199,10 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (action: ");
-		result.append(action);
-		result.append(", category: ");
+		result.append(" (category: ");
 		result.append(category);
+		result.append(", action: ");
+		result.append(action);
 		result.append(')');
 		return result.toString();
 	}

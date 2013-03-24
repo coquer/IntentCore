@@ -5,9 +5,9 @@ package intent.impl;
 import intent.Bundle;
 import intent.BundleExtra;
 import intent.ByteExtra;
+import intent.Callback;
 import intent.CharExtra;
 import intent.CharSequenceExtra;
-import intent.Data;
 import intent.DoubleExtra;
 import intent.ExplicitIntent;
 import intent.FloatExtra;
@@ -15,10 +15,10 @@ import intent.ImplicitIntent;
 import intent.IntExtra;
 import intent.Intent;
 import intent.IntentFactory;
-import intent.IntentFilter;
 import intent.IntentPackage;
 import intent.LongExtra;
 import intent.ParceableExtra;
+import intent.Permissions;
 import intent.SerializableExtra;
 import intent.StringExtra;
 
@@ -83,20 +83,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass intentFilterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass charSequenceExtraEClass = null;
 
 	/**
@@ -154,6 +140,20 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	private EClass stringExtraEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass callbackEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass permissionsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -248,6 +248,42 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIntent_Data() {
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntent_SucessCallback() {
+		return (EReference)intentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntent_ExceptionName() {
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntent_Permissions() {
+		return (EReference)intentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBundle() {
 		return bundleEClass;
 	}
@@ -302,7 +338,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImplicitIntent_Action() {
+	public EAttribute getImplicitIntent_Category() {
 		return (EAttribute)implicitIntentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -311,7 +347,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImplicitIntent_Category() {
+	public EAttribute getImplicitIntent_Action() {
 		return (EAttribute)implicitIntentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -331,114 +367,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 */
 	public EClass getIntExtra() {
 		return intExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIntentFilter() {
-		return intentFilterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntentFilter_Action() {
-		return (EAttribute)intentFilterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntentFilter_Category() {
-		return (EAttribute)intentFilterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIntentFilter_Datas() {
-		return (EReference)intentFilterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getData() {
-		return dataEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Host() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_MimeType() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Path() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_PathPrefix() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_PathPattern() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Port() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Scheme() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -527,6 +455,42 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCallback() {
+		return callbackEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCallback_Name() {
+		return (EAttribute)callbackEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCallback_Data() {
+		return (EAttribute)callbackEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPermissions() {
+		return permissionsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IntentFactory getIntentFactory() {
 		return (IntentFactory)getEFactoryInstance();
 	}
@@ -553,6 +517,10 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		intentEClass = createEClass(INTENT);
 		createEReference(intentEClass, INTENT__EXTRAS);
 		createEAttribute(intentEClass, INTENT__TYPE);
+		createEAttribute(intentEClass, INTENT__DATA);
+		createEReference(intentEClass, INTENT__SUCESS_CALLBACK);
+		createEAttribute(intentEClass, INTENT__EXCEPTION_NAME);
+		createEReference(intentEClass, INTENT__PERMISSIONS);
 
 		bundleEClass = createEClass(BUNDLE);
 		createEAttribute(bundleEClass, BUNDLE__NAME);
@@ -562,26 +530,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		createEAttribute(explicitIntentEClass, EXPLICIT_INTENT__COMPONENT);
 
 		implicitIntentEClass = createEClass(IMPLICIT_INTENT);
-		createEAttribute(implicitIntentEClass, IMPLICIT_INTENT__ACTION);
 		createEAttribute(implicitIntentEClass, IMPLICIT_INTENT__CATEGORY);
+		createEAttribute(implicitIntentEClass, IMPLICIT_INTENT__ACTION);
 
 		doubleExtraEClass = createEClass(DOUBLE_EXTRA);
 
 		intExtraEClass = createEClass(INT_EXTRA);
-
-		intentFilterEClass = createEClass(INTENT_FILTER);
-		createEAttribute(intentFilterEClass, INTENT_FILTER__ACTION);
-		createEAttribute(intentFilterEClass, INTENT_FILTER__CATEGORY);
-		createEReference(intentFilterEClass, INTENT_FILTER__DATAS);
-
-		dataEClass = createEClass(DATA);
-		createEAttribute(dataEClass, DATA__HOST);
-		createEAttribute(dataEClass, DATA__MIME_TYPE);
-		createEAttribute(dataEClass, DATA__PATH);
-		createEAttribute(dataEClass, DATA__PATH_PREFIX);
-		createEAttribute(dataEClass, DATA__PATH_PATTERN);
-		createEAttribute(dataEClass, DATA__PORT);
-		createEAttribute(dataEClass, DATA__SCHEME);
 
 		charSequenceExtraEClass = createEClass(CHAR_SEQUENCE_EXTRA);
 
@@ -600,6 +554,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		longExtraEClass = createEClass(LONG_EXTRA);
 
 		stringExtraEClass = createEClass(STRING_EXTRA);
+
+		callbackEClass = createEClass(CALLBACK);
+		createEAttribute(callbackEClass, CALLBACK__NAME);
+		createEAttribute(callbackEClass, CALLBACK__DATA);
+
+		permissionsEClass = createEClass(PERMISSIONS);
 	}
 
 	/**
@@ -644,6 +604,10 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntent_Extras(), this.getBundle(), null, "extras", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Type(), ecorePackage.getEString(), "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntent_Data(), ecorePackage.getEString(), "data", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntent_SucessCallback(), this.getCallback(), null, "sucessCallback", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntent_ExceptionName(), ecorePackage.getEString(), "exceptionName", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntent_Permissions(), this.getPermissions(), null, "permissions", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bundleEClass, Bundle.class, "Bundle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBundle_Name(), ecorePackage.getEString(), "name", null, 1, 1, Bundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -653,26 +617,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEAttribute(getExplicitIntent_Component(), ecorePackage.getEString(), "component", null, 1, 1, ExplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(implicitIntentEClass, ImplicitIntent.class, "ImplicitIntent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImplicitIntent_Action(), ecorePackage.getEString(), "action", null, 1, 1, ImplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImplicitIntent_Category(), ecorePackage.getEString(), "category", null, 0, 1, ImplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImplicitIntent_Action(), ecorePackage.getEString(), "action", null, 1, 1, ImplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(doubleExtraEClass, DoubleExtra.class, "DoubleExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(intExtraEClass, IntExtra.class, "IntExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(intentFilterEClass, IntentFilter.class, "IntentFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntentFilter_Action(), ecorePackage.getEString(), "action", null, 1, -1, IntentFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntentFilter_Category(), ecorePackage.getEString(), "category", null, 1, 1, IntentFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntentFilter_Datas(), this.getData(), null, "datas", null, 0, -1, IntentFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getData_Host(), ecorePackage.getEString(), "host", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_MimeType(), ecorePackage.getEString(), "mimeType", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_Path(), ecorePackage.getEString(), "path", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_PathPrefix(), ecorePackage.getEString(), "pathPrefix", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_PathPattern(), ecorePackage.getEString(), "pathPattern", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_Port(), ecorePackage.getEString(), "port", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_Scheme(), ecorePackage.getEString(), "scheme", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(charSequenceExtraEClass, CharSequenceExtra.class, "CharSequenceExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -691,6 +641,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEClass(longExtraEClass, LongExtra.class, "LongExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(stringExtraEClass, StringExtra.class, "StringExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(callbackEClass, Callback.class, "Callback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCallback_Name(), ecorePackage.getEString(), "name", null, 1, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCallback_Data(), ecorePackage.getEString(), "data", null, 0, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(permissionsEClass, Permissions.class, "Permissions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

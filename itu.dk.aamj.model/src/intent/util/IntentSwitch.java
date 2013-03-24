@@ -123,18 +123,6 @@ public class IntentSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case IntentPackage.INTENT_FILTER: {
-				IntentFilter intentFilter = (IntentFilter)theEObject;
-				Object result = caseIntentFilter(intentFilter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case IntentPackage.DATA: {
-				Data data = (Data)theEObject;
-				Object result = caseData(data);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case IntentPackage.CHAR_SEQUENCE_EXTRA: {
 				CharSequenceExtra charSequenceExtra = (CharSequenceExtra)theEObject;
 				Object result = caseCharSequenceExtra(charSequenceExtra);
@@ -195,6 +183,18 @@ public class IntentSwitch {
 				StringExtra stringExtra = (StringExtra)theEObject;
 				Object result = caseStringExtra(stringExtra);
 				if (result == null) result = caseBundle(stringExtra);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntentPackage.CALLBACK: {
+				Callback callback = (Callback)theEObject;
+				Object result = caseCallback(callback);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntentPackage.PERMISSIONS: {
+				Permissions permissions = (Permissions)theEObject;
+				Object result = casePermissions(permissions);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,36 +289,6 @@ public class IntentSwitch {
 	 * @generated
 	 */
 	public Object caseIntExtra(IntExtra object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseIntentFilter(IntentFilter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseData(Data object) {
 		return null;
 	}
 
@@ -454,6 +424,36 @@ public class IntentSwitch {
 	 * @generated
 	 */
 	public Object caseStringExtra(StringExtra object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Callback</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Callback</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseCallback(Callback object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Permissions</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Permissions</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object casePermissions(Permissions object) {
 		return null;
 	}
 

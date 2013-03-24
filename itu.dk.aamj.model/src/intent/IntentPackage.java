@@ -84,13 +84,49 @@ public interface IntentPackage extends EPackage {
 	int INTENT__TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__DATA = 2;
+
+	/**
+	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__SUCESS_CALLBACK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__EXCEPTION_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__PERMISSIONS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Intent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_FEATURE_COUNT = 2;
+	int INTENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.BundleImpl <em>Bundle</em>}' class.
@@ -158,6 +194,42 @@ public interface IntentPackage extends EPackage {
 	int EXPLICIT_INTENT__TYPE = INTENT__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__DATA = INTENT__DATA;
+
+	/**
+	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__SUCESS_CALLBACK = INTENT__SUCESS_CALLBACK;
+
+	/**
+	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__EXCEPTION_NAME = INTENT__EXCEPTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__PERMISSIONS = INTENT__PERMISSIONS;
+
+	/**
 	 * The feature id for the '<em><b>Component</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,13 +276,40 @@ public interface IntentPackage extends EPackage {
 	int IMPLICIT_INTENT__TYPE = INTENT__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLICIT_INTENT__ACTION = INTENT_FEATURE_COUNT + 0;
+	int IMPLICIT_INTENT__DATA = INTENT__DATA;
+
+	/**
+	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__SUCESS_CALLBACK = INTENT__SUCESS_CALLBACK;
+
+	/**
+	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__EXCEPTION_NAME = INTENT__EXCEPTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__PERMISSIONS = INTENT__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Category</b></em>' attribute.
@@ -219,7 +318,16 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLICIT_INTENT__CATEGORY = INTENT_FEATURE_COUNT + 1;
+	int IMPLICIT_INTENT__CATEGORY = INTENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__ACTION = INTENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Implicit Intent</em>' class.
@@ -305,134 +413,6 @@ public interface IntentPackage extends EPackage {
 	int INT_EXTRA_FEATURE_COUNT = BUNDLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link intent.impl.IntentFilterImpl <em>Filter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see intent.impl.IntentFilterImpl
-	 * @see intent.impl.IntentPackageImpl#getIntentFilter()
-	 * @generated
-	 */
-	int INTENT_FILTER = 6;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTENT_FILTER__ACTION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Category</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTENT_FILTER__CATEGORY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Datas</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTENT_FILTER__DATAS = 2;
-
-	/**
-	 * The number of structural features of the '<em>Filter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTENT_FILTER_FEATURE_COUNT = 3;
-
-	/**
-	 * The meta object id for the '{@link intent.impl.DataImpl <em>Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see intent.impl.DataImpl
-	 * @see intent.impl.IntentPackageImpl#getData()
-	 * @generated
-	 */
-	int DATA = 7;
-
-	/**
-	 * The feature id for the '<em><b>Host</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__HOST = 0;
-
-	/**
-	 * The feature id for the '<em><b>Mime Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__MIME_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__PATH = 2;
-
-	/**
-	 * The feature id for the '<em><b>Path Prefix</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__PATH_PREFIX = 3;
-
-	/**
-	 * The feature id for the '<em><b>Path Pattern</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__PATH_PATTERN = 4;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__PORT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__SCHEME = 6;
-
-	/**
-	 * The number of structural features of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FEATURE_COUNT = 7;
-
-	/**
 	 * The meta object id for the '{@link intent.impl.CharSequenceExtraImpl <em>Char Sequence Extra</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,7 +420,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getCharSequenceExtra()
 	 * @generated
 	 */
-	int CHAR_SEQUENCE_EXTRA = 8;
+	int CHAR_SEQUENCE_EXTRA = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -477,7 +457,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getCharExtra()
 	 * @generated
 	 */
-	int CHAR_EXTRA = 9;
+	int CHAR_EXTRA = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -514,7 +494,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getBundleExtra()
 	 * @generated
 	 */
-	int BUNDLE_EXTRA = 10;
+	int BUNDLE_EXTRA = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -551,7 +531,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getParceableExtra()
 	 * @generated
 	 */
-	int PARCEABLE_EXTRA = 11;
+	int PARCEABLE_EXTRA = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -588,7 +568,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getSerializableExtra()
 	 * @generated
 	 */
-	int SERIALIZABLE_EXTRA = 12;
+	int SERIALIZABLE_EXTRA = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -625,7 +605,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getFloatExtra()
 	 * @generated
 	 */
-	int FLOAT_EXTRA = 13;
+	int FLOAT_EXTRA = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -662,7 +642,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getByteExtra()
 	 * @generated
 	 */
-	int BYTE_EXTRA = 14;
+	int BYTE_EXTRA = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -699,7 +679,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getLongExtra()
 	 * @generated
 	 */
-	int LONG_EXTRA = 15;
+	int LONG_EXTRA = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -736,7 +716,7 @@ public interface IntentPackage extends EPackage {
 	 * @see intent.impl.IntentPackageImpl#getStringExtra()
 	 * @generated
 	 */
-	int STRING_EXTRA = 16;
+	int STRING_EXTRA = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -764,6 +744,62 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_EXTRA_FEATURE_COUNT = BUNDLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link intent.impl.CallbackImpl <em>Callback</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see intent.impl.CallbackImpl
+	 * @see intent.impl.IntentPackageImpl#getCallback()
+	 * @generated
+	 */
+	int CALLBACK = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__DATA = 1;
+
+	/**
+	 * The number of structural features of the '<em>Callback</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link intent.impl.PermissionsImpl <em>Permissions</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see intent.impl.PermissionsImpl
+	 * @see intent.impl.IntentPackageImpl#getPermissions()
+	 * @generated
+	 */
+	int PERMISSIONS = 16;
+
+	/**
+	 * The number of structural features of the '<em>Permissions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSIONS_FEATURE_COUNT = 0;
 
 
 	/**
@@ -797,6 +833,50 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIntent_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.Intent#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data</em>'.
+	 * @see intent.Intent#getData()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EAttribute getIntent_Data();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link intent.Intent#getSucessCallback <em>Sucess Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Sucess Callback</em>'.
+	 * @see intent.Intent#getSucessCallback()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EReference getIntent_SucessCallback();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.Intent#getExceptionName <em>Exception Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Exception Name</em>'.
+	 * @see intent.Intent#getExceptionName()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EAttribute getIntent_ExceptionName();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link intent.Intent#getPermissions <em>Permissions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Permissions</em>'.
+	 * @see intent.Intent#getPermissions()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EReference getIntent_Permissions();
 
 	/**
 	 * Returns the meta object for class '{@link intent.Bundle <em>Bundle</em>}'.
@@ -862,17 +942,6 @@ public interface IntentPackage extends EPackage {
 	EClass getImplicitIntent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link intent.ImplicitIntent#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action</em>'.
-	 * @see intent.ImplicitIntent#getAction()
-	 * @see #getImplicitIntent()
-	 * @generated
-	 */
-	EAttribute getImplicitIntent_Action();
-
-	/**
 	 * Returns the meta object for the attribute '{@link intent.ImplicitIntent#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -882,6 +951,17 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getImplicitIntent_Category();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.ImplicitIntent#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action</em>'.
+	 * @see intent.ImplicitIntent#getAction()
+	 * @see #getImplicitIntent()
+	 * @generated
+	 */
+	EAttribute getImplicitIntent_Action();
 
 	/**
 	 * Returns the meta object for class '{@link intent.DoubleExtra <em>Double Extra</em>}'.
@@ -902,136 +982,6 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIntExtra();
-
-	/**
-	 * Returns the meta object for class '{@link intent.IntentFilter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Filter</em>'.
-	 * @see intent.IntentFilter
-	 * @generated
-	 */
-	EClass getIntentFilter();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link intent.IntentFilter#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Action</em>'.
-	 * @see intent.IntentFilter#getAction()
-	 * @see #getIntentFilter()
-	 * @generated
-	 */
-	EAttribute getIntentFilter_Action();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.IntentFilter#getCategory <em>Category</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Category</em>'.
-	 * @see intent.IntentFilter#getCategory()
-	 * @see #getIntentFilter()
-	 * @generated
-	 */
-	EAttribute getIntentFilter_Category();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link intent.IntentFilter#getDatas <em>Datas</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Datas</em>'.
-	 * @see intent.IntentFilter#getDatas()
-	 * @see #getIntentFilter()
-	 * @generated
-	 */
-	EReference getIntentFilter_Datas();
-
-	/**
-	 * Returns the meta object for class '{@link intent.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data</em>'.
-	 * @see intent.Data
-	 * @generated
-	 */
-	EClass getData();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getHost <em>Host</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Host</em>'.
-	 * @see intent.Data#getHost()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Host();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getMimeType <em>Mime Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mime Type</em>'.
-	 * @see intent.Data#getMimeType()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_MimeType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getPath <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see intent.Data#getPath()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Path();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getPathPrefix <em>Path Prefix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path Prefix</em>'.
-	 * @see intent.Data#getPathPrefix()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_PathPrefix();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getPathPattern <em>Path Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path Pattern</em>'.
-	 * @see intent.Data#getPathPattern()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_PathPattern();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port</em>'.
-	 * @see intent.Data#getPort()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Port();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Data#getScheme <em>Scheme</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scheme</em>'.
-	 * @see intent.Data#getScheme()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Scheme();
 
 	/**
 	 * Returns the meta object for class '{@link intent.CharSequenceExtra <em>Char Sequence Extra</em>}'.
@@ -1124,6 +1074,48 @@ public interface IntentPackage extends EPackage {
 	EClass getStringExtra();
 
 	/**
+	 * Returns the meta object for class '{@link intent.Callback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Callback</em>'.
+	 * @see intent.Callback
+	 * @generated
+	 */
+	EClass getCallback();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.Callback#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see intent.Callback#getName()
+	 * @see #getCallback()
+	 * @generated
+	 */
+	EAttribute getCallback_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.Callback#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data</em>'.
+	 * @see intent.Callback#getData()
+	 * @see #getCallback()
+	 * @generated
+	 */
+	EAttribute getCallback_Data();
+
+	/**
+	 * Returns the meta object for class '{@link intent.Permissions <em>Permissions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Permissions</em>'.
+	 * @see intent.Permissions
+	 * @generated
+	 */
+	EClass getPermissions();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1170,6 +1162,38 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTENT__TYPE = eINSTANCE.getIntent_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENT__DATA = eINSTANCE.getIntent_Data();
+
+		/**
+		 * The meta object literal for the '<em><b>Sucess Callback</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENT__SUCESS_CALLBACK = eINSTANCE.getIntent_SucessCallback();
+
+		/**
+		 * The meta object literal for the '<em><b>Exception Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENT__EXCEPTION_NAME = eINSTANCE.getIntent_ExceptionName();
+
+		/**
+		 * The meta object literal for the '<em><b>Permissions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENT__PERMISSIONS = eINSTANCE.getIntent_Permissions();
 
 		/**
 		 * The meta object literal for the '{@link intent.impl.BundleImpl <em>Bundle</em>}' class.
@@ -1226,20 +1250,20 @@ public interface IntentPackage extends EPackage {
 		EClass IMPLICIT_INTENT = eINSTANCE.getImplicitIntent();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMPLICIT_INTENT__ACTION = eINSTANCE.getImplicitIntent_Action();
-
-		/**
 		 * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute IMPLICIT_INTENT__CATEGORY = eINSTANCE.getImplicitIntent_Category();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPLICIT_INTENT__ACTION = eINSTANCE.getImplicitIntent_Action();
 
 		/**
 		 * The meta object literal for the '{@link intent.impl.DoubleExtraImpl <em>Double Extra</em>}' class.
@@ -1260,106 +1284,6 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INT_EXTRA = eINSTANCE.getIntExtra();
-
-		/**
-		 * The meta object literal for the '{@link intent.impl.IntentFilterImpl <em>Filter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see intent.impl.IntentFilterImpl
-		 * @see intent.impl.IntentPackageImpl#getIntentFilter()
-		 * @generated
-		 */
-		EClass INTENT_FILTER = eINSTANCE.getIntentFilter();
-
-		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTENT_FILTER__ACTION = eINSTANCE.getIntentFilter_Action();
-
-		/**
-		 * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTENT_FILTER__CATEGORY = eINSTANCE.getIntentFilter_Category();
-
-		/**
-		 * The meta object literal for the '<em><b>Datas</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INTENT_FILTER__DATAS = eINSTANCE.getIntentFilter_Datas();
-
-		/**
-		 * The meta object literal for the '{@link intent.impl.DataImpl <em>Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see intent.impl.DataImpl
-		 * @see intent.impl.IntentPackageImpl#getData()
-		 * @generated
-		 */
-		EClass DATA = eINSTANCE.getData();
-
-		/**
-		 * The meta object literal for the '<em><b>Host</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__HOST = eINSTANCE.getData_Host();
-
-		/**
-		 * The meta object literal for the '<em><b>Mime Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__MIME_TYPE = eINSTANCE.getData_MimeType();
-
-		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__PATH = eINSTANCE.getData_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Path Prefix</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__PATH_PREFIX = eINSTANCE.getData_PathPrefix();
-
-		/**
-		 * The meta object literal for the '<em><b>Path Pattern</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__PATH_PATTERN = eINSTANCE.getData_PathPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__PORT = eINSTANCE.getData_Port();
-
-		/**
-		 * The meta object literal for the '<em><b>Scheme</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__SCHEME = eINSTANCE.getData_Scheme();
 
 		/**
 		 * The meta object literal for the '{@link intent.impl.CharSequenceExtraImpl <em>Char Sequence Extra</em>}' class.
@@ -1450,6 +1374,42 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRING_EXTRA = eINSTANCE.getStringExtra();
+
+		/**
+		 * The meta object literal for the '{@link intent.impl.CallbackImpl <em>Callback</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see intent.impl.CallbackImpl
+		 * @see intent.impl.IntentPackageImpl#getCallback()
+		 * @generated
+		 */
+		EClass CALLBACK = eINSTANCE.getCallback();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CALLBACK__NAME = eINSTANCE.getCallback_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CALLBACK__DATA = eINSTANCE.getCallback_Data();
+
+		/**
+		 * The meta object literal for the '{@link intent.impl.PermissionsImpl <em>Permissions</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see intent.impl.PermissionsImpl
+		 * @see intent.impl.IntentPackageImpl#getPermissions()
+		 * @generated
+		 */
+		EClass PERMISSIONS = eINSTANCE.getPermissions();
 
 	}
 

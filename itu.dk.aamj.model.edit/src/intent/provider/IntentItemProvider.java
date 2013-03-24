@@ -62,6 +62,8 @@ public class IntentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addDataPropertyDescriptor(object);
+			addExceptionNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +91,50 @@ public class IntentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Intent_data_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Intent_data_feature", "_UI_Intent_type"),
+				 IntentPackage.Literals.INTENT__DATA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Exception Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExceptionNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Intent_exceptionName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Intent_exceptionName_feature", "_UI_Intent_type"),
+				 IntentPackage.Literals.INTENT__EXCEPTION_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -100,6 +146,8 @@ public class IntentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(IntentPackage.Literals.INTENT__EXTRAS);
+			childrenFeatures.add(IntentPackage.Literals.INTENT__SUCESS_CALLBACK);
+			childrenFeatures.add(IntentPackage.Literals.INTENT__PERMISSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -133,7 +181,7 @@ public class IntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((Intent)object).getType();
+		String label = ((Intent)object).getExceptionName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Intent_type") :
 			getString("_UI_Intent_type") + " " + label;
@@ -151,9 +199,13 @@ public class IntentItemProvider
 
 		switch (notification.getFeatureID(Intent.class)) {
 			case IntentPackage.INTENT__TYPE:
+			case IntentPackage.INTENT__DATA:
+			case IntentPackage.INTENT__EXCEPTION_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case IntentPackage.INTENT__EXTRAS:
+			case IntentPackage.INTENT__SUCESS_CALLBACK:
+			case IntentPackage.INTENT__PERMISSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -229,6 +281,16 @@ public class IntentItemProvider
 			(createChildParameter
 				(IntentPackage.Literals.INTENT__EXTRAS,
 				 IntentFactory.eINSTANCE.createStringExtra()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(IntentPackage.Literals.INTENT__SUCESS_CALLBACK,
+				 IntentFactory.eINSTANCE.createCallback()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(IntentPackage.Literals.INTENT__PERMISSIONS,
+				 IntentFactory.eINSTANCE.createPermissions()));
 	}
 
 	/**

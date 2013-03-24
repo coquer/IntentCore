@@ -204,50 +204,6 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link intent.IntentFilter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IntentFilterItemProvider intentFilterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link intent.IntentFilter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Adapter createIntentFilterAdapter() {
-		if (intentFilterItemProvider == null) {
-			intentFilterItemProvider = new IntentFilterItemProvider(this);
-		}
-
-		return intentFilterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link intent.Data} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataItemProvider dataItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link intent.Data}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
-		if (dataItemProvider == null) {
-			dataItemProvider = new DataItemProvider(this);
-		}
-
-		return dataItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link intent.CharSequenceExtra} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +402,50 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link intent.Callback} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CallbackItemProvider callbackItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link intent.Callback}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createCallbackAdapter() {
+		if (callbackItemProvider == null) {
+			callbackItemProvider = new CallbackItemProvider(this);
+		}
+
+		return callbackItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link intent.Permissions} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PermissionsItemProvider permissionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link intent.Permissions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createPermissionsAdapter() {
+		if (permissionsItemProvider == null) {
+			permissionsItemProvider = new PermissionsItemProvider(this);
+		}
+
+		return permissionsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -547,8 +547,6 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 		if (implicitIntentItemProvider != null) implicitIntentItemProvider.dispose();
 		if (doubleExtraItemProvider != null) doubleExtraItemProvider.dispose();
 		if (intExtraItemProvider != null) intExtraItemProvider.dispose();
-		if (intentFilterItemProvider != null) intentFilterItemProvider.dispose();
-		if (dataItemProvider != null) dataItemProvider.dispose();
 		if (charSequenceExtraItemProvider != null) charSequenceExtraItemProvider.dispose();
 		if (charExtraItemProvider != null) charExtraItemProvider.dispose();
 		if (bundleExtraItemProvider != null) bundleExtraItemProvider.dispose();
@@ -558,6 +556,8 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 		if (byteExtraItemProvider != null) byteExtraItemProvider.dispose();
 		if (longExtraItemProvider != null) longExtraItemProvider.dispose();
 		if (stringExtraItemProvider != null) stringExtraItemProvider.dispose();
+		if (callbackItemProvider != null) callbackItemProvider.dispose();
+		if (permissionsItemProvider != null) permissionsItemProvider.dispose();
 	}
 
 }

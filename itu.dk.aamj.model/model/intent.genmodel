@@ -7,34 +7,24 @@
     <genClasses ecoreClass="intent.ecore#//Intent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/extras"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/sucessCallback"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/exceptionName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/permissions"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//Bundle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/value"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//ExplicitIntent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ExplicitIntent/component"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//ImplicitIntent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ImplicitIntent/action"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ImplicitIntent/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//ImplicitIntent/action"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//DoubleExtra"/>
     <genClasses ecoreClass="intent.ecore#//IntExtra"/>
-    <genClasses ecoreClass="intent.ecore#//IntentFilter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//IntentFilter/action"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//IntentFilter/category"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//IntentFilter/datas"/>
-    </genClasses>
-    <genClasses ecoreClass="intent.ecore#//Data">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/host"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/mimeType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/pathPrefix"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/pathPattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Data/scheme"/>
-    </genClasses>
     <genClasses ecoreClass="intent.ecore#//CharSequenceExtra"/>
     <genClasses ecoreClass="intent.ecore#//CharExtra"/>
     <genClasses ecoreClass="intent.ecore#//BundleExtra"/>
@@ -44,5 +34,10 @@
     <genClasses ecoreClass="intent.ecore#//ByteExtra"/>
     <genClasses ecoreClass="intent.ecore#//LongExtra"/>
     <genClasses ecoreClass="intent.ecore#//StringExtra"/>
+    <genClasses ecoreClass="intent.ecore#//Callback">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Callback/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Callback/data"/>
+    </genClasses>
+    <genClasses ecoreClass="intent.ecore#//Permissions"/>
   </genPackages>
 </genmodel:GenModel>

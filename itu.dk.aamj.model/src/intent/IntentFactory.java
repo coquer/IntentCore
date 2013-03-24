@@ -76,24 +76,6 @@ public interface IntentFactory extends EFactory {
 	IntExtra createIntExtra();
 
 	/**
-	 * Returns a new object of class '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter</em>'.
-	 * @generated
-	 */
-	IntentFilter createIntentFilter();
-
-	/**
-	 * Returns a new object of class '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data</em>'.
-	 * @generated
-	 */
-	Data createData();
-
-	/**
 	 * Returns a new object of class '<em>Char Sequence Extra</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +155,24 @@ public interface IntentFactory extends EFactory {
 	 * @generated
 	 */
 	StringExtra createStringExtra();
+
+	/**
+	 * Returns a new object of class '<em>Callback</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Callback</em>'.
+	 * @generated
+	 */
+	Callback createCallback();
+
+	/**
+	 * Returns a new object of class '<em>Permissions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permissions</em>'.
+	 * @generated
+	 */
+	Permissions createPermissions();
 
 	/**
 	 * Returns the package supported by this factory.

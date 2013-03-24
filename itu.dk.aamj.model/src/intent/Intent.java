@@ -16,6 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link intent.Intent#getExtras <em>Extras</em>}</li>
  *   <li>{@link intent.Intent#getType <em>Type</em>}</li>
+ *   <li>{@link intent.Intent#getData <em>Data</em>}</li>
+ *   <li>{@link intent.Intent#getSucessCallback <em>Sucess Callback</em>}</li>
+ *   <li>{@link intent.Intent#getExceptionName <em>Exception Name</em>}</li>
+ *   <li>{@link intent.Intent#getPermissions <em>Permissions</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +69,99 @@ public interface Intent extends EObject {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data</em>' attribute.
+	 * @see #setData(String)
+	 * @see intent.IntentPackage#getIntent_Data()
+	 * @model
+	 * @generated
+	 */
+	String getData();
+
+	/**
+	 * Sets the value of the '{@link intent.Intent#getData <em>Data</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data</em>' attribute.
+	 * @see #getData()
+	 * @generated
+	 */
+	void setData(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Sucess Callback</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sucess Callback</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sucess Callback</em>' containment reference.
+	 * @see #setSucessCallback(Callback)
+	 * @see intent.IntentPackage#getIntent_SucessCallback()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Callback getSucessCallback();
+
+	/**
+	 * Sets the value of the '{@link intent.Intent#getSucessCallback <em>Sucess Callback</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sucess Callback</em>' containment reference.
+	 * @see #getSucessCallback()
+	 * @generated
+	 */
+	void setSucessCallback(Callback value);
+
+	/**
+	 * Returns the value of the '<em><b>Exception Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Exception Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Exception Name</em>' attribute.
+	 * @see #setExceptionName(String)
+	 * @see intent.IntentPackage#getIntent_ExceptionName()
+	 * @model
+	 * @generated
+	 */
+	String getExceptionName();
+
+	/**
+	 * Sets the value of the '{@link intent.Intent#getExceptionName <em>Exception Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Exception Name</em>' attribute.
+	 * @see #getExceptionName()
+	 * @generated
+	 */
+	void setExceptionName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference list.
+	 * The list contents are of type {@link intent.Permissions}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Permissions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Permissions</em>' containment reference list.
+	 * @see intent.IntentPackage#getIntent_Permissions()
+	 * @model type="intent.Permissions" containment="true"
+	 * @generated
+	 */
+	EList getPermissions();
 
 } // Intent

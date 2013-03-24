@@ -55,32 +55,10 @@ public class ImplicitIntentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionPropertyDescriptor(object);
 			addCategoryPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImplicitIntent_action_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImplicitIntent_action_feature", "_UI_ImplicitIntent_type"),
-				 IntentPackage.Literals.IMPLICIT_INTENT__ACTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -106,6 +84,28 @@ public class ImplicitIntentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImplicitIntent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImplicitIntent_action_feature", "_UI_ImplicitIntent_type"),
+				 IntentPackage.Literals.IMPLICIT_INTENT__ACTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ImplicitIntent.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,7 +122,7 @@ public class ImplicitIntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((ImplicitIntent)object).getType();
+		String label = ((ImplicitIntent)object).getExceptionName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ImplicitIntent_type") :
 			getString("_UI_ImplicitIntent_type") + " " + label;
@@ -139,8 +139,8 @@ public class ImplicitIntentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImplicitIntent.class)) {
-			case IntentPackage.IMPLICIT_INTENT__ACTION:
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
+			case IntentPackage.IMPLICIT_INTENT__ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

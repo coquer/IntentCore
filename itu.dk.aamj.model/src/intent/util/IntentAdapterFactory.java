@@ -84,12 +84,6 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 			public Object caseIntExtra(IntExtra object) {
 				return createIntExtraAdapter();
 			}
-			public Object caseIntentFilter(IntentFilter object) {
-				return createIntentFilterAdapter();
-			}
-			public Object caseData(Data object) {
-				return createDataAdapter();
-			}
 			public Object caseCharSequenceExtra(CharSequenceExtra object) {
 				return createCharSequenceExtraAdapter();
 			}
@@ -116,6 +110,12 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 			}
 			public Object caseStringExtra(StringExtra object) {
 				return createStringExtraAdapter();
+			}
+			public Object caseCallback(Callback object) {
+				return createCallbackAdapter();
+			}
+			public Object casePermissions(Permissions object) {
+				return createPermissionsAdapter();
 			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -216,34 +216,6 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIntExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.IntentFilter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.IntentFilter
-	 * @generated
-	 */
-	public Adapter createIntentFilterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.Data
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
 		return null;
 	}
 
@@ -370,6 +342,34 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringExtraAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.Callback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.Callback
+	 * @generated
+	 */
+	public Adapter createCallbackAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.Permissions <em>Permissions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.Permissions
+	 * @generated
+	 */
+	public Adapter createPermissionsAdapter() {
 		return null;
 	}
 

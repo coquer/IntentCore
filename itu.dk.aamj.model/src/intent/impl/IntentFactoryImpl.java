@@ -61,8 +61,6 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			case IntentPackage.IMPLICIT_INTENT: return createImplicitIntent();
 			case IntentPackage.DOUBLE_EXTRA: return createDoubleExtra();
 			case IntentPackage.INT_EXTRA: return createIntExtra();
-			case IntentPackage.INTENT_FILTER: return createIntentFilter();
-			case IntentPackage.DATA: return createData();
 			case IntentPackage.CHAR_SEQUENCE_EXTRA: return createCharSequenceExtra();
 			case IntentPackage.CHAR_EXTRA: return createCharExtra();
 			case IntentPackage.BUNDLE_EXTRA: return createBundleExtra();
@@ -72,6 +70,8 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			case IntentPackage.BYTE_EXTRA: return createByteExtra();
 			case IntentPackage.LONG_EXTRA: return createLongExtra();
 			case IntentPackage.STRING_EXTRA: return createStringExtra();
+			case IntentPackage.CALLBACK: return createCallback();
+			case IntentPackage.PERMISSIONS: return createPermissions();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -135,26 +135,6 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	public IntExtra createIntExtra() {
 		IntExtraImpl intExtra = new IntExtraImpl();
 		return intExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IntentFilter createIntentFilter() {
-		IntentFilterImpl intentFilter = new IntentFilterImpl();
-		return intentFilter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Data createData() {
-		DataImpl data = new DataImpl();
-		return data;
 	}
 
 	/**
@@ -245,6 +225,26 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	public StringExtra createStringExtra() {
 		StringExtraImpl stringExtra = new StringExtraImpl();
 		return stringExtra;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Callback createCallback() {
+		CallbackImpl callback = new CallbackImpl();
+		return callback;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Permissions createPermissions() {
+		PermissionsImpl permissions = new PermissionsImpl();
+		return permissions;
 	}
 
 	/**
