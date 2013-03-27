@@ -72,6 +72,50 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link intent.Intent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntentItemProvider intentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link intent.Intent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createIntentAdapter() {
+		if (intentItemProvider == null) {
+			intentItemProvider = new IntentItemProvider(this);
+		}
+
+		return intentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link intent.Bundle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BundleItemProvider bundleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link intent.Bundle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createBundleAdapter() {
+		if (bundleItemProvider == null) {
+			bundleItemProvider = new BundleItemProvider(this);
+		}
+
+		return bundleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link intent.ExplicitIntent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,6 +541,8 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 	 * @generated
 	 */
 	public void dispose() {
+		if (intentItemProvider != null) intentItemProvider.dispose();
+		if (bundleItemProvider != null) bundleItemProvider.dispose();
 		if (explicitIntentItemProvider != null) explicitIntentItemProvider.dispose();
 		if (implicitIntentItemProvider != null) implicitIntentItemProvider.dispose();
 		if (doubleExtraItemProvider != null) doubleExtraItemProvider.dispose();

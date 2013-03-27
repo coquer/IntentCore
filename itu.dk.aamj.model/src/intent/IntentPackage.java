@@ -37,7 +37,7 @@ public interface IntentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://intent/1.0";
+	String eNS_URI = "itu.dk.aamj.model";
 
 	/**
 	 * The package namespace name.
@@ -75,13 +75,22 @@ public interface IntentPackage extends EPackage {
 	int INTENT__EXTRAS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__NAME = 1;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__TYPE = 1;
+	int INTENT__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' attribute.
@@ -90,7 +99,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__DATA = 2;
+	int INTENT__DATA = 3;
 
 	/**
 	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
@@ -99,7 +108,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__SUCESS_CALLBACK = 3;
+	int INTENT__SUCESS_CALLBACK = 4;
 
 	/**
 	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
@@ -108,7 +117,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__EXCEPTION_NAME = 4;
+	int INTENT__EXCEPTION_NAME = 5;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
@@ -117,7 +126,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__PERMISSIONS = 5;
+	int INTENT__PERMISSIONS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Intent</em>' class.
@@ -126,7 +135,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_FEATURE_COUNT = 6;
+	int INTENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.BundleImpl <em>Bundle</em>}' class.
@@ -183,6 +192,15 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__NAME = INTENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -265,6 +283,15 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__NAME = INTENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -824,6 +851,17 @@ public interface IntentPackage extends EPackage {
 	EReference getIntent_Extras();
 
 	/**
+	 * Returns the meta object for the attribute '{@link intent.Intent#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see intent.Intent#getName()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EAttribute getIntent_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link intent.Intent#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1154,6 +1192,14 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTENT__EXTRAS = eINSTANCE.getIntent_Extras();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENT__NAME = eINSTANCE.getIntent_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.

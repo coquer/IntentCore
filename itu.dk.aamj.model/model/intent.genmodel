@@ -6,6 +6,7 @@
   <genPackages prefix="Intent" disposableProviderFactory="true" ecorePackage="intent.ecore#/">
     <genClasses ecoreClass="intent.ecore#//Intent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/extras"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/data"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/sucessCallback"/>

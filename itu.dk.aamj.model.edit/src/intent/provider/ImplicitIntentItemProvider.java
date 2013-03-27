@@ -122,7 +122,7 @@ public class ImplicitIntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((ImplicitIntent)object).getExceptionName();
+		String label = ((ImplicitIntent)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ImplicitIntent_type") :
 			getString("_UI_ImplicitIntent_type") + " " + label;

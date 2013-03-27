@@ -61,11 +61,34 @@ public class IntentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDataPropertyDescriptor(object);
 			addExceptionNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Intent_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Intent_name_feature", "_UI_Intent_type"),
+				 IntentPackage.Literals.INTENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -181,7 +204,7 @@ public class IntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((Intent)object).getExceptionName();
+		String label = ((Intent)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Intent_type") :
 			getString("_UI_Intent_type") + " " + label;
@@ -198,6 +221,7 @@ public class IntentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Intent.class)) {
+			case IntentPackage.INTENT__NAME:
 			case IntentPackage.INTENT__TYPE:
 			case IntentPackage.INTENT__DATA:
 			case IntentPackage.INTENT__EXCEPTION_NAME:
@@ -221,6 +245,11 @@ public class IntentItemProvider
 	 */
 	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(IntentPackage.Literals.INTENT__EXTRAS,
+				 IntentFactory.eINSTANCE.createBundle()));
 
 		newChildDescriptors.add
 			(createChildParameter

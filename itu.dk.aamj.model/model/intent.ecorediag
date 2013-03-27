@@ -3,6 +3,10 @@
   <children xmi:type="notation:Node" xmi:id="_WI4IsIGgEeKHc-kMMC6Ieg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_WI-2YIGgEeKHc-kMMC6Ieg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_WJDH0IGgEeKHc-kMMC6Ieg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_1rE3UJbtEeKEKazYcWHfFg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="intent.ecore#//Intent/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1rE3UZbtEeKEKazYcWHfFg"/>
+      </children>
       <children xmi:type="notation:Node" xmi:id="_oeEFYIGiEeKHc-kMMC6Ieg" type="2001">
         <element xmi:type="ecore:EAttribute" href="intent.ecore#//Intent/type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_oeEFYYGiEeKHc-kMMC6Ieg"/>
@@ -26,7 +30,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_WI4vwIGgEeKHc-kMMC6Ieg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Intent"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WI4vwYGgEeKHc-kMMC6Ieg" x="324" y="216" height="84"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WI4vwYGgEeKHc-kMMC6Ieg" x="324" y="180" height="111"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_X3e_kIGgEeKHc-kMMC6Ieg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_X3fmoIGgEeKHc-kMMC6Ieg" type="4001"/>
@@ -332,7 +336,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_ovCQ4YaVEeKayLK4EOJSjg" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_ovCQ4oaVEeKayLK4EOJSjg" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ovCQ44aVEeKayLK4EOJSjg" points="[24, -2, -23, 49]$[24, -20, -23, 31]$[42, -20, -5, 31]$[42, -46, -5, 5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ovCQ44aVEeKayLK4EOJSjg" points="[42, -2, -5, 60]$[42, -55, -5, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_owlJAIaVEeKayLK4EOJSjg" id="(0.5196078431372549,0.047619047619047616)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_owlJAYaVEeKayLK4EOJSjg" id="(0.2184873949579832,0.9393939393939394)"/>
   </edges>

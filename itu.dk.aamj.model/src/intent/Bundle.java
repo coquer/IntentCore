@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see intent.IntentPackage#getBundle()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Bundle extends EObject {

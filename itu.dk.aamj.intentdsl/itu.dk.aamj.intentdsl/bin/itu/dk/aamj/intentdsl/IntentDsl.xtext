@@ -4,11 +4,30 @@ grammar itu.dk.aamj.intentdsl.IntentDsl with org.eclipse.xtext.common.Terminals
 import "platform:/resource/itu.dk.aamj.model/model/intent.ecore" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+Intent returns Intent:
+	{Intent}
+	'Intent'
+	name=EString
+	'{'
+		('type' type=EString)?
+		('data' data=EString)?
+		('exceptionName' exceptionName=EString)?
+		('extras' '{' extras+=Bundle ( "," extras+=Bundle)* '}' )?
+		('sucessCallback' sucessCallback=Callback)?
+		('permissions' '{' permissions+=Permissions ( "," permissions+=Permissions)* '}' )?
+	'}';
 
 Bundle returns Bundle:
-	DoubleExtra | IntExtra | CharSequenceExtra | CharExtra | BundleExtra | ParceableExtra | SerializableExtra | FloatExtra | ByteExtra | LongExtra | StringExtra;
+	Bundle_Impl | DoubleExtra | IntExtra | CharSequenceExtra | CharExtra | BundleExtra | ParceableExtra | SerializableExtra | FloatExtra | ByteExtra | LongExtra | StringExtra;
 
 
+
+Bundle_Impl returns Bundle:
+	'Bundle'
+	name=EString
+	'{'
+		'value' value=EString
+	'}';
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -28,6 +47,7 @@ Permissions returns Permissions:
 
 ExplicitIntent returns ExplicitIntent:
 	'ExplicitIntent'
+	name=EString
 	'{'
 		('type' type=EString)?
 		('data' data=EString)?
@@ -40,6 +60,7 @@ ExplicitIntent returns ExplicitIntent:
 
 ImplicitIntent returns ImplicitIntent:
 	'ImplicitIntent'
+	name=EString
 	'{'
 		('type' type=EString)?
 		('data' data=EString)?

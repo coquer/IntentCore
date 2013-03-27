@@ -99,7 +99,7 @@ public class ExplicitIntentItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((ExplicitIntent)object).getExceptionName();
+		String label = ((ExplicitIntent)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ExplicitIntent_type") :
 			getString("_UI_ExplicitIntent_type") + " " + label;
