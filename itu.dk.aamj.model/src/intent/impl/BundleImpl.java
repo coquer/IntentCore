@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class BundleImpl extends EObjectImpl implements Bundle {
+public abstract class BundleImpl extends EObjectImpl implements Bundle {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

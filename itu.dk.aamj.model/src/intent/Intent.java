@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see intent.IntentPackage#getIntent()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Intent extends EObject {

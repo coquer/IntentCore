@@ -225,11 +225,6 @@ public class IntentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(IntentPackage.Literals.INTENT__EXTRAS,
-				 IntentFactory.eINSTANCE.createBundle()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(IntentPackage.Literals.INTENT__EXTRAS,
 				 IntentFactory.eINSTANCE.createDoubleExtra()));
 
 		newChildDescriptors.add

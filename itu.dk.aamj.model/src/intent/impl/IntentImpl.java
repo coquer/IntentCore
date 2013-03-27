@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class IntentImpl extends EObjectImpl implements Intent {
+public abstract class IntentImpl extends EObjectImpl implements Intent {
 	/**
 	 * The cached value of the '{@link #getExtras() <em>Extras</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
