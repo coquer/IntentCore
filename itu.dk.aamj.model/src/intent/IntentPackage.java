@@ -56,6 +56,34 @@ public interface IntentPackage extends EPackage {
 	IntentPackage eINSTANCE = intent.impl.IntentPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link intent.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see intent.impl.NamedElementImpl
+	 * @see intent.impl.IntentPackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link intent.impl.IntentImpl <em>Intent</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,22 +94,22 @@ public interface IntentPackage extends EPackage {
 	int INTENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTENT__EXTRAS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__NAME = 1;
+	int INTENT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__EXTRAS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -90,7 +118,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__TYPE = 2;
+	int INTENT__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' attribute.
@@ -99,7 +127,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__DATA = 3;
+	int INTENT__DATA = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
@@ -108,7 +136,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__SUCESS_CALLBACK = 4;
+	int INTENT__SUCESS_CALLBACK = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
@@ -117,7 +145,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__EXCEPTION_NAME = 5;
+	int INTENT__EXCEPTION_NAME = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
@@ -126,7 +154,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__PERMISSIONS = 6;
+	int INTENT__PERMISSIONS = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Intent</em>' class.
@@ -135,7 +163,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_FEATURE_COUNT = 7;
+	int INTENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.BundleImpl <em>Bundle</em>}' class.
@@ -154,7 +182,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUNDLE__NAME = 0;
+	int BUNDLE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -163,7 +191,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUNDLE__VALUE = 1;
+	int BUNDLE__VALUE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bundle</em>' class.
@@ -172,7 +200,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUNDLE_FEATURE_COUNT = 2;
+	int BUNDLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.ExplicitIntentImpl <em>Explicit Intent</em>}' class.
@@ -185,15 +213,6 @@ public interface IntentPackage extends EPackage {
 	int EXPLICIT_INTENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,6 +220,15 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPLICIT_INTENT__NAME = INTENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -276,15 +304,6 @@ public interface IntentPackage extends EPackage {
 	int IMPLICIT_INTENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -292,6 +311,15 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMPLICIT_INTENT__NAME = INTENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extras</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_INTENT__EXTRAS = INTENT__EXTRAS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -789,7 +817,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLBACK__NAME = 0;
+	int CALLBACK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' attribute.
@@ -798,7 +826,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLBACK__DATA = 1;
+	int CALLBACK__DATA = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Callback</em>' class.
@@ -807,7 +835,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLBACK_FEATURE_COUNT = 2;
+	int CALLBACK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.PermissionsImpl <em>Permissions</em>}' class.
@@ -820,13 +848,22 @@ public interface IntentPackage extends EPackage {
 	int PERMISSIONS = 16;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSIONS__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Permissions</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERMISSIONS_FEATURE_COUNT = 0;
+	int PERMISSIONS_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 
 	/**
@@ -849,17 +886,6 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIntent_Extras();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Intent#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see intent.Intent#getName()
-	 * @see #getIntent()
-	 * @generated
-	 */
-	EAttribute getIntent_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link intent.Intent#getType <em>Type</em>}'.
@@ -925,17 +951,6 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBundle();
-
-	/**
-	 * Returns the meta object for the attribute '{@link intent.Bundle#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see intent.Bundle#getName()
-	 * @see #getBundle()
-	 * @generated
-	 */
-	EAttribute getBundle_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link intent.Bundle#getValue <em>Value</em>}'.
@@ -1122,17 +1137,6 @@ public interface IntentPackage extends EPackage {
 	EClass getCallback();
 
 	/**
-	 * Returns the meta object for the attribute '{@link intent.Callback#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see intent.Callback#getName()
-	 * @see #getCallback()
-	 * @generated
-	 */
-	EAttribute getCallback_Name();
-
-	/**
 	 * Returns the meta object for the attribute '{@link intent.Callback#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1152,6 +1156,27 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPermissions();
+
+	/**
+	 * Returns the meta object for class '{@link intent.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see intent.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see intent.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1192,14 +1217,6 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTENT__EXTRAS = eINSTANCE.getIntent_Extras();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTENT__NAME = eINSTANCE.getIntent_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1250,14 +1267,6 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BUNDLE = eINSTANCE.getBundle();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BUNDLE__NAME = eINSTANCE.getBundle_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1432,14 +1441,6 @@ public interface IntentPackage extends EPackage {
 		EClass CALLBACK = eINSTANCE.getCallback();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CALLBACK__NAME = eINSTANCE.getCallback_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1456,6 +1457,24 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PERMISSIONS = eINSTANCE.getPermissions();
+
+		/**
+		 * The meta object literal for the '{@link intent.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see intent.impl.NamedElementImpl
+		 * @see intent.impl.IntentPackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 	}
 

@@ -22,15 +22,15 @@ Bundle returns Bundle:
 
 
 
+EString returns ecore::EString:
+	STRING | ID;
+
 Bundle_Impl returns Bundle:
 	'Bundle'
 	name=EString
 	'{'
 		'value' value=EString
 	'}';
-
-EString returns ecore::EString:
-	STRING | ID;
 
 Callback returns Callback:
 	{Callback}
@@ -43,7 +43,7 @@ Callback returns Callback:
 Permissions returns Permissions:
 	{Permissions}
 	'Permissions'
-	;
+	name=EString;
 
 ExplicitIntent returns ExplicitIntent:
 	'ExplicitIntent'

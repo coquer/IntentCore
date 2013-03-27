@@ -446,6 +446,28 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link intent.NamedElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NamedElementItemProvider namedElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link intent.NamedElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		if (namedElementItemProvider == null) {
+			namedElementItemProvider = new NamedElementItemProvider(this);
+		}
+
+		return namedElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -558,6 +580,7 @@ public class IntentItemProviderAdapterFactory extends IntentAdapterFactory imple
 		if (stringExtraItemProvider != null) stringExtraItemProvider.dispose();
 		if (callbackItemProvider != null) callbackItemProvider.dispose();
 		if (permissionsItemProvider != null) permissionsItemProvider.dispose();
+		if (namedElementItemProvider != null) namedElementItemProvider.dispose();
 	}
 
 }

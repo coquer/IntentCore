@@ -19,8 +19,8 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class IntentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Intent");
+	public class Intent_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Intent_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cIntentAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cIntentKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -65,7 +65,7 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_9_4 = (Keyword)cGroup_9.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//Intent:
+		//Intent_Impl returns Intent:
 		//	{Intent} "Intent" name=EString "{" ("type" type=EString)? ("data" data=EString)? ("exceptionName"
 		//	exceptionName=EString)? ("extras" "{" extras+=Bundle ("," extras+=Bundle)* "}")? ("sucessCallback"
 		//	sucessCallback=Callback)? ("permissions" "{" permissions+=Permissions ("," permissions+=Permissions)* "}")? "}";
@@ -265,6 +265,26 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getStringExtraParserRuleCall_11() { return cStringExtraParserRuleCall_11; }
 	}
 
+	public class EStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EString returns ecore::EString:
+		//	STRING | ID;
+		public ParserRule getRule() { return rule; }
+
+		//STRING | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+
 	public class Bundle_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Bundle_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -307,26 +327,6 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//EString returns ecore::EString:
-		//	STRING | ID;
-		public ParserRule getRule() { return rule; }
-
-		//STRING | ID
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class CallbackElements extends AbstractParserRuleElementFinder {
@@ -386,12 +386,14 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPermissionsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cPermissionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Permissions:
-		//	{Permissions} "Permissions";
+		//	{Permissions} "Permissions" name=EString;
 		public ParserRule getRule() { return rule; }
 
-		//{Permissions} "Permissions"
+		//{Permissions} "Permissions" name=EString
 		public Group getGroup() { return cGroup; }
 
 		//{Permissions}
@@ -399,6 +401,12 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Permissions"
 		public Keyword getPermissionsKeyword_1() { return cPermissionsKeyword_1; }
+
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 	}
 
 	public class ExplicitIntentElements extends AbstractParserRuleElementFinder {
@@ -1289,10 +1297,10 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private IntentElements pIntent;
+	private Intent_ImplElements pIntent_Impl;
 	private BundleElements pBundle;
-	private Bundle_ImplElements pBundle_Impl;
 	private EStringElements pEString;
+	private Bundle_ImplElements pBundle_Impl;
 	private CallbackElements pCallback;
 	private PermissionsElements pPermissions;
 	private ExplicitIntentElements pExplicitIntent;
@@ -1347,16 +1355,16 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Intent:
+	//Intent_Impl returns Intent:
 	//	{Intent} "Intent" name=EString "{" ("type" type=EString)? ("data" data=EString)? ("exceptionName"
 	//	exceptionName=EString)? ("extras" "{" extras+=Bundle ("," extras+=Bundle)* "}")? ("sucessCallback"
 	//	sucessCallback=Callback)? ("permissions" "{" permissions+=Permissions ("," permissions+=Permissions)* "}")? "}";
-	public IntentElements getIntentAccess() {
-		return (pIntent != null) ? pIntent : (pIntent = new IntentElements());
+	public Intent_ImplElements getIntent_ImplAccess() {
+		return (pIntent_Impl != null) ? pIntent_Impl : (pIntent_Impl = new Intent_ImplElements());
 	}
 	
-	public ParserRule getIntentRule() {
-		return getIntentAccess().getRule();
+	public ParserRule getIntent_ImplRule() {
+		return getIntent_ImplAccess().getRule();
 	}
 
 	//Bundle:
@@ -1370,16 +1378,6 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getBundleAccess().getRule();
 	}
 
-	//Bundle_Impl returns Bundle:
-	//	"Bundle" name=EString "{" "value" value=EString "}";
-	public Bundle_ImplElements getBundle_ImplAccess() {
-		return (pBundle_Impl != null) ? pBundle_Impl : (pBundle_Impl = new Bundle_ImplElements());
-	}
-	
-	public ParserRule getBundle_ImplRule() {
-		return getBundle_ImplAccess().getRule();
-	}
-
 	//EString returns ecore::EString:
 	//	STRING | ID;
 	public EStringElements getEStringAccess() {
@@ -1388,6 +1386,16 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEStringRule() {
 		return getEStringAccess().getRule();
+	}
+
+	//Bundle_Impl returns Bundle:
+	//	"Bundle" name=EString "{" "value" value=EString "}";
+	public Bundle_ImplElements getBundle_ImplAccess() {
+		return (pBundle_Impl != null) ? pBundle_Impl : (pBundle_Impl = new Bundle_ImplElements());
+	}
+	
+	public ParserRule getBundle_ImplRule() {
+		return getBundle_ImplAccess().getRule();
 	}
 
 	//Callback:
@@ -1401,7 +1409,7 @@ public class IntentDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Permissions:
-	//	{Permissions} "Permissions";
+	//	{Permissions} "Permissions" name=EString;
 	public PermissionsElements getPermissionsAccess() {
 		return (pPermissions != null) ? pPermissions : (pPermissions = new PermissionsElements());
 	}

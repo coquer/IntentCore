@@ -6,7 +6,6 @@
   <genPackages prefix="Intent" disposableProviderFactory="true" ecorePackage="intent.ecore#/">
     <genClasses ecoreClass="intent.ecore#//Intent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/extras"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Intent/data"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/sucessCallback"/>
@@ -14,7 +13,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Intent/permissions"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//Bundle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Bundle/value"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//ExplicitIntent">
@@ -36,9 +34,11 @@
     <genClasses ecoreClass="intent.ecore#//LongExtra"/>
     <genClasses ecoreClass="intent.ecore#//StringExtra"/>
     <genClasses ecoreClass="intent.ecore#//Callback">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Callback/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//Callback/data"/>
     </genClasses>
     <genClasses ecoreClass="intent.ecore#//Permissions"/>
+    <genClasses ecoreClass="intent.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intent.ecore#//NamedElement/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

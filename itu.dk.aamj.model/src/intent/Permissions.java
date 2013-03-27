@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Permissions extends EObject {
+public interface Permissions extends NamedElement {
 } // Permissions

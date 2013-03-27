@@ -86,12 +86,14 @@ public class IntentSwitch {
 			case IntentPackage.INTENT: {
 				Intent intent = (Intent)theEObject;
 				Object result = caseIntent(intent);
+				if (result == null) result = caseNamedElement(intent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case IntentPackage.BUNDLE: {
 				Bundle bundle = (Bundle)theEObject;
 				Object result = caseBundle(bundle);
+				if (result == null) result = caseNamedElement(bundle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -99,6 +101,7 @@ public class IntentSwitch {
 				ExplicitIntent explicitIntent = (ExplicitIntent)theEObject;
 				Object result = caseExplicitIntent(explicitIntent);
 				if (result == null) result = caseIntent(explicitIntent);
+				if (result == null) result = caseNamedElement(explicitIntent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +109,7 @@ public class IntentSwitch {
 				ImplicitIntent implicitIntent = (ImplicitIntent)theEObject;
 				Object result = caseImplicitIntent(implicitIntent);
 				if (result == null) result = caseIntent(implicitIntent);
+				if (result == null) result = caseNamedElement(implicitIntent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -113,6 +117,7 @@ public class IntentSwitch {
 				DoubleExtra doubleExtra = (DoubleExtra)theEObject;
 				Object result = caseDoubleExtra(doubleExtra);
 				if (result == null) result = caseBundle(doubleExtra);
+				if (result == null) result = caseNamedElement(doubleExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,6 +125,7 @@ public class IntentSwitch {
 				IntExtra intExtra = (IntExtra)theEObject;
 				Object result = caseIntExtra(intExtra);
 				if (result == null) result = caseBundle(intExtra);
+				if (result == null) result = caseNamedElement(intExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +133,7 @@ public class IntentSwitch {
 				CharSequenceExtra charSequenceExtra = (CharSequenceExtra)theEObject;
 				Object result = caseCharSequenceExtra(charSequenceExtra);
 				if (result == null) result = caseBundle(charSequenceExtra);
+				if (result == null) result = caseNamedElement(charSequenceExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +141,7 @@ public class IntentSwitch {
 				CharExtra charExtra = (CharExtra)theEObject;
 				Object result = caseCharExtra(charExtra);
 				if (result == null) result = caseBundle(charExtra);
+				if (result == null) result = caseNamedElement(charExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,6 +149,7 @@ public class IntentSwitch {
 				BundleExtra bundleExtra = (BundleExtra)theEObject;
 				Object result = caseBundleExtra(bundleExtra);
 				if (result == null) result = caseBundle(bundleExtra);
+				if (result == null) result = caseNamedElement(bundleExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +157,7 @@ public class IntentSwitch {
 				ParceableExtra parceableExtra = (ParceableExtra)theEObject;
 				Object result = caseParceableExtra(parceableExtra);
 				if (result == null) result = caseBundle(parceableExtra);
+				if (result == null) result = caseNamedElement(parceableExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -155,6 +165,7 @@ public class IntentSwitch {
 				SerializableExtra serializableExtra = (SerializableExtra)theEObject;
 				Object result = caseSerializableExtra(serializableExtra);
 				if (result == null) result = caseBundle(serializableExtra);
+				if (result == null) result = caseNamedElement(serializableExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,6 +173,7 @@ public class IntentSwitch {
 				FloatExtra floatExtra = (FloatExtra)theEObject;
 				Object result = caseFloatExtra(floatExtra);
 				if (result == null) result = caseBundle(floatExtra);
+				if (result == null) result = caseNamedElement(floatExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,6 +181,7 @@ public class IntentSwitch {
 				ByteExtra byteExtra = (ByteExtra)theEObject;
 				Object result = caseByteExtra(byteExtra);
 				if (result == null) result = caseBundle(byteExtra);
+				if (result == null) result = caseNamedElement(byteExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +189,7 @@ public class IntentSwitch {
 				LongExtra longExtra = (LongExtra)theEObject;
 				Object result = caseLongExtra(longExtra);
 				if (result == null) result = caseBundle(longExtra);
+				if (result == null) result = caseNamedElement(longExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,18 +197,27 @@ public class IntentSwitch {
 				StringExtra stringExtra = (StringExtra)theEObject;
 				Object result = caseStringExtra(stringExtra);
 				if (result == null) result = caseBundle(stringExtra);
+				if (result == null) result = caseNamedElement(stringExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case IntentPackage.CALLBACK: {
 				Callback callback = (Callback)theEObject;
 				Object result = caseCallback(callback);
+				if (result == null) result = caseNamedElement(callback);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case IntentPackage.PERMISSIONS: {
 				Permissions permissions = (Permissions)theEObject;
 				Object result = casePermissions(permissions);
+				if (result == null) result = caseNamedElement(permissions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntentPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				Object result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -454,6 +477,21 @@ public class IntentSwitch {
 	 * @generated
 	 */
 	public Object casePermissions(Permissions object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseNamedElement(NamedElement object) {
 		return null;
 	}
 

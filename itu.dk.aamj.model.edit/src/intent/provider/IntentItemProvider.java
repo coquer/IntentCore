@@ -34,7 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class IntentItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,34 +61,11 @@ public class IntentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDataPropertyDescriptor(object);
 			addExceptionNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Intent_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Intent_name_feature", "_UI_Intent_type"),
-				 IntentPackage.Literals.INTENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -221,7 +198,6 @@ public class IntentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Intent.class)) {
-			case IntentPackage.INTENT__NAME:
 			case IntentPackage.INTENT__TYPE:
 			case IntentPackage.INTENT__DATA:
 			case IntentPackage.INTENT__EXCEPTION_NAME:
@@ -315,16 +291,6 @@ public class IntentItemProvider
 			(createChildParameter
 				(IntentPackage.Literals.INTENT__PERMISSIONS,
 				 IntentFactory.eINSTANCE.createPermissions()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceLocator getResourceLocator() {
-		return IntentEditPlugin.INSTANCE;
 	}
 
 }

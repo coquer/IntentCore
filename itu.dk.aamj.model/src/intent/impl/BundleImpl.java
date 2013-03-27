@@ -19,34 +19,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link intent.impl.BundleImpl#getName <em>Name</em>}</li>
  *   <li>{@link intent.impl.BundleImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BundleImpl extends EObjectImpl implements Bundle {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class BundleImpl extends NamedElementImpl implements Bundle {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,27 +69,6 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.BUNDLE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getValue() {
 		return value;
 	}
@@ -134,8 +92,6 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case IntentPackage.BUNDLE__NAME:
-				return getName();
 			case IntentPackage.BUNDLE__VALUE:
 				return getValue();
 		}
@@ -149,9 +105,6 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case IntentPackage.BUNDLE__NAME:
-				setName((String)newValue);
-				return;
 			case IntentPackage.BUNDLE__VALUE:
 				setValue((String)newValue);
 				return;
@@ -166,9 +119,6 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case IntentPackage.BUNDLE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case IntentPackage.BUNDLE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -183,8 +133,6 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case IntentPackage.BUNDLE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case IntentPackage.BUNDLE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
@@ -200,9 +148,7 @@ public class BundleImpl extends EObjectImpl implements Bundle {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", value: ");
+		result.append(" (value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();

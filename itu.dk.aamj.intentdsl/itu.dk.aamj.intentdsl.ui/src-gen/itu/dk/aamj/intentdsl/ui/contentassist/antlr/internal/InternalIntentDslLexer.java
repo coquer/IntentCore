@@ -586,10 +586,10 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4896:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4896:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4942:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4942:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4896:11: ( '^' )?
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4942:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -598,7 +598,7 @@ public class InternalIntentDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4896:11: '^'
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4942:11: '^'
                     {
                     match('^'); 
 
@@ -616,7 +616,7 @@ public class InternalIntentDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4896:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4942:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -665,10 +665,10 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4898:10: ( ( '0' .. '9' )+ )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4898:12: ( '0' .. '9' )+
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4944:10: ( ( '0' .. '9' )+ )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4944:12: ( '0' .. '9' )+
             {
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4898:12: ( '0' .. '9' )+
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4944:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -682,7 +682,7 @@ public class InternalIntentDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4898:13: '0' .. '9'
+            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4944:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -714,10 +714,10 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -735,10 +735,10 @@ public class InternalIntentDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -754,7 +754,7 @@ public class InternalIntentDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -770,7 +770,7 @@ public class InternalIntentDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -795,10 +795,10 @@ public class InternalIntentDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -814,7 +814,7 @@ public class InternalIntentDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -830,7 +830,7 @@ public class InternalIntentDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4900:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4946:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -873,12 +873,12 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4902:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4902:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4948:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4948:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4902:24: ( options {greedy=false; } : . )*
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4948:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -903,7 +903,7 @@ public class InternalIntentDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4902:52: .
+            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4948:52: .
             	    {
             	    matchAny(); 
 
@@ -933,12 +933,12 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -951,7 +951,7 @@ public class InternalIntentDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -971,7 +971,7 @@ public class InternalIntentDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:40: ( ( '\\r' )? '\\n' )?
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -980,9 +980,9 @@ public class InternalIntentDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:41: ( '\\r' )? '\\n'
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:41: ( '\\r' )? '\\n'
                     {
-                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:41: ( '\\r' )?
+                    // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -991,7 +991,7 @@ public class InternalIntentDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4904:41: '\\r'
+                            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4950:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1023,10 +1023,10 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4906:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4906:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4952:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4952:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4906:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4952:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1080,8 +1080,8 @@ public class InternalIntentDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4908:16: ( . )
-            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4908:18: .
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4954:16: ( . )
+            // ../itu.dk.aamj.intentdsl.ui/src-gen/itu/dk/aamj/intentdsl/ui/contentassist/antlr/internal/InternalIntentDsl.g:4954:18: .
             {
             matchAny(); 
 

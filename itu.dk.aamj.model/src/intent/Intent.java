@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link intent.Intent#getExtras <em>Extras</em>}</li>
- *   <li>{@link intent.Intent#getName <em>Name</em>}</li>
  *   <li>{@link intent.Intent#getType <em>Type</em>}</li>
  *   <li>{@link intent.Intent#getData <em>Data</em>}</li>
  *   <li>{@link intent.Intent#getSucessCallback <em>Sucess Callback</em>}</li>
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Intent extends EObject {
+public interface Intent extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Extras</b></em>' containment reference list.
 	 * The list contents are of type {@link intent.Bundle}.
@@ -44,32 +43,6 @@ public interface Intent extends EObject {
 	 * @generated
 	 */
 	EList getExtras();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see intent.IntentPackage#getIntent_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link intent.Intent#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

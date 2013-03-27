@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link intent.impl.IntentImpl#getExtras <em>Extras</em>}</li>
- *   <li>{@link intent.impl.IntentImpl#getName <em>Name</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getType <em>Type</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getData <em>Data</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getSucessCallback <em>Sucess Callback</em>}</li>
@@ -43,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class IntentImpl extends EObjectImpl implements Intent {
+public class IntentImpl extends NamedElementImpl implements Intent {
 	/**
 	 * The cached value of the '{@link #getExtras() <em>Extras</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -53,26 +52,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 	 * @ordered
 	 */
 	protected EList extras;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -182,27 +161,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 			extras = new EObjectContainmentEList(Bundle.class, this, IntentPackage.INTENT__EXTRAS);
 		}
 		return extras;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.INTENT__NAME, oldName, name));
 	}
 
 	/**
@@ -349,8 +307,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				return getExtras();
-			case IntentPackage.INTENT__NAME:
-				return getName();
 			case IntentPackage.INTENT__TYPE:
 				return getType();
 			case IntentPackage.INTENT__DATA:
@@ -375,9 +331,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 			case IntentPackage.INTENT__EXTRAS:
 				getExtras().clear();
 				getExtras().addAll((Collection)newValue);
-				return;
-			case IntentPackage.INTENT__NAME:
-				setName((String)newValue);
 				return;
 			case IntentPackage.INTENT__TYPE:
 				setType((String)newValue);
@@ -409,9 +362,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 			case IntentPackage.INTENT__EXTRAS:
 				getExtras().clear();
 				return;
-			case IntentPackage.INTENT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case IntentPackage.INTENT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -440,8 +390,6 @@ public class IntentImpl extends EObjectImpl implements Intent {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				return extras != null && !extras.isEmpty();
-			case IntentPackage.INTENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case IntentPackage.INTENT__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case IntentPackage.INTENT__DATA:
@@ -465,9 +413,7 @@ public class IntentImpl extends EObjectImpl implements Intent {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", type: ");
+		result.append(" (type: ");
 		result.append(type);
 		result.append(", data: ");
 		result.append(data);

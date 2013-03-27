@@ -72,6 +72,7 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			case IntentPackage.STRING_EXTRA: return createStringExtra();
 			case IntentPackage.CALLBACK: return createCallback();
 			case IntentPackage.PERMISSIONS: return createPermissions();
+			case IntentPackage.NAMED_ELEMENT: return createNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -245,6 +246,16 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	public Permissions createPermissions() {
 		PermissionsImpl permissions = new PermissionsImpl();
 		return permissions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NamedElement createNamedElement() {
+		NamedElementImpl namedElement = new NamedElementImpl();
+		return namedElement;
 	}
 
 	/**

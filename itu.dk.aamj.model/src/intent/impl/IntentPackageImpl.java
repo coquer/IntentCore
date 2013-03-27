@@ -17,6 +17,7 @@ import intent.Intent;
 import intent.IntentFactory;
 import intent.IntentPackage;
 import intent.LongExtra;
+import intent.NamedElement;
 import intent.ParceableExtra;
 import intent.Permissions;
 import intent.SerializableExtra;
@@ -156,6 +157,13 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	private EClass permissionsEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -239,7 +247,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Name() {
+	public EAttribute getIntent_Type() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -248,7 +256,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Type() {
+	public EAttribute getIntent_Data() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -257,17 +265,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Data() {
-		return (EAttribute)intentEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getIntent_SucessCallback() {
-		return (EReference)intentEClass.getEStructuralFeatures().get(4);
+		return (EReference)intentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -276,7 +275,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	public EAttribute getIntent_ExceptionName() {
-		return (EAttribute)intentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -285,7 +284,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	public EReference getIntent_Permissions() {
-		return (EReference)intentEClass.getEStructuralFeatures().get(6);
+		return (EReference)intentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -302,17 +301,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBundle_Name() {
-		return (EAttribute)bundleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBundle_Value() {
-		return (EAttribute)bundleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)bundleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -473,17 +463,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCallback_Name() {
-		return (EAttribute)callbackEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCallback_Data() {
-		return (EAttribute)callbackEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)callbackEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -493,6 +474,24 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 */
 	public EClass getPermissions() {
 		return permissionsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -525,7 +524,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		// Create classes and their features
 		intentEClass = createEClass(INTENT);
 		createEReference(intentEClass, INTENT__EXTRAS);
-		createEAttribute(intentEClass, INTENT__NAME);
 		createEAttribute(intentEClass, INTENT__TYPE);
 		createEAttribute(intentEClass, INTENT__DATA);
 		createEReference(intentEClass, INTENT__SUCESS_CALLBACK);
@@ -533,7 +531,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		createEReference(intentEClass, INTENT__PERMISSIONS);
 
 		bundleEClass = createEClass(BUNDLE);
-		createEAttribute(bundleEClass, BUNDLE__NAME);
 		createEAttribute(bundleEClass, BUNDLE__VALUE);
 
 		explicitIntentEClass = createEClass(EXPLICIT_INTENT);
@@ -566,10 +563,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		stringExtraEClass = createEClass(STRING_EXTRA);
 
 		callbackEClass = createEClass(CALLBACK);
-		createEAttribute(callbackEClass, CALLBACK__NAME);
 		createEAttribute(callbackEClass, CALLBACK__DATA);
 
 		permissionsEClass = createEClass(PERMISSIONS);
+
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -596,6 +595,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		setNsURI(eNS_URI);
 
 		// Add supertypes to classes
+		intentEClass.getESuperTypes().add(this.getNamedElement());
+		bundleEClass.getESuperTypes().add(this.getNamedElement());
 		explicitIntentEClass.getESuperTypes().add(this.getIntent());
 		implicitIntentEClass.getESuperTypes().add(this.getIntent());
 		doubleExtraEClass.getESuperTypes().add(this.getBundle());
@@ -609,11 +610,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		byteExtraEClass.getESuperTypes().add(this.getBundle());
 		longExtraEClass.getESuperTypes().add(this.getBundle());
 		stringExtraEClass.getESuperTypes().add(this.getBundle());
+		callbackEClass.getESuperTypes().add(this.getNamedElement());
+		permissionsEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntent_Extras(), this.getBundle(), null, "extras", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntent_Name(), ecorePackage.getEString(), "name", null, 1, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Type(), ecorePackage.getEString(), "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Data(), ecorePackage.getEString(), "data", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntent_SucessCallback(), this.getCallback(), null, "sucessCallback", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -621,7 +623,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEReference(getIntent_Permissions(), this.getPermissions(), null, "permissions", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bundleEClass, Bundle.class, "Bundle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBundle_Name(), ecorePackage.getEString(), "name", null, 1, 1, Bundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBundle_Value(), ecorePackage.getEString(), "value", null, 1, 1, Bundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(explicitIntentEClass, ExplicitIntent.class, "ExplicitIntent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -654,10 +655,12 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEClass(stringExtraEClass, StringExtra.class, "StringExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(callbackEClass, Callback.class, "Callback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCallback_Name(), ecorePackage.getEString(), "name", null, 1, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCallback_Data(), ecorePackage.getEString(), "data", null, 0, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(permissionsEClass, Permissions.class, "Permissions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

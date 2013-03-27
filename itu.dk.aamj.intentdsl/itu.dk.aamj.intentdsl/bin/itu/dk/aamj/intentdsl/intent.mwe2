@@ -4,27 +4,32 @@ Workflow {
 
 	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
 		platformUri = "../../"
-//		registerGeneratedEPackage = "tripLoose.TripLoosePackage"
+		registerGeneratedEPackage = "intent.IntentPackage"
 		registerEcoreFile = "platform:/resource/itu.dk.aamj.model/model/intent.ecore"
 	}
 	
-	component = org.eclipse.xtext.mwe.Reader {
-		path = "."
-		register = itu.dk.aamj.intentdsl.IntentDslStandaloneSetup { }
-		load = {
-			slot = "intent"
-			type = "Intent"
-			firstOnly = true
-		}
+//	component = org.eclipse.xtext.mwe.Reader {
+//		path = "."
+//		register = itu.dk.aamj.intentdsl.IntentDslStandaloneSetup { }
+//		load = {
+//			slot = "intent"
+//			type = "Intent"
+//			firstOnly = true
+//		}
+//	}
+
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = "platform:/resource/itu.dk.aamj.model/model/intent.ecore"
+		modelSlot = "intent"
 	}
 	
 	component = org.eclipse.emf.mwe.utils.DirectoryCleaner {
-		directory = "../itu.dk.aamj.model/model-gen/"
+		directory = "platform:/resource/itu.dk.aamj.model/model-gen/"
 	}
 	
 	component = org.eclipse.emf.mwe.utils.Writer {
 		modelSlot = "intent"
-		uri = "platform:/resource/itu.dk.aamj.model/model-gen/output.xmi"
+		uri = "platform:/resource/itu.dk.aamj.model/model-gen/output.intentdsl"
 	}
 
 }

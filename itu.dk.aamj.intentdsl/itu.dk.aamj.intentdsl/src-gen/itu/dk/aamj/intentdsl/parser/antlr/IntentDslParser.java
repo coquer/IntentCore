@@ -25,7 +25,7 @@ public class IntentDslParser extends org.eclipse.xtext.parser.antlr.AbstractAntl
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Intent";
+		return "Intent_Impl";
 	}
 	
 	public IntentDslGrammarAccess getGrammarAccess() {

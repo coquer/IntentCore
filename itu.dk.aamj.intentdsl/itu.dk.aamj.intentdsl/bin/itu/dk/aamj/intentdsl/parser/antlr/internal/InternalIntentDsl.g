@@ -44,7 +44,7 @@ import itu.dk.aamj.intentdsl.services.IntentDslGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "Intent";	
+    	return "Intent_Impl";	
    	}
    	
    	@Override
@@ -63,38 +63,38 @@ import itu.dk.aamj.intentdsl.services.IntentDslGrammarAccess;
 
 
 
-// Entry rule entryRuleIntent
-entryRuleIntent returns [EObject current=null] 
+// Entry rule entryRuleIntent_Impl
+entryRuleIntent_Impl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getIntentRule()); }
-	 iv_ruleIntent=ruleIntent 
-	 { $current=$iv_ruleIntent.current; } 
+	{ newCompositeNode(grammarAccess.getIntent_ImplRule()); }
+	 iv_ruleIntent_Impl=ruleIntent_Impl 
+	 { $current=$iv_ruleIntent_Impl.current; } 
 	 EOF 
 ;
 
-// Rule Intent
-ruleIntent returns [EObject current=null] 
+// Rule Intent_Impl
+ruleIntent_Impl returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getIntentAccess().getIntentAction_0(),
+            grammarAccess.getIntent_ImplAccess().getIntentAction_0(),
             $current);
     }
 )	otherlv_1='Intent' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getIntentAccess().getIntentKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getIntent_ImplAccess().getIntentKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getNameEStringParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getNameEStringParserRuleCall_2_0()); 
 	    }
 		lv_name_2_0=ruleEString		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		set(
        			$current, 
@@ -107,20 +107,20 @@ ruleIntent returns [EObject current=null]
 )
 )	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getIntentAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getIntent_ImplAccess().getLeftCurlyBracketKeyword_3());
     }
 (	otherlv_4='type' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getIntentAccess().getTypeKeyword_4_0());
+    	newLeafNode(otherlv_4, grammarAccess.getIntent_ImplAccess().getTypeKeyword_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getTypeEStringParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getTypeEStringParserRuleCall_4_1_0()); 
 	    }
 		lv_type_5_0=ruleEString		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		set(
        			$current, 
@@ -133,16 +133,16 @@ ruleIntent returns [EObject current=null]
 )
 ))?(	otherlv_6='data' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getIntentAccess().getDataKeyword_5_0());
+    	newLeafNode(otherlv_6, grammarAccess.getIntent_ImplAccess().getDataKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getDataEStringParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getDataEStringParserRuleCall_5_1_0()); 
 	    }
 		lv_data_7_0=ruleEString		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		set(
        			$current, 
@@ -155,16 +155,16 @@ ruleIntent returns [EObject current=null]
 )
 ))?(	otherlv_8='exceptionName' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getIntentAccess().getExceptionNameKeyword_6_0());
+    	newLeafNode(otherlv_8, grammarAccess.getIntent_ImplAccess().getExceptionNameKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getExceptionNameEStringParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getExceptionNameEStringParserRuleCall_6_1_0()); 
 	    }
 		lv_exceptionName_9_0=ruleEString		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		set(
        			$current, 
@@ -177,20 +177,20 @@ ruleIntent returns [EObject current=null]
 )
 ))?(	otherlv_10='extras' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getIntentAccess().getExtrasKeyword_7_0());
+    	newLeafNode(otherlv_10, grammarAccess.getIntent_ImplAccess().getExtrasKeyword_7_0());
     }
 	otherlv_11='{' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getIntentAccess().getLeftCurlyBracketKeyword_7_1());
+    	newLeafNode(otherlv_11, grammarAccess.getIntent_ImplAccess().getLeftCurlyBracketKeyword_7_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getExtrasBundleParserRuleCall_7_2_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getExtrasBundleParserRuleCall_7_2_0()); 
 	    }
 		lv_extras_12_0=ruleBundle		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		add(
        			$current, 
@@ -203,16 +203,16 @@ ruleIntent returns [EObject current=null]
 )
 )(	otherlv_13=',' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getIntentAccess().getCommaKeyword_7_3_0());
+    	newLeafNode(otherlv_13, grammarAccess.getIntent_ImplAccess().getCommaKeyword_7_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getExtrasBundleParserRuleCall_7_3_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getExtrasBundleParserRuleCall_7_3_1_0()); 
 	    }
 		lv_extras_14_0=ruleBundle		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		add(
        			$current, 
@@ -225,20 +225,20 @@ ruleIntent returns [EObject current=null]
 )
 ))*	otherlv_15='}' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getIntentAccess().getRightCurlyBracketKeyword_7_4());
+    	newLeafNode(otherlv_15, grammarAccess.getIntent_ImplAccess().getRightCurlyBracketKeyword_7_4());
     }
 )?(	otherlv_16='sucessCallback' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getIntentAccess().getSucessCallbackKeyword_8_0());
+    	newLeafNode(otherlv_16, grammarAccess.getIntent_ImplAccess().getSucessCallbackKeyword_8_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getSucessCallbackCallbackParserRuleCall_8_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getSucessCallbackCallbackParserRuleCall_8_1_0()); 
 	    }
 		lv_sucessCallback_17_0=ruleCallback		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		set(
        			$current, 
@@ -251,20 +251,20 @@ ruleIntent returns [EObject current=null]
 )
 ))?(	otherlv_18='permissions' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getIntentAccess().getPermissionsKeyword_9_0());
+    	newLeafNode(otherlv_18, grammarAccess.getIntent_ImplAccess().getPermissionsKeyword_9_0());
     }
 	otherlv_19='{' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getIntentAccess().getLeftCurlyBracketKeyword_9_1());
+    	newLeafNode(otherlv_19, grammarAccess.getIntent_ImplAccess().getLeftCurlyBracketKeyword_9_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getPermissionsPermissionsParserRuleCall_9_2_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getPermissionsPermissionsParserRuleCall_9_2_0()); 
 	    }
 		lv_permissions_20_0=rulePermissions		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		add(
        			$current, 
@@ -277,16 +277,16 @@ ruleIntent returns [EObject current=null]
 )
 )(	otherlv_21=',' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getIntentAccess().getCommaKeyword_9_3_0());
+    	newLeafNode(otherlv_21, grammarAccess.getIntent_ImplAccess().getCommaKeyword_9_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntentAccess().getPermissionsPermissionsParserRuleCall_9_3_1_0()); 
+	        newCompositeNode(grammarAccess.getIntent_ImplAccess().getPermissionsPermissionsParserRuleCall_9_3_1_0()); 
 	    }
 		lv_permissions_22_0=rulePermissions		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntentRule());
+	            $current = createModelElementForParent(grammarAccess.getIntent_ImplRule());
 	        }
        		add(
        			$current, 
@@ -299,11 +299,11 @@ ruleIntent returns [EObject current=null]
 )
 ))*	otherlv_23='}' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getIntentAccess().getRightCurlyBracketKeyword_9_4());
+    	newLeafNode(otherlv_23, grammarAccess.getIntent_ImplAccess().getRightCurlyBracketKeyword_9_4());
     }
 )?	otherlv_24='}' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getIntentAccess().getRightCurlyBracketKeyword_10());
+    	newLeafNode(otherlv_24, grammarAccess.getIntent_ImplAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -452,6 +452,42 @@ ruleBundle returns [EObject current=null]
 
 
 
+// Entry rule entryRuleEString
+entryRuleEString returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEStringRule()); } 
+	 iv_ruleEString=ruleEString 
+	 { $current=$iv_ruleEString.current.getText(); }  
+	 EOF 
+;
+
+// Rule EString
+ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
+    }
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
+    }
+)
+    ;
+
+
+
+
+
 // Entry rule entryRuleBundle_Impl
 entryRuleBundle_Impl returns [EObject current=null] 
 	:
@@ -520,42 +556,6 @@ ruleBundle_Impl returns [EObject current=null]
     }
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getEStringRule()); } 
-	 iv_ruleEString=ruleEString 
-	 { $current=$iv_ruleEString.current.getText(); }  
-	 EOF 
-;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_STRING_0=RULE_STRING    {
-		$current.merge(this_STRING_0);
-    }
-
-    { 
-    newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
-    }
-
-    |    this_ID_1=RULE_ID    {
-		$current.merge(this_ID_1);
-    }
-
-    { 
-    newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
-    }
-)
-    ;
 
 
 
@@ -664,7 +664,25 @@ rulePermissions returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getPermissionsAccess().getPermissionsKeyword_1());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPermissionsAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPermissionsRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))
 ;
 
 

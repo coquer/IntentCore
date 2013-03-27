@@ -3,6 +3,7 @@
 package intent.provider;
 
 
+import intent.Permissions;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class PermissionsItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -73,7 +74,10 @@ public class PermissionsItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		return getString("_UI_Permissions_type");
+		String label = ((Permissions)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Permissions_type") :
+			getString("_UI_Permissions_type") + " " + label;
 	}
 
 	/**
@@ -97,16 +101,6 @@ public class PermissionsItemProvider
 	 */
 	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceLocator getResourceLocator() {
-		return IntentEditPlugin.INSTANCE;
 	}
 
 }

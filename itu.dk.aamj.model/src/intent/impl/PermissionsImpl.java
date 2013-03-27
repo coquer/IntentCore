@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class PermissionsImpl extends EObjectImpl implements Permissions {
+public class PermissionsImpl extends NamedElementImpl implements Permissions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

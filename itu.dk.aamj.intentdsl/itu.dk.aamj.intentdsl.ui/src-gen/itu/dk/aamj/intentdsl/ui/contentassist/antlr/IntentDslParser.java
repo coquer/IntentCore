@@ -39,15 +39,15 @@ public class IntentDslParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getBundleAccess().getAlternatives(), "rule__Bundle__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-					put(grammarAccess.getIntentAccess().getGroup(), "rule__Intent__Group__0");
-					put(grammarAccess.getIntentAccess().getGroup_4(), "rule__Intent__Group_4__0");
-					put(grammarAccess.getIntentAccess().getGroup_5(), "rule__Intent__Group_5__0");
-					put(grammarAccess.getIntentAccess().getGroup_6(), "rule__Intent__Group_6__0");
-					put(grammarAccess.getIntentAccess().getGroup_7(), "rule__Intent__Group_7__0");
-					put(grammarAccess.getIntentAccess().getGroup_7_3(), "rule__Intent__Group_7_3__0");
-					put(grammarAccess.getIntentAccess().getGroup_8(), "rule__Intent__Group_8__0");
-					put(grammarAccess.getIntentAccess().getGroup_9(), "rule__Intent__Group_9__0");
-					put(grammarAccess.getIntentAccess().getGroup_9_3(), "rule__Intent__Group_9_3__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup(), "rule__Intent_Impl__Group__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_4(), "rule__Intent_Impl__Group_4__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_5(), "rule__Intent_Impl__Group_5__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_6(), "rule__Intent_Impl__Group_6__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_7(), "rule__Intent_Impl__Group_7__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_7_3(), "rule__Intent_Impl__Group_7_3__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_8(), "rule__Intent_Impl__Group_8__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_9(), "rule__Intent_Impl__Group_9__0");
+					put(grammarAccess.getIntent_ImplAccess().getGroup_9_3(), "rule__Intent_Impl__Group_9_3__0");
 					put(grammarAccess.getBundle_ImplAccess().getGroup(), "rule__Bundle_Impl__Group__0");
 					put(grammarAccess.getCallbackAccess().getGroup(), "rule__Callback__Group__0");
 					put(grammarAccess.getCallbackAccess().getGroup_4(), "rule__Callback__Group_4__0");
@@ -82,19 +82,20 @@ public class IntentDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getByteExtraAccess().getGroup(), "rule__ByteExtra__Group__0");
 					put(grammarAccess.getLongExtraAccess().getGroup(), "rule__LongExtra__Group__0");
 					put(grammarAccess.getStringExtraAccess().getGroup(), "rule__StringExtra__Group__0");
-					put(grammarAccess.getIntentAccess().getNameAssignment_2(), "rule__Intent__NameAssignment_2");
-					put(grammarAccess.getIntentAccess().getTypeAssignment_4_1(), "rule__Intent__TypeAssignment_4_1");
-					put(grammarAccess.getIntentAccess().getDataAssignment_5_1(), "rule__Intent__DataAssignment_5_1");
-					put(grammarAccess.getIntentAccess().getExceptionNameAssignment_6_1(), "rule__Intent__ExceptionNameAssignment_6_1");
-					put(grammarAccess.getIntentAccess().getExtrasAssignment_7_2(), "rule__Intent__ExtrasAssignment_7_2");
-					put(grammarAccess.getIntentAccess().getExtrasAssignment_7_3_1(), "rule__Intent__ExtrasAssignment_7_3_1");
-					put(grammarAccess.getIntentAccess().getSucessCallbackAssignment_8_1(), "rule__Intent__SucessCallbackAssignment_8_1");
-					put(grammarAccess.getIntentAccess().getPermissionsAssignment_9_2(), "rule__Intent__PermissionsAssignment_9_2");
-					put(grammarAccess.getIntentAccess().getPermissionsAssignment_9_3_1(), "rule__Intent__PermissionsAssignment_9_3_1");
+					put(grammarAccess.getIntent_ImplAccess().getNameAssignment_2(), "rule__Intent_Impl__NameAssignment_2");
+					put(grammarAccess.getIntent_ImplAccess().getTypeAssignment_4_1(), "rule__Intent_Impl__TypeAssignment_4_1");
+					put(grammarAccess.getIntent_ImplAccess().getDataAssignment_5_1(), "rule__Intent_Impl__DataAssignment_5_1");
+					put(grammarAccess.getIntent_ImplAccess().getExceptionNameAssignment_6_1(), "rule__Intent_Impl__ExceptionNameAssignment_6_1");
+					put(grammarAccess.getIntent_ImplAccess().getExtrasAssignment_7_2(), "rule__Intent_Impl__ExtrasAssignment_7_2");
+					put(grammarAccess.getIntent_ImplAccess().getExtrasAssignment_7_3_1(), "rule__Intent_Impl__ExtrasAssignment_7_3_1");
+					put(grammarAccess.getIntent_ImplAccess().getSucessCallbackAssignment_8_1(), "rule__Intent_Impl__SucessCallbackAssignment_8_1");
+					put(grammarAccess.getIntent_ImplAccess().getPermissionsAssignment_9_2(), "rule__Intent_Impl__PermissionsAssignment_9_2");
+					put(grammarAccess.getIntent_ImplAccess().getPermissionsAssignment_9_3_1(), "rule__Intent_Impl__PermissionsAssignment_9_3_1");
 					put(grammarAccess.getBundle_ImplAccess().getNameAssignment_1(), "rule__Bundle_Impl__NameAssignment_1");
 					put(grammarAccess.getBundle_ImplAccess().getValueAssignment_4(), "rule__Bundle_Impl__ValueAssignment_4");
 					put(grammarAccess.getCallbackAccess().getNameAssignment_2(), "rule__Callback__NameAssignment_2");
 					put(grammarAccess.getCallbackAccess().getDataAssignment_4_1(), "rule__Callback__DataAssignment_4_1");
+					put(grammarAccess.getPermissionsAccess().getNameAssignment_2(), "rule__Permissions__NameAssignment_2");
 					put(grammarAccess.getExplicitIntentAccess().getNameAssignment_1(), "rule__ExplicitIntent__NameAssignment_1");
 					put(grammarAccess.getExplicitIntentAccess().getTypeAssignment_3_1(), "rule__ExplicitIntent__TypeAssignment_3_1");
 					put(grammarAccess.getExplicitIntentAccess().getDataAssignment_4_1(), "rule__ExplicitIntent__DataAssignment_4_1");
@@ -148,7 +149,7 @@ public class IntentDslParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			itu.dk.aamj.intentdsl.ui.contentassist.antlr.internal.InternalIntentDslParser typedParser = (itu.dk.aamj.intentdsl.ui.contentassist.antlr.internal.InternalIntentDslParser) parser;
-			typedParser.entryRuleIntent();
+			typedParser.entryRuleIntent_Impl();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
