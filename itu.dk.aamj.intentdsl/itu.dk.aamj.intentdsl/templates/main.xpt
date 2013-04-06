@@ -1,0 +1,50 @@
+«IMPORT intent::IntentPackage»
+
+«DEFINE main FOR intent::Intent»
+«FILE name+".java"»
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE entry FOR NamedElement»
+«ENDDEFINE»
+
+«DEFINE entry FOR ecore::EPackage»
+aaaaa
+«ENDDEFINE»
+
+«DEFINE entry FOR xpand2::Type»
+«ENDDEFINE»
+
+«DEFINE entry FOR ImplicitIntent»
+	«IF callback»
+		startActivityForResult(
+			new Intent(«name», new Uri(«data»)),
+			«extra»
+		);
+	«ENDIF»
+	«IF !callbac»
+		Intent i = new Intent(«name»);
+		«IF type»
+		i.setType(«type»);
+		«ENDIF»
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE entry FOR ExplicitIntent»
+	startActivity(new Intent(FirstActivity.this, «name».class));
+«ENDDEFINE»
+
+«DEFINE entry FOR CharBundle»
+	i.putExtra(«name», «value»);
+«ENDDEFINE»
+
+«DEFINE entry FOR Callback»
+     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+         if (requestCode == «extra» && resultCode == RESULT_OK) {
+                 
+				// Successful callback
+
+         }
+     }	
+«ENDDEFINE»
