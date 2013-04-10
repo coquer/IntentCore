@@ -1,10 +1,12 @@
 .DS_Store
-itu.dk.aamj.model/bin/
+itu.dk.aamj.model.tests/
 itu.dk.aamj.model.edit/
 itu.dk.aamj.model.editor/
+bin/
 
 *.pydevproject
 .project
+.metadata/
 .metadata/*
 .metadata/**/*
 *.metadata
