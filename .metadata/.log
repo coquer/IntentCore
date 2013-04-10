@@ -1856,3 +1856,19 @@ java.io.FileNotFoundException: /IMG_TOOL_COPY
 
 !ENTRY org.eclipse.emf.ecoretools.diagram 1 0 2013-02-28 13:01:23.772
 !MESSAGE Running DawnEcoreCanonicalEditPolicy instead of original one
+!SESSION 2013-04-10 16:11:52.162 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/ashley/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/ashley/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-04-10 16:11:55.668
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-10 16:11:56.508
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-10 16:12:13.332
+!MESSAGE An Android SDK is already being loaded. Please try again later.
