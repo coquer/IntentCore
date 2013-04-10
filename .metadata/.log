@@ -1872,3 +1872,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2013-04-10 16:12:13.332
 !MESSAGE An Android SDK is already being loaded. Please try again later.
+
+!ENTRY org.eclipse.ui 2 2 2013-04-10 16:15:15.872
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

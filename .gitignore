@@ -1,4 +1,7 @@
 .DS_Store
+itu.dk.aamj.model/bin/
+itu.dk.aamj.model.edit/
+itu.dk.aamj.model.editor/
 
 *.pydevproject
 .project

@@ -45,7 +45,7 @@ public interface IntentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "intent";
+	String eNS_PREFIX = "";
 
 	/**
 	 * The singleton instance of the package.
