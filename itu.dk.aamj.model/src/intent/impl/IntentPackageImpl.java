@@ -17,6 +17,7 @@ import intent.Intent;
 import intent.IntentFactory;
 import intent.IntentPackage;
 import intent.LongExtra;
+import intent.Model;
 import intent.NamedElement;
 import intent.ParceableExtra;
 import intent.Permissions;
@@ -162,6 +163,13 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -499,6 +507,24 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getModel() {
+		return modelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModel_Intents() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IntentFactory getIntentFactory() {
 		return (IntentFactory)getEFactoryInstance();
 	}
@@ -569,6 +595,9 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		modelEClass = createEClass(MODEL);
+		createEReference(modelEClass, MODEL__INTENTS);
 	}
 
 	/**
@@ -661,6 +690,9 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModel_Intents(), this.getIntent(), null, "intents", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

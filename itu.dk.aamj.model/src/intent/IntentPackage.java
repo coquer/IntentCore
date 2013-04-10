@@ -867,6 +867,35 @@ public interface IntentPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link intent.impl.ModelImpl <em>Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see intent.impl.ModelImpl
+	 * @see intent.impl.IntentPackageImpl#getModel()
+	 * @generated
+	 */
+	int MODEL = 18;
+
+	/**
+	 * The feature id for the '<em><b>Intents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__INTENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FEATURE_COUNT = 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link intent.Intent <em>Intent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1208,27 @@ public interface IntentPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link intent.Model <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model</em>'.
+	 * @see intent.Model
+	 * @generated
+	 */
+	EClass getModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link intent.Model#getIntents <em>Intents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intents</em>'.
+	 * @see intent.Model#getIntents()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Intents();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1475,6 +1525,24 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link intent.impl.ModelImpl <em>Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see intent.impl.ModelImpl
+		 * @see intent.impl.IntentPackageImpl#getModel()
+		 * @generated
+		 */
+		EClass MODEL = eINSTANCE.getModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Intents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__INTENTS = eINSTANCE.getModel_Intents();
 
 	}
 
