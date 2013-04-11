@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class IntentImpl extends NamedElementImpl implements Intent {
+public abstract class IntentImpl extends NamedElementImpl implements Intent {
 	/**
 	 * The cached value of the '{@link #getExtras() <em>Extras</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -51,7 +50,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList extras;
+	protected EList<Bundle> extras;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -131,7 +130,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList permissions;
+	protected EList<Permissions> permissions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +146,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.INTENT;
 	}
@@ -156,9 +156,9 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getExtras() {
+	public EList<Bundle> getExtras() {
 		if (extras == null) {
-			extras = new EObjectContainmentEList(Bundle.class, this, IntentPackage.INTENT__EXTRAS);
+			extras = new EObjectContainmentEList<Bundle>(Bundle.class, this, IntentPackage.INTENT__EXTRAS);
 		}
 		return extras;
 	}
@@ -274,9 +274,9 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getPermissions() {
+	public EList<Permissions> getPermissions() {
 		if (permissions == null) {
-			permissions = new EObjectContainmentEList(Permissions.class, this, IntentPackage.INTENT__PERMISSIONS);
+			permissions = new EObjectContainmentEList<Permissions>(Permissions.class, this, IntentPackage.INTENT__PERMISSIONS);
 		}
 		return permissions;
 	}
@@ -286,14 +286,15 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
-				return ((InternalEList)getExtras()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getExtras()).basicRemove(otherEnd, msgs);
 			case IntentPackage.INTENT__SUCESS_CALLBACK:
 				return basicSetSucessCallback(null, msgs);
 			case IntentPackage.INTENT__PERMISSIONS:
-				return ((InternalEList)getPermissions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPermissions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -303,6 +304,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
@@ -326,11 +328,13 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				getExtras().clear();
-				getExtras().addAll((Collection)newValue);
+				getExtras().addAll((Collection<? extends Bundle>)newValue);
 				return;
 			case IntentPackage.INTENT__TYPE:
 				setType((String)newValue);
@@ -346,7 +350,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 				return;
 			case IntentPackage.INTENT__PERMISSIONS:
 				getPermissions().clear();
-				getPermissions().addAll((Collection)newValue);
+				getPermissions().addAll((Collection<? extends Permissions>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -357,6 +361,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
@@ -386,6 +391,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
@@ -409,6 +415,7 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

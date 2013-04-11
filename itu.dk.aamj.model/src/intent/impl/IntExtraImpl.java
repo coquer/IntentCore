@@ -31,6 +31,7 @@ public class IntExtraImpl extends BundleImpl implements IntExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.INT_EXTRA;
 	}

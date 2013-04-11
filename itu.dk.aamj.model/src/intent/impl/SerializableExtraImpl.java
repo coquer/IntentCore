@@ -31,6 +31,7 @@ public class SerializableExtraImpl extends BundleImpl implements SerializableExt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.SERIALIZABLE_EXTRA;
 	}

@@ -31,6 +31,7 @@ public class CharExtraImpl extends BundleImpl implements CharExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.CHAR_EXTRA;
 	}

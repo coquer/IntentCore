@@ -59,6 +59,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.EXPLICIT_INTENT;
 	}
@@ -89,6 +90,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.EXPLICIT_INTENT__COMPONENT:
@@ -102,6 +104,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.EXPLICIT_INTENT__COMPONENT:
@@ -116,6 +119,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.EXPLICIT_INTENT__COMPONENT:
@@ -130,6 +134,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.EXPLICIT_INTENT__COMPONENT:
@@ -143,6 +148,7 @@ public class ExplicitIntentImpl extends IntentImpl implements ExplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

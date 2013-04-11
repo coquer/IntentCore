@@ -4,8 +4,6 @@ package intent;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Intent</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see intent.IntentPackage#getIntent()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Intent extends NamedElement {
@@ -39,10 +37,10 @@ public interface Intent extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Extras</em>' containment reference list.
 	 * @see intent.IntentPackage#getIntent_Extras()
-	 * @model type="intent.Bundle" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getExtras();
+	EList<Bundle> getExtras();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -159,9 +157,9 @@ public interface Intent extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Permissions</em>' containment reference list.
 	 * @see intent.IntentPackage#getIntent_Permissions()
-	 * @model type="intent.Permissions" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getPermissions();
+	EList<Permissions> getPermissions();
 
 } // Intent

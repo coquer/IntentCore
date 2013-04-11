@@ -22,24 +22,6 @@ public interface IntentFactory extends EFactory {
 	IntentFactory eINSTANCE = intent.impl.IntentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Intent</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Intent</em>'.
-	 * @generated
-	 */
-	Intent createIntent();
-
-	/**
-	 * Returns a new object of class '<em>Bundle</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bundle</em>'.
-	 * @generated
-	 */
-	Bundle createBundle();
-
-	/**
 	 * Returns a new object of class '<em>Explicit Intent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

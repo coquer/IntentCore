@@ -31,6 +31,7 @@ public class LongExtraImpl extends BundleImpl implements LongExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.LONG_EXTRA;
 	}

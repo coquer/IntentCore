@@ -31,6 +31,7 @@ public class DoubleExtraImpl extends BundleImpl implements DoubleExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.DOUBLE_EXTRA;
 	}

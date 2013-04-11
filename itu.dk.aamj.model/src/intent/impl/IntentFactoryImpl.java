@@ -27,7 +27,7 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 */
 	public static IntentFactory init() {
 		try {
-			IntentFactory theIntentFactory = (IntentFactory)EPackage.Registry.INSTANCE.getEFactory("itu.dk.aamj.model"); 
+			IntentFactory theIntentFactory = (IntentFactory)EPackage.Registry.INSTANCE.getEFactory("itu.dk.aamj"); 
 			if (theIntentFactory != null) {
 				return theIntentFactory;
 			}
@@ -53,10 +53,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case IntentPackage.INTENT: return createIntent();
-			case IntentPackage.BUNDLE: return createBundle();
 			case IntentPackage.EXPLICIT_INTENT: return createExplicitIntent();
 			case IntentPackage.IMPLICIT_INTENT: return createImplicitIntent();
 			case IntentPackage.DOUBLE_EXTRA: return createDoubleExtra();
@@ -77,26 +76,6 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intent createIntent() {
-		IntentImpl intent = new IntentImpl();
-		return intent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Bundle createBundle() {
-		BundleImpl bundle = new BundleImpl();
-		return bundle;
 	}
 
 	/**
@@ -284,6 +263,7 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static IntentPackage getPackage() {
 		return IntentPackage.eINSTANCE;
 	}

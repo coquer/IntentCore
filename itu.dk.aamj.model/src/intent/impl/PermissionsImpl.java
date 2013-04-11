@@ -7,8 +7,6 @@ import intent.Permissions;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Permissions</b></em>'.
@@ -33,6 +31,7 @@ public class PermissionsImpl extends NamedElementImpl implements Permissions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.PERMISSIONS;
 	}

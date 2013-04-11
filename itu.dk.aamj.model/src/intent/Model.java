@@ -4,8 +4,6 @@ package intent;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Model</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Model extends EObject {
+public interface Model extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Intents</b></em>' containment reference list.
 	 * The list contents are of type {@link intent.Intent}.
@@ -34,9 +32,9 @@ public interface Model extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Intents</em>' containment reference list.
 	 * @see intent.IntentPackage#getModel_Intents()
-	 * @model type="intent.Intent" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getIntents();
+	EList<Intent> getIntents();
 
 } // Model

@@ -15,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ModelImpl extends EObjectImpl implements Model {
+public class ModelImpl extends NamedElementImpl implements Model {
 	/**
 	 * The cached value of the '{@link #getIntents() <em>Intents</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,7 +40,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList intents;
+	protected EList<Intent> intents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,6 +56,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.MODEL;
 	}
@@ -67,9 +66,9 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getIntents() {
+	public EList<Intent> getIntents() {
 		if (intents == null) {
-			intents = new EObjectContainmentEList(Intent.class, this, IntentPackage.MODEL__INTENTS);
+			intents = new EObjectContainmentEList<Intent>(Intent.class, this, IntentPackage.MODEL__INTENTS);
 		}
 		return intents;
 	}
@@ -79,10 +78,11 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case IntentPackage.MODEL__INTENTS:
-				return ((InternalEList)getIntents()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIntents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,6 +92,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.MODEL__INTENTS:
@@ -105,11 +106,13 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.MODEL__INTENTS:
 				getIntents().clear();
-				getIntents().addAll((Collection)newValue);
+				getIntents().addAll((Collection<? extends Intent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -120,6 +123,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.MODEL__INTENTS:
@@ -134,6 +138,7 @@ public class ModelImpl extends EObjectImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.MODEL__INTENTS:

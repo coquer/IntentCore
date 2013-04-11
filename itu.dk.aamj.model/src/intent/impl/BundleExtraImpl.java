@@ -31,6 +31,7 @@ public class BundleExtraImpl extends BundleImpl implements BundleExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.BUNDLE_EXTRA;
 	}
