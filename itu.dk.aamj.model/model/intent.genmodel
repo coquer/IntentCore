@@ -44,5 +44,6 @@
     <genClasses ecoreClass="intent.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intent.ecore#//Model/intents"/>
     </genClasses>
+    <genClasses ecoreClass="intent.ecore#//BooleanExtra"/>
   </genPackages>
 </genmodel:GenModel>

@@ -144,6 +144,14 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 				return createModelAdapter();
 			}
 			@Override
+			public Adapter caseBooleanExtra(BooleanExtra object) {
+				return createBooleanExtraAdapter();
+			}
+			@Override
+			public Adapter caseUriExtra(UriExtra object) {
+				return createUriExtraAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -426,6 +434,34 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.BooleanExtra <em>Boolean Extra</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.BooleanExtra
+	 * @generated
+	 */
+	public Adapter createBooleanExtraAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.UriExtra <em>Uri Extra</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.UriExtra
+	 * @generated
+	 */
+	public Adapter createUriExtraAdapter() {
 		return null;
 	}
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intent" nsURI="itu.dk.aamj" nsPrefix="intent">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intent" nsURI="itu.dk.aamj.model" nsPrefix="intent">
   <eClassifiers xsi:type="ecore:EClass" name="Intent" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extras" upperBound="-1"
         eType="#//Bundle" containment="true"/>
@@ -39,11 +39,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Permissions" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="intents" upperBound="-1"
         eType="#//Intent" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExtra" eSuperTypes="#//Bundle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UriExtra" eSuperTypes="#//Bundle"/>
 </ecore:EPackage>

@@ -27,7 +27,7 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 */
 	public static IntentFactory init() {
 		try {
-			IntentFactory theIntentFactory = (IntentFactory)EPackage.Registry.INSTANCE.getEFactory("itu.dk.aamj"); 
+			IntentFactory theIntentFactory = (IntentFactory)EPackage.Registry.INSTANCE.getEFactory("itu.dk.aamj.model"); 
 			if (theIntentFactory != null) {
 				return theIntentFactory;
 			}
@@ -71,8 +71,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			case IntentPackage.STRING_EXTRA: return createStringExtra();
 			case IntentPackage.CALLBACK: return createCallback();
 			case IntentPackage.PERMISSIONS: return createPermissions();
-			case IntentPackage.NAMED_ELEMENT: return createNamedElement();
 			case IntentPackage.MODEL: return createModel();
+			case IntentPackage.BOOLEAN_EXTRA: return createBooleanExtra();
+			case IntentPackage.URI_EXTRA: return createUriExtra();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -233,9 +234,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamedElement createNamedElement() {
-		NamedElementImpl namedElement = new NamedElementImpl();
-		return namedElement;
+	public Model createModel() {
+		ModelImpl model = new ModelImpl();
+		return model;
 	}
 
 	/**
@@ -243,9 +244,19 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Model createModel() {
-		ModelImpl model = new ModelImpl();
-		return model;
+	public BooleanExtra createBooleanExtra() {
+		BooleanExtraImpl booleanExtra = new BooleanExtraImpl();
+		return booleanExtra;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UriExtra createUriExtra() {
+		UriExtraImpl uriExtra = new UriExtraImpl();
+		return uriExtra;
 	}
 
 	/**

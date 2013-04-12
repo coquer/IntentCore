@@ -2,6 +2,7 @@
  */
 package intent.impl;
 
+import intent.BooleanExtra;
 import intent.Bundle;
 import intent.BundleExtra;
 import intent.ByteExtra;
@@ -24,6 +25,7 @@ import intent.Permissions;
 import intent.SerializableExtra;
 import intent.StringExtra;
 
+import intent.UriExtra;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -170,6 +172,20 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	private EClass modelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanExtraEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uriExtraEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -525,6 +541,24 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBooleanExtra() {
+		return booleanExtraEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUriExtra() {
+		return uriExtraEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IntentFactory getIntentFactory() {
 		return (IntentFactory)getEFactoryInstance();
 	}
@@ -598,6 +632,10 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__INTENTS);
+
+		booleanExtraEClass = createEClass(BOOLEAN_EXTRA);
+
+		uriExtraEClass = createEClass(URI_EXTRA);
 	}
 
 	/**
@@ -645,7 +683,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		stringExtraEClass.getESuperTypes().add(this.getBundle());
 		callbackEClass.getESuperTypes().add(this.getNamedElement());
 		permissionsEClass.getESuperTypes().add(this.getNamedElement());
-		modelEClass.getESuperTypes().add(this.getNamedElement());
+		booleanExtraEClass.getESuperTypes().add(this.getBundle());
+		uriExtraEClass.getESuperTypes().add(this.getBundle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(intentEClass, Intent.class, "Intent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -693,11 +732,15 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		initEClass(permissionsEClass, Permissions.class, "Permissions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_Intents(), this.getIntent(), null, "intents", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanExtraEClass, BooleanExtra.class, "BooleanExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(uriExtraEClass, UriExtra.class, "UriExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

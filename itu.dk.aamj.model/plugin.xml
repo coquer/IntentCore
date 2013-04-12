@@ -8,7 +8,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://intent/1.0"
+            uri="itu.dk.aamj.model"
             class="intent.IntentPackage"
             genModel="model/intent.genmodel"/>
    </extension>

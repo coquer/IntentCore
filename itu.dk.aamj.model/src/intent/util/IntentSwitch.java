@@ -207,7 +207,22 @@ public class IntentSwitch<T> extends Switch<T> {
 			case IntentPackage.MODEL: {
 				Model model = (Model)theEObject;
 				T result = caseModel(model);
-				if (result == null) result = caseNamedElement(model);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntentPackage.BOOLEAN_EXTRA: {
+				BooleanExtra booleanExtra = (BooleanExtra)theEObject;
+				T result = caseBooleanExtra(booleanExtra);
+				if (result == null) result = caseBundle(booleanExtra);
+				if (result == null) result = caseNamedElement(booleanExtra);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntentPackage.URI_EXTRA: {
+				UriExtra uriExtra = (UriExtra)theEObject;
+				T result = caseUriExtra(uriExtra);
+				if (result == null) result = caseBundle(uriExtra);
+				if (result == null) result = caseNamedElement(uriExtra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -497,6 +512,36 @@ public class IntentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModel(Model object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Extra</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Extra</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanExtra(BooleanExtra object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Uri Extra</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Uri Extra</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUriExtra(UriExtra object) {
 		return null;
 	}
 

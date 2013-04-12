@@ -5,9 +5,8 @@ import "platform:/resource/itu.dk.aamj.model/model/intent.ecore"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model returns Model:
-//	{Model}
+	{Model}
 	'Model'
-	name=EString
 	'{'
 		('intents' '{' intents+=Intent ( "," intents+=Intent)* '}' )?
 	'}';
@@ -16,20 +15,16 @@ Intent returns Intent:
 	ExplicitIntent | ImplicitIntent;
 
 Bundle returns Bundle:
-	DoubleExtra | IntExtra | CharSequenceExtra | CharExtra | BundleExtra | ParceableExtra | SerializableExtra | FloatExtra | ByteExtra | LongExtra | StringExtra;
-
-
+	DoubleExtra | IntExtra | CharSequenceExtra | CharExtra | BundleExtra | ParceableExtra | SerializableExtra | FloatExtra | ByteExtra | LongExtra | StringExtra | BooleanExtra | UriExtra;
 
 EString returns ecore::EString:
 	STRING | ID;
-
+	
+//Before: Callback functioname { data anotherstring }
+//After: Callback functioname(anotherstring);
 Callback returns Callback:
 	{Callback}
-	'Callback'
-	name=EString
-	'{'
-		('data' data=EString)?
-	'}';
+	'Callback' name=EString ('(' 'data' data=EString ')')? ';';
 
 Permissions returns Permissions:
 	{Permissions}
@@ -63,79 +58,43 @@ ImplicitIntent returns ImplicitIntent:
 		('permissions' '{' permissions+=Permissions ( "," permissions+=Permissions)* '}' )?
 	'}';
 
+//Before DoubleExtra name { value somevalue }
+//After: DoubleExtra name somevalue;
 DoubleExtra returns DoubleExtra:
-	'DoubleExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'DoubleExtra' name=EString value=EString;
 
 IntExtra returns IntExtra:
-	'IntExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'IntExtra' name=EString value=EString;
 
 CharSequenceExtra returns CharSequenceExtra:
-	'CharSequenceExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'CharSequenceExtra' name=EString value=EString;
 
 CharExtra returns CharExtra:
-	'CharExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'CharExtra' name=EString value=EString;
 
 BundleExtra returns BundleExtra:
-	'BundleExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'BundleExtra' name=EString value=EString;
 
 ParceableExtra returns ParceableExtra:
-	'ParceableExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'ParceableExtra' name=EString value=EString;
 
 SerializableExtra returns SerializableExtra:
-	'SerializableExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'SerializableExtra' name=EString value=EString;
 
 FloatExtra returns FloatExtra:
-	'FloatExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'FloatExtra' name=EString value=EString;
 
 ByteExtra returns ByteExtra:
-	'ByteExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'ByteExtra' name=EString value=EString;
 
 LongExtra returns LongExtra:
-	'LongExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'LongExtra' name=EString value=EString;
 
 StringExtra returns StringExtra:
-	'StringExtra'
-	name=EString
-	'{'
-		'value' value=EString
-	'}';
+	'StringExtra' name=EString value=EString;
+
+BooleanExtra returns BooleanExtra:
+	'BooleanExtra' name=EString value=EString;
+	
+UriExtra returns UriExtra:
+	'UriExtra' name=EString value=EString;
