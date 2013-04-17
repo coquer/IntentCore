@@ -31,6 +31,7 @@ public class FloatExtraImpl extends BundleImpl implements FloatExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.FLOAT_EXTRA;
 	}

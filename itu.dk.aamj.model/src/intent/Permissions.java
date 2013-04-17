@@ -2,7 +2,6 @@
  */
 package intent;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

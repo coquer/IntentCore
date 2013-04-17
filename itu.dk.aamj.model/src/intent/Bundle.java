@@ -2,7 +2,6 @@
  */
 package intent;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see intent.IntentPackage#getBundle()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Bundle extends NamedElement {

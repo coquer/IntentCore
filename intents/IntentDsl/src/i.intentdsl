@@ -1,0 +1,49 @@
+Model {
+	intents {
+		ImplicitIntent PickFile {
+			data "file:///path/to/your/file.txt"
+			action "org.openintents.action.PICK_FILE"
+			extras {
+				StringExtra "org.openintents.extra.TITLE" "Please select a value"
+			}
+		},
+		ImplicitIntent FlashLight {
+			action "com.telsacoilsw.intent.FLASHLIGHT"
+			extras {
+				BooleanExtra "on" "false",
+				IntExtra "timeout" "0",
+				BooleanExtra "off" "true",
+				BooleanExtra "toggle" "false",
+				IntExtra "strobe" "0"
+			}
+		},
+		ImplicitIntent ActionWebSearch {
+			action "android.intent.action.WEB_SEARCH"
+			extras {
+				StringExtra "query" "Insert query or URL"
+			}
+		},
+		ImplicitIntent ActionCall {
+			data "tel:555-555-5555"
+			action "android.intent.action.CALL"
+		},
+		ExplicitIntent ActionDial {
+			data "tel:555-555-5555"
+			component "android.intent.action.DIAL"
+		},
+		ImplicitIntent ActionSendText {
+			type "text/plain"
+			action "android.intent.action.SEND"
+			extras {
+				StringExtra "android.intent.extra.TEXT" "Put your text here"
+			}
+		},
+		ImplicitIntent ActionSendStream {
+			type "image/jpeg"
+			action "android.intent.action.SEND"
+			extras {
+				UriExtra "android.intent.extra.STREAM" "file:///path/to/your/file"
+			}
+		}
+	}
+}

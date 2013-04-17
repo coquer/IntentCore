@@ -2,27 +2,27 @@
  */
 package intent.impl;
 
-import intent.DoubleExtra;
+import intent.BooleanExtra;
 import intent.IntentPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Double Extra</b></em>'.
+ * An implementation of the model object '<em><b>Boolean Extra</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class DoubleExtraImpl extends BundleImpl implements DoubleExtra {
+public class BooleanExtraImpl extends BundleImpl implements BooleanExtra {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DoubleExtraImpl() {
+	protected BooleanExtraImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class DoubleExtraImpl extends BundleImpl implements DoubleExtra {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IntentPackage.Literals.DOUBLE_EXTRA;
+		return IntentPackage.Literals.BOOLEAN_EXTRA;
 	}
 
-} //DoubleExtraImpl
+} //BooleanExtraImpl

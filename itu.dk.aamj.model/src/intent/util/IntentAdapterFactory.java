@@ -48,6 +48,7 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -64,63 +65,94 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IntentSwitch modelSwitch =
-		new IntentSwitch() {
-			public Object caseIntent(Intent object) {
+	protected IntentSwitch<Adapter> modelSwitch =
+		new IntentSwitch<Adapter>() {
+			@Override
+			public Adapter caseIntent(Intent object) {
 				return createIntentAdapter();
 			}
-			public Object caseBundle(Bundle object) {
+			@Override
+			public Adapter caseBundle(Bundle object) {
 				return createBundleAdapter();
 			}
-			public Object caseExplicitIntent(ExplicitIntent object) {
+			@Override
+			public Adapter caseExplicitIntent(ExplicitIntent object) {
 				return createExplicitIntentAdapter();
 			}
-			public Object caseImplicitIntent(ImplicitIntent object) {
+			@Override
+			public Adapter caseImplicitIntent(ImplicitIntent object) {
 				return createImplicitIntentAdapter();
 			}
-			public Object caseDoubleExtra(DoubleExtra object) {
+			@Override
+			public Adapter caseDoubleExtra(DoubleExtra object) {
 				return createDoubleExtraAdapter();
 			}
-			public Object caseIntExtra(IntExtra object) {
+			@Override
+			public Adapter caseIntExtra(IntExtra object) {
 				return createIntExtraAdapter();
 			}
-			public Object caseCharSequenceExtra(CharSequenceExtra object) {
+			@Override
+			public Adapter caseCharSequenceExtra(CharSequenceExtra object) {
 				return createCharSequenceExtraAdapter();
 			}
-			public Object caseCharExtra(CharExtra object) {
+			@Override
+			public Adapter caseCharExtra(CharExtra object) {
 				return createCharExtraAdapter();
 			}
-			public Object caseBundleExtra(BundleExtra object) {
+			@Override
+			public Adapter caseBundleExtra(BundleExtra object) {
 				return createBundleExtraAdapter();
 			}
-			public Object caseParceableExtra(ParceableExtra object) {
+			@Override
+			public Adapter caseParceableExtra(ParceableExtra object) {
 				return createParceableExtraAdapter();
 			}
-			public Object caseSerializableExtra(SerializableExtra object) {
+			@Override
+			public Adapter caseSerializableExtra(SerializableExtra object) {
 				return createSerializableExtraAdapter();
 			}
-			public Object caseFloatExtra(FloatExtra object) {
+			@Override
+			public Adapter caseFloatExtra(FloatExtra object) {
 				return createFloatExtraAdapter();
 			}
-			public Object caseByteExtra(ByteExtra object) {
+			@Override
+			public Adapter caseByteExtra(ByteExtra object) {
 				return createByteExtraAdapter();
 			}
-			public Object caseLongExtra(LongExtra object) {
+			@Override
+			public Adapter caseLongExtra(LongExtra object) {
 				return createLongExtraAdapter();
 			}
-			public Object caseStringExtra(StringExtra object) {
+			@Override
+			public Adapter caseStringExtra(StringExtra object) {
 				return createStringExtraAdapter();
 			}
-			public Object caseCallback(Callback object) {
+			@Override
+			public Adapter caseCallback(Callback object) {
 				return createCallbackAdapter();
 			}
-			public Object casePermissions(Permissions object) {
+			@Override
+			public Adapter casePermissions(Permissions object) {
 				return createPermissionsAdapter();
 			}
-			public Object caseNamedElement(NamedElement object) {
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter caseModel(Model object) {
+				return createModelAdapter();
+			}
+			@Override
+			public Adapter caseBooleanExtra(BooleanExtra object) {
+				return createBooleanExtraAdapter();
+			}
+			@Override
+			public Adapter caseUriExtra(UriExtra object) {
+				return createUriExtraAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -133,8 +165,9 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 
@@ -387,6 +420,48 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.Model <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.Model
+	 * @generated
+	 */
+	public Adapter createModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.BooleanExtra <em>Boolean Extra</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.BooleanExtra
+	 * @generated
+	 */
+	public Adapter createBooleanExtraAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link intent.UriExtra <em>Uri Extra</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see intent.UriExtra
+	 * @generated
+	 */
+	public Adapter createUriExtraAdapter() {
 		return null;
 	}
 

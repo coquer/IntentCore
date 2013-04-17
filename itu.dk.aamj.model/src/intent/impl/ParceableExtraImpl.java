@@ -31,6 +31,7 @@ public class ParceableExtraImpl extends BundleImpl implements ParceableExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.PARCEABLE_EXTRA;
 	}

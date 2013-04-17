@@ -1,7 +1,16 @@
 .DS_Store
+itu.dk.aamj.model.tests/
+itu.dk.aamj.model.edit/
+itu.dk.aamj.model.editor/
+bin/
+src-gen/
+itu.dk.aamj.intentdsl.sdk/
+itu.dk.aamj.intentdsl.tests/
+itu.dk.aamj.intentdsl.ui/
 
 *.pydevproject
 .project
+.metadata/
 .metadata/*
 .metadata/**/*
 *.metadata
@@ -29,3 +38,5 @@ local.properties
 # PDT-specific
 .buildpath
 .metadata/.plugins/org.eclipse.cdt.core/.log
+
+/itu.dk.aamj.intentdsl/.antlr-generator-3.2.0.jar

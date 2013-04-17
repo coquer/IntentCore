@@ -80,6 +80,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.IMPLICIT_INTENT;
 	}
@@ -131,6 +132,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
@@ -146,6 +148,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
@@ -163,6 +166,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
@@ -180,6 +184,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.IMPLICIT_INTENT__CATEGORY:
@@ -195,6 +200,7 @@ public class ImplicitIntentImpl extends IntentImpl implements ImplicitIntent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

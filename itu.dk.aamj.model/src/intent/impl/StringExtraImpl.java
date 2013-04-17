@@ -31,6 +31,7 @@ public class StringExtraImpl extends BundleImpl implements StringExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.STRING_EXTRA;
 	}

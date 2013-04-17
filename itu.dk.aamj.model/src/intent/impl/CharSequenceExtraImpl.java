@@ -31,6 +31,7 @@ public class CharSequenceExtraImpl extends BundleImpl implements CharSequenceExt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.CHAR_SEQUENCE_EXTRA;
 	}

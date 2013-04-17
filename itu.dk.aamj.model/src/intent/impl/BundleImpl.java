@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class BundleImpl extends NamedElementImpl implements Bundle {
+public abstract class BundleImpl extends NamedElementImpl implements Bundle {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,6 +59,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.BUNDLE;
 	}
@@ -90,6 +90,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.BUNDLE__VALUE:
@@ -103,6 +104,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.BUNDLE__VALUE:
@@ -117,6 +119,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.BUNDLE__VALUE:
@@ -131,6 +134,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.BUNDLE__VALUE:
@@ -144,6 +148,7 @@ public class BundleImpl extends NamedElementImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

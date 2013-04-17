@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class NamedElementImpl extends EObjectImpl implements NamedElement {
+public abstract class NamedElementImpl extends EObjectImpl implements NamedElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,6 +60,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.NAMED_ELEMENT;
 	}
@@ -90,6 +91,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IntentPackage.NAMED_ELEMENT__NAME:
@@ -103,6 +105,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case IntentPackage.NAMED_ELEMENT__NAME:
@@ -117,6 +120,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IntentPackage.NAMED_ELEMENT__NAME:
@@ -131,6 +135,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IntentPackage.NAMED_ELEMENT__NAME:
@@ -144,6 +149,7 @@ public class NamedElementImpl extends EObjectImpl implements NamedElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

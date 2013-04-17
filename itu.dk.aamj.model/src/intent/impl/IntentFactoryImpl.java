@@ -53,10 +53,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case IntentPackage.INTENT: return createIntent();
-			case IntentPackage.BUNDLE: return createBundle();
 			case IntentPackage.EXPLICIT_INTENT: return createExplicitIntent();
 			case IntentPackage.IMPLICIT_INTENT: return createImplicitIntent();
 			case IntentPackage.DOUBLE_EXTRA: return createDoubleExtra();
@@ -72,30 +71,12 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 			case IntentPackage.STRING_EXTRA: return createStringExtra();
 			case IntentPackage.CALLBACK: return createCallback();
 			case IntentPackage.PERMISSIONS: return createPermissions();
-			case IntentPackage.NAMED_ELEMENT: return createNamedElement();
+			case IntentPackage.MODEL: return createModel();
+			case IntentPackage.BOOLEAN_EXTRA: return createBooleanExtra();
+			case IntentPackage.URI_EXTRA: return createUriExtra();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intent createIntent() {
-		IntentImpl intent = new IntentImpl();
-		return intent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Bundle createBundle() {
-		BundleImpl bundle = new BundleImpl();
-		return bundle;
 	}
 
 	/**
@@ -253,9 +234,29 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamedElement createNamedElement() {
-		NamedElementImpl namedElement = new NamedElementImpl();
-		return namedElement;
+	public Model createModel() {
+		ModelImpl model = new ModelImpl();
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanExtra createBooleanExtra() {
+		BooleanExtraImpl booleanExtra = new BooleanExtraImpl();
+		return booleanExtra;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UriExtra createUriExtra() {
+		UriExtraImpl uriExtra = new UriExtraImpl();
+		return uriExtra;
 	}
 
 	/**
@@ -273,6 +274,7 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static IntentPackage getPackage() {
 		return IntentPackage.eINSTANCE;
 	}

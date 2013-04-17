@@ -31,6 +31,7 @@ public class ByteExtraImpl extends BundleImpl implements ByteExtra {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return IntentPackage.Literals.BYTE_EXTRA;
 	}

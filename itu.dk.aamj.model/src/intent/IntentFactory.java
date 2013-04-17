@@ -22,24 +22,6 @@ public interface IntentFactory extends EFactory {
 	IntentFactory eINSTANCE = intent.impl.IntentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Intent</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Intent</em>'.
-	 * @generated
-	 */
-	Intent createIntent();
-
-	/**
-	 * Returns a new object of class '<em>Bundle</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bundle</em>'.
-	 * @generated
-	 */
-	Bundle createBundle();
-
-	/**
 	 * Returns a new object of class '<em>Explicit Intent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,13 +157,31 @@ public interface IntentFactory extends EFactory {
 	Permissions createPermissions();
 
 	/**
-	 * Returns a new object of class '<em>Named Element</em>'.
+	 * Returns a new object of class '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Named Element</em>'.
+	 * @return a new object of class '<em>Model</em>'.
 	 * @generated
 	 */
-	NamedElement createNamedElement();
+	Model createModel();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Extra</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Extra</em>'.
+	 * @generated
+	 */
+	BooleanExtra createBooleanExtra();
+
+	/**
+	 * Returns a new object of class '<em>Uri Extra</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uri Extra</em>'.
+	 * @generated
+	 */
+	UriExtra createUriExtra();
 
 	/**
 	 * Returns the package supported by this factory.
