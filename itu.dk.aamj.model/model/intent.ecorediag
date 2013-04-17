@@ -578,4 +578,11 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bzuMQKN5EeKB0PRl5kI0wg" id="(0.6764705882352942,0.19047619047619047)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bzuMQaN5EeKB0PRl5kI0wg" id="(0.49019607843137253,0.14285714285714285)"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_s0qzYKdsEeK-k4SpL9Z5sA" type="3003" source="_pIaZwKHqEeKb984pmI3U7g" target="_4seZgJbyEeKEKazYcWHfFg">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_s0qzYadsEeK-k4SpL9Z5sA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_s0qzYqdsEeK-k4SpL9Z5sA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_s0qzY6dsEeK-k4SpL9Z5sA" points="[16, -20, -154, 188]$[171, -194, 1, 14]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s0udwKdsEeK-k4SpL9Z5sA" id="(0.18627450980392157,0.7142857142857143)"/>
+  </edges>
 </notation:Diagram>

@@ -1,0 +1,131 @@
+«IMPORT intent::IntentPackage»
+
+«DEFINE main FOR intent::Model»
+«FILE "intents.xml"-»
+<intents>
+«FOREACH intents AS i-»
+	«EXPAND imp FOR i-»
+«ENDFOREACH-»
+</intents>
+«ENDFILE-»
+«ENDDEFINE»
+
+«DEFINE imp FOR intent::ImplicitIntent-»
+	<intent>
+		<name>«name»</name>
+		<action android:name="«action»" />
+		<data android:mimeType="«type»" />
+		<data android:Uri="«data»" />
+		<category android:name="«category»" />
+		<exceptionName>«exceptionName»</exceptionName>
+		<sucessCallback>«sucessCallback»</sucessCallback>
+		<extras>
+			«FOREACH extras AS e-»
+				«EXPAND extra FOR e-»
+			«ENDFOREACH-»
+		</extras>
+	</intent>
+«ENDDEFINE»
+
+«DEFINE imp FOR intent::ExplicitIntent»
+	<intent>
+		<name>«name»</name>
+		<action android:name="«component»" />
+	</intent>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::IntExtra-»
+			<extra>
+				<type>IntExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::CharSequenceExtra-»
+			<extra>
+				<type>CharSequenceExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::CharExtra-»
+			<extra>
+				<type>CharExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::BundleExtra-»
+			<extra>
+				<type>BundleExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::ParceableExtra-»
+			<extra>
+				<type>ParceableExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::SerializableExtra-»
+			<extra>
+				<type>SerializableExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::FloatExtra-»
+			<extra>
+				<type>FloatExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::ByteExtra-»
+			<extra>
+				<type>ByteExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::LongExtra-»
+			<extra>
+				<type>LongExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::StringExtra-»
+			<extra>
+				<type>StringExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::BooleanExtra-»
+			<extra>
+				<type>BooleanExtra</type>
+				<name>«name»</name>
+				<value>«value»</value>
+			</extra>
+«ENDDEFINE»
+
+«DEFINE extra FOR intent::UriExtra-»
+		<extra>
+			<type>UriExtra</type>
+			<name>«name»</name>
+			<value>«value»</value>
+		</extra>
+«ENDDEFINE»

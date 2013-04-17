@@ -24,8 +24,8 @@ import intent.ParceableExtra;
 import intent.Permissions;
 import intent.SerializableExtra;
 import intent.StringExtra;
-
 import intent.UriExtra;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -683,6 +683,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		stringExtraEClass.getESuperTypes().add(this.getBundle());
 		callbackEClass.getESuperTypes().add(this.getNamedElement());
 		permissionsEClass.getESuperTypes().add(this.getNamedElement());
+		modelEClass.getESuperTypes().add(this.getNamedElement());
 		booleanExtraEClass.getESuperTypes().add(this.getBundle());
 		uriExtraEClass.getESuperTypes().add(this.getBundle());
 

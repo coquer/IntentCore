@@ -207,6 +207,7 @@ public class IntentSwitch<T> extends Switch<T> {
 			case IntentPackage.MODEL: {
 				Model model = (Model)theEObject;
 				T result = caseModel(model);
+				if (result == null) result = caseNamedElement(model);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

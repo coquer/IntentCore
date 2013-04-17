@@ -876,13 +876,22 @@ public interface IntentPackage extends EPackage {
 	int MODEL = 18;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Intents</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__INTENTS = 0;
+	int MODEL__INTENTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -891,8 +900,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 1;
-
+	int MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.BooleanExtraImpl <em>Boolean Extra</em>}' class.
@@ -930,7 +938,6 @@ public interface IntentPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_EXTRA_FEATURE_COUNT = BUNDLE_FEATURE_COUNT + 0;
-
 
 	/**
 	 * The meta object id for the '{@link intent.impl.UriExtraImpl <em>Uri Extra</em>}' class.

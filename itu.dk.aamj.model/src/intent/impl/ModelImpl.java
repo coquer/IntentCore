@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ModelImpl extends EObjectImpl implements Model {
+public class ModelImpl extends NamedElementImpl implements Model {
 	/**
 	 * The cached value of the '{@link #getIntents() <em>Intents</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
