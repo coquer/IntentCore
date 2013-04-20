@@ -2,32 +2,19 @@
  */
 package intent.impl;
 
-import intent.BooleanExtra;
-import intent.Bundle;
-import intent.BundleExtra;
-import intent.ByteExtra;
 import intent.Callback;
-import intent.CharExtra;
-import intent.CharSequenceExtra;
-import intent.DoubleExtra;
-import intent.ExplicitIntent;
-import intent.FloatExtra;
-import intent.ImplicitIntent;
-import intent.IntExtra;
+import intent.Extra;
+import intent.ExtraType;
 import intent.Intent;
 import intent.IntentFactory;
 import intent.IntentPackage;
-import intent.LongExtra;
 import intent.Model;
 import intent.NamedElement;
-import intent.ParceableExtra;
 import intent.Permissions;
-import intent.SerializableExtra;
-import intent.StringExtra;
-import intent.UriExtra;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -52,98 +39,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bundleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass explicitIntentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass implicitIntentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass doubleExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass charSequenceExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass charExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bundleExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass parceableExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass serializableExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass floatExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass byteExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass longExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringExtraEClass = null;
+	private EClass extraEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,14 +74,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass booleanExtraEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass uriExtraEClass = null;
+	private EEnum extraTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -271,7 +160,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Type() {
+	public EAttribute getIntent_Action() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -280,7 +169,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Data() {
+	public EAttribute getIntent_Category() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -289,8 +178,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntent_SucessCallback() {
-		return (EReference)intentEClass.getEStructuralFeatures().get(3);
+	public EAttribute getIntent_Type() {
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -298,7 +187,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_ExceptionName() {
+	public EAttribute getIntent_Data() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -307,7 +196,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntent_Permissions() {
+	public EReference getIntent_SucessCallback() {
 		return (EReference)intentEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -316,8 +205,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBundle() {
-		return bundleEClass;
+	public EAttribute getIntent_ExceptionName() {
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -325,8 +214,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBundle_Value() {
-		return (EAttribute)bundleEClass.getEStructuralFeatures().get(0);
+	public EReference getIntent_Permissions() {
+		return (EReference)intentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -334,8 +223,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExplicitIntent() {
-		return explicitIntentEClass;
+	public EClass getExtra() {
+		return extraEClass;
 	}
 
 	/**
@@ -343,8 +232,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExplicitIntent_Component() {
-		return (EAttribute)explicitIntentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getExtra_Value() {
+		return (EAttribute)extraEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -352,125 +241,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getImplicitIntent() {
-		return implicitIntentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImplicitIntent_Category() {
-		return (EAttribute)implicitIntentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImplicitIntent_Action() {
-		return (EAttribute)implicitIntentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDoubleExtra() {
-		return doubleExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIntExtra() {
-		return intExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCharSequenceExtra() {
-		return charSequenceExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCharExtra() {
-		return charExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBundleExtra() {
-		return bundleExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getParceableExtra() {
-		return parceableExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSerializableExtra() {
-		return serializableExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFloatExtra() {
-		return floatExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getByteExtra() {
-		return byteExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLongExtra() {
-		return longExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStringExtra() {
-		return stringExtraEClass;
+	public EAttribute getExtra_Type() {
+		return (EAttribute)extraEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -541,17 +313,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBooleanExtra() {
-		return booleanExtraEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUriExtra() {
-		return uriExtraEClass;
+	public EEnum getExtraType() {
+		return extraTypeEEnum;
 	}
 
 	/**
@@ -584,43 +347,17 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		// Create classes and their features
 		intentEClass = createEClass(INTENT);
 		createEReference(intentEClass, INTENT__EXTRAS);
+		createEAttribute(intentEClass, INTENT__ACTION);
+		createEAttribute(intentEClass, INTENT__CATEGORY);
 		createEAttribute(intentEClass, INTENT__TYPE);
 		createEAttribute(intentEClass, INTENT__DATA);
 		createEReference(intentEClass, INTENT__SUCESS_CALLBACK);
 		createEAttribute(intentEClass, INTENT__EXCEPTION_NAME);
 		createEReference(intentEClass, INTENT__PERMISSIONS);
 
-		bundleEClass = createEClass(BUNDLE);
-		createEAttribute(bundleEClass, BUNDLE__VALUE);
-
-		explicitIntentEClass = createEClass(EXPLICIT_INTENT);
-		createEAttribute(explicitIntentEClass, EXPLICIT_INTENT__COMPONENT);
-
-		implicitIntentEClass = createEClass(IMPLICIT_INTENT);
-		createEAttribute(implicitIntentEClass, IMPLICIT_INTENT__CATEGORY);
-		createEAttribute(implicitIntentEClass, IMPLICIT_INTENT__ACTION);
-
-		doubleExtraEClass = createEClass(DOUBLE_EXTRA);
-
-		intExtraEClass = createEClass(INT_EXTRA);
-
-		charSequenceExtraEClass = createEClass(CHAR_SEQUENCE_EXTRA);
-
-		charExtraEClass = createEClass(CHAR_EXTRA);
-
-		bundleExtraEClass = createEClass(BUNDLE_EXTRA);
-
-		parceableExtraEClass = createEClass(PARCEABLE_EXTRA);
-
-		serializableExtraEClass = createEClass(SERIALIZABLE_EXTRA);
-
-		floatExtraEClass = createEClass(FLOAT_EXTRA);
-
-		byteExtraEClass = createEClass(BYTE_EXTRA);
-
-		longExtraEClass = createEClass(LONG_EXTRA);
-
-		stringExtraEClass = createEClass(STRING_EXTRA);
+		extraEClass = createEClass(EXTRA);
+		createEAttribute(extraEClass, EXTRA__VALUE);
+		createEAttribute(extraEClass, EXTRA__TYPE);
 
 		callbackEClass = createEClass(CALLBACK);
 		createEAttribute(callbackEClass, CALLBACK__DATA);
@@ -633,9 +370,8 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__INTENTS);
 
-		booleanExtraEClass = createEClass(BOOLEAN_EXTRA);
-
-		uriExtraEClass = createEClass(URI_EXTRA);
+		// Create enums
+		extraTypeEEnum = createEEnum(EXTRA_TYPE);
 	}
 
 	/**
@@ -667,66 +403,25 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		// Add supertypes to classes
 		intentEClass.getESuperTypes().add(this.getNamedElement());
-		bundleEClass.getESuperTypes().add(this.getNamedElement());
-		explicitIntentEClass.getESuperTypes().add(this.getIntent());
-		implicitIntentEClass.getESuperTypes().add(this.getIntent());
-		doubleExtraEClass.getESuperTypes().add(this.getBundle());
-		intExtraEClass.getESuperTypes().add(this.getBundle());
-		charSequenceExtraEClass.getESuperTypes().add(this.getBundle());
-		charExtraEClass.getESuperTypes().add(this.getBundle());
-		bundleExtraEClass.getESuperTypes().add(this.getBundle());
-		parceableExtraEClass.getESuperTypes().add(this.getBundle());
-		serializableExtraEClass.getESuperTypes().add(this.getBundle());
-		floatExtraEClass.getESuperTypes().add(this.getBundle());
-		byteExtraEClass.getESuperTypes().add(this.getBundle());
-		longExtraEClass.getESuperTypes().add(this.getBundle());
-		stringExtraEClass.getESuperTypes().add(this.getBundle());
+		extraEClass.getESuperTypes().add(this.getNamedElement());
 		callbackEClass.getESuperTypes().add(this.getNamedElement());
 		permissionsEClass.getESuperTypes().add(this.getNamedElement());
 		modelEClass.getESuperTypes().add(this.getNamedElement());
-		booleanExtraEClass.getESuperTypes().add(this.getBundle());
-		uriExtraEClass.getESuperTypes().add(this.getBundle());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(intentEClass, Intent.class, "Intent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIntent_Extras(), this.getBundle(), null, "extras", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntent_Extras(), this.getExtra(), null, "extras", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntent_Action(), ecorePackage.getEString(), "action", null, 1, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntent_Category(), ecorePackage.getEString(), "category", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Type(), ecorePackage.getEString(), "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Data(), ecorePackage.getEString(), "data", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntent_SucessCallback(), this.getCallback(), null, "sucessCallback", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_ExceptionName(), ecorePackage.getEString(), "exceptionName", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntent_Permissions(), this.getPermissions(), null, "permissions", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(bundleEClass, Bundle.class, "Bundle", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBundle_Value(), ecorePackage.getEString(), "value", null, 1, 1, Bundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(explicitIntentEClass, ExplicitIntent.class, "ExplicitIntent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExplicitIntent_Component(), ecorePackage.getEString(), "component", null, 1, 1, ExplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(implicitIntentEClass, ImplicitIntent.class, "ImplicitIntent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImplicitIntent_Category(), ecorePackage.getEString(), "category", null, 0, 1, ImplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImplicitIntent_Action(), ecorePackage.getEString(), "action", null, 1, 1, ImplicitIntent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(doubleExtraEClass, DoubleExtra.class, "DoubleExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(intExtraEClass, IntExtra.class, "IntExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(charSequenceExtraEClass, CharSequenceExtra.class, "CharSequenceExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(charExtraEClass, CharExtra.class, "CharExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(bundleExtraEClass, BundleExtra.class, "BundleExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(parceableExtraEClass, ParceableExtra.class, "ParceableExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(serializableExtraEClass, SerializableExtra.class, "SerializableExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(floatExtraEClass, FloatExtra.class, "FloatExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(byteExtraEClass, ByteExtra.class, "ByteExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(longExtraEClass, LongExtra.class, "LongExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(stringExtraEClass, StringExtra.class, "StringExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(extraEClass, Extra.class, "Extra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExtra_Value(), ecorePackage.getEString(), "value", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExtra_Type(), this.getExtraType(), "type", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callbackEClass, Callback.class, "Callback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCallback_Data(), ecorePackage.getEString(), "data", null, 0, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -739,9 +434,21 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_Intents(), this.getIntent(), null, "intents", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(booleanExtraEClass, BooleanExtra.class, "BooleanExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(uriExtraEClass, UriExtra.class, "UriExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		// Initialize enums and add enum literals
+		initEEnum(extraTypeEEnum, ExtraType.class, "ExtraType");
+		addEEnumLiteral(extraTypeEEnum, ExtraType.STRING);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.SERIALIZABLE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.FLOAT);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.BYTE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.LONG);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.PARCELABLE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.BUNDLE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.CHAR);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.CHAR_SEQUENCE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.INT);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.DOUBLE);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.URI);
+		addEEnumLiteral(extraTypeEEnum, ExtraType.BOOLEAN);
 
 		// Create resource
 		createResource(eNS_URI);

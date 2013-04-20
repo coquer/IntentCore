@@ -22,121 +22,22 @@ public interface IntentFactory extends EFactory {
 	IntentFactory eINSTANCE = intent.impl.IntentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Explicit Intent</em>'.
+	 * Returns a new object of class '<em>Intent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Explicit Intent</em>'.
+	 * @return a new object of class '<em>Intent</em>'.
 	 * @generated
 	 */
-	ExplicitIntent createExplicitIntent();
+	Intent createIntent();
 
 	/**
-	 * Returns a new object of class '<em>Implicit Intent</em>'.
+	 * Returns a new object of class '<em>Extra</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Implicit Intent</em>'.
+	 * @return a new object of class '<em>Extra</em>'.
 	 * @generated
 	 */
-	ImplicitIntent createImplicitIntent();
-
-	/**
-	 * Returns a new object of class '<em>Double Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Double Extra</em>'.
-	 * @generated
-	 */
-	DoubleExtra createDoubleExtra();
-
-	/**
-	 * Returns a new object of class '<em>Int Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Int Extra</em>'.
-	 * @generated
-	 */
-	IntExtra createIntExtra();
-
-	/**
-	 * Returns a new object of class '<em>Char Sequence Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Char Sequence Extra</em>'.
-	 * @generated
-	 */
-	CharSequenceExtra createCharSequenceExtra();
-
-	/**
-	 * Returns a new object of class '<em>Char Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Char Extra</em>'.
-	 * @generated
-	 */
-	CharExtra createCharExtra();
-
-	/**
-	 * Returns a new object of class '<em>Bundle Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bundle Extra</em>'.
-	 * @generated
-	 */
-	BundleExtra createBundleExtra();
-
-	/**
-	 * Returns a new object of class '<em>Parceable Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parceable Extra</em>'.
-	 * @generated
-	 */
-	ParceableExtra createParceableExtra();
-
-	/**
-	 * Returns a new object of class '<em>Serializable Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Serializable Extra</em>'.
-	 * @generated
-	 */
-	SerializableExtra createSerializableExtra();
-
-	/**
-	 * Returns a new object of class '<em>Float Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Float Extra</em>'.
-	 * @generated
-	 */
-	FloatExtra createFloatExtra();
-
-	/**
-	 * Returns a new object of class '<em>Byte Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Byte Extra</em>'.
-	 * @generated
-	 */
-	ByteExtra createByteExtra();
-
-	/**
-	 * Returns a new object of class '<em>Long Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Long Extra</em>'.
-	 * @generated
-	 */
-	LongExtra createLongExtra();
-
-	/**
-	 * Returns a new object of class '<em>String Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Extra</em>'.
-	 * @generated
-	 */
-	StringExtra createStringExtra();
+	Extra createExtra();
 
 	/**
 	 * Returns a new object of class '<em>Callback</em>'.
@@ -164,24 +65,6 @@ public interface IntentFactory extends EFactory {
 	 * @generated
 	 */
 	Model createModel();
-
-	/**
-	 * Returns a new object of class '<em>Boolean Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Boolean Extra</em>'.
-	 * @generated
-	 */
-	BooleanExtra createBooleanExtra();
-
-	/**
-	 * Returns a new object of class '<em>Uri Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Uri Extra</em>'.
-	 * @generated
-	 */
-	UriExtra createUriExtra();
 
 	/**
 	 * Returns the package supported by this factory.

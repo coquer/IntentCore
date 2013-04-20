@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intent" nsURI="itu.dk.aamj.model" nsPrefix="intent">
-  <eClassifiers xsi:type="ecore:EClass" name="Intent" abstract="true" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Intent" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extras" upperBound="-1"
-        eType="#//Bundle" containment="true"/>
+        eType="#//Extra" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sucessCallback" eType="#//Callback"
@@ -12,29 +15,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" upperBound="-1"
         eType="#//Permissions" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bundle" abstract="true" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Extra" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ExtraType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExplicitIntent" eSuperTypes="#//Intent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImplicitIntent" eSuperTypes="#//Intent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DoubleExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IntExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CharSequenceExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CharExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BundleExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ParceableExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SerializableExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FloatExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ByteExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LongExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringExtra" eSuperTypes="#//Bundle"/>
   <eClassifiers xsi:type="ecore:EClass" name="Callback" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -46,6 +30,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="intents" upperBound="-1"
         eType="#//Intent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanExtra" eSuperTypes="#//Bundle"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UriExtra" eSuperTypes="#//Bundle"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExtraType">
+    <eLiterals name="String"/>
+    <eLiterals name="Serializable" value="1"/>
+    <eLiterals name="Float" value="2"/>
+    <eLiterals name="Byte" value="3"/>
+    <eLiterals name="Long" value="4"/>
+    <eLiterals name="Parcelable" value="5"/>
+    <eLiterals name="Bundle" value="6"/>
+    <eLiterals name="Char" value="7"/>
+    <eLiterals name="CharSequence" value="8"/>
+    <eLiterals name="Int" value="9"/>
+    <eLiterals name="Double" value="10"/>
+    <eLiterals name="Uri" value="11"/>
+    <eLiterals name="Boolean" value="12"/>
+  </eClassifiers>
 </ecore:EPackage>

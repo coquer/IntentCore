@@ -72,60 +72,8 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 				return createIntentAdapter();
 			}
 			@Override
-			public Adapter caseBundle(Bundle object) {
-				return createBundleAdapter();
-			}
-			@Override
-			public Adapter caseExplicitIntent(ExplicitIntent object) {
-				return createExplicitIntentAdapter();
-			}
-			@Override
-			public Adapter caseImplicitIntent(ImplicitIntent object) {
-				return createImplicitIntentAdapter();
-			}
-			@Override
-			public Adapter caseDoubleExtra(DoubleExtra object) {
-				return createDoubleExtraAdapter();
-			}
-			@Override
-			public Adapter caseIntExtra(IntExtra object) {
-				return createIntExtraAdapter();
-			}
-			@Override
-			public Adapter caseCharSequenceExtra(CharSequenceExtra object) {
-				return createCharSequenceExtraAdapter();
-			}
-			@Override
-			public Adapter caseCharExtra(CharExtra object) {
-				return createCharExtraAdapter();
-			}
-			@Override
-			public Adapter caseBundleExtra(BundleExtra object) {
-				return createBundleExtraAdapter();
-			}
-			@Override
-			public Adapter caseParceableExtra(ParceableExtra object) {
-				return createParceableExtraAdapter();
-			}
-			@Override
-			public Adapter caseSerializableExtra(SerializableExtra object) {
-				return createSerializableExtraAdapter();
-			}
-			@Override
-			public Adapter caseFloatExtra(FloatExtra object) {
-				return createFloatExtraAdapter();
-			}
-			@Override
-			public Adapter caseByteExtra(ByteExtra object) {
-				return createByteExtraAdapter();
-			}
-			@Override
-			public Adapter caseLongExtra(LongExtra object) {
-				return createLongExtraAdapter();
-			}
-			@Override
-			public Adapter caseStringExtra(StringExtra object) {
-				return createStringExtraAdapter();
+			public Adapter caseExtra(Extra object) {
+				return createExtraAdapter();
 			}
 			@Override
 			public Adapter caseCallback(Callback object) {
@@ -142,14 +90,6 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseModel(Model object) {
 				return createModelAdapter();
-			}
-			@Override
-			public Adapter caseBooleanExtra(BooleanExtra object) {
-				return createBooleanExtraAdapter();
-			}
-			@Override
-			public Adapter caseUriExtra(UriExtra object) {
-				return createUriExtraAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -186,198 +126,16 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link intent.Bundle <em>Bundle</em>}'.
+	 * Creates a new adapter for an object of class '{@link intent.Extra <em>Extra</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see intent.Bundle
+	 * @see intent.Extra
 	 * @generated
 	 */
-	public Adapter createBundleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.ExplicitIntent <em>Explicit Intent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.ExplicitIntent
-	 * @generated
-	 */
-	public Adapter createExplicitIntentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.ImplicitIntent <em>Implicit Intent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.ImplicitIntent
-	 * @generated
-	 */
-	public Adapter createImplicitIntentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.DoubleExtra <em>Double Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.DoubleExtra
-	 * @generated
-	 */
-	public Adapter createDoubleExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.IntExtra <em>Int Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.IntExtra
-	 * @generated
-	 */
-	public Adapter createIntExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.CharSequenceExtra <em>Char Sequence Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.CharSequenceExtra
-	 * @generated
-	 */
-	public Adapter createCharSequenceExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.CharExtra <em>Char Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.CharExtra
-	 * @generated
-	 */
-	public Adapter createCharExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.BundleExtra <em>Bundle Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.BundleExtra
-	 * @generated
-	 */
-	public Adapter createBundleExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.ParceableExtra <em>Parceable Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.ParceableExtra
-	 * @generated
-	 */
-	public Adapter createParceableExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.SerializableExtra <em>Serializable Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.SerializableExtra
-	 * @generated
-	 */
-	public Adapter createSerializableExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.FloatExtra <em>Float Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.FloatExtra
-	 * @generated
-	 */
-	public Adapter createFloatExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.ByteExtra <em>Byte Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.ByteExtra
-	 * @generated
-	 */
-	public Adapter createByteExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.LongExtra <em>Long Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.LongExtra
-	 * @generated
-	 */
-	public Adapter createLongExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.StringExtra <em>String Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.StringExtra
-	 * @generated
-	 */
-	public Adapter createStringExtraAdapter() {
+	public Adapter createExtraAdapter() {
 		return null;
 	}
 
@@ -434,34 +192,6 @@ public class IntentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.BooleanExtra <em>Boolean Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.BooleanExtra
-	 * @generated
-	 */
-	public Adapter createBooleanExtraAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link intent.UriExtra <em>Uri Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see intent.UriExtra
-	 * @generated
-	 */
-	public Adapter createUriExtraAdapter() {
 		return null;
 	}
 

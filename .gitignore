@@ -6,7 +6,6 @@ bin/
 src-gen/
 itu.dk.aamj.intentdsl.sdk/
 itu.dk.aamj.intentdsl.tests/
-itu.dk.aamj.intentdsl.ui/
 
 *.pydevproject
 .project

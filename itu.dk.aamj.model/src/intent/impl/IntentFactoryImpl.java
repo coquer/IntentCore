@@ -5,6 +5,7 @@ package intent.impl;
 import intent.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -56,24 +57,11 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case IntentPackage.EXPLICIT_INTENT: return createExplicitIntent();
-			case IntentPackage.IMPLICIT_INTENT: return createImplicitIntent();
-			case IntentPackage.DOUBLE_EXTRA: return createDoubleExtra();
-			case IntentPackage.INT_EXTRA: return createIntExtra();
-			case IntentPackage.CHAR_SEQUENCE_EXTRA: return createCharSequenceExtra();
-			case IntentPackage.CHAR_EXTRA: return createCharExtra();
-			case IntentPackage.BUNDLE_EXTRA: return createBundleExtra();
-			case IntentPackage.PARCEABLE_EXTRA: return createParceableExtra();
-			case IntentPackage.SERIALIZABLE_EXTRA: return createSerializableExtra();
-			case IntentPackage.FLOAT_EXTRA: return createFloatExtra();
-			case IntentPackage.BYTE_EXTRA: return createByteExtra();
-			case IntentPackage.LONG_EXTRA: return createLongExtra();
-			case IntentPackage.STRING_EXTRA: return createStringExtra();
+			case IntentPackage.INTENT: return createIntent();
+			case IntentPackage.EXTRA: return createExtra();
 			case IntentPackage.CALLBACK: return createCallback();
 			case IntentPackage.PERMISSIONS: return createPermissions();
 			case IntentPackage.MODEL: return createModel();
-			case IntentPackage.BOOLEAN_EXTRA: return createBooleanExtra();
-			case IntentPackage.URI_EXTRA: return createUriExtra();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,9 +72,14 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExplicitIntent createExplicitIntent() {
-		ExplicitIntentImpl explicitIntent = new ExplicitIntentImpl();
-		return explicitIntent;
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case IntentPackage.EXTRA_TYPE:
+				return createExtraTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -94,9 +87,14 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImplicitIntent createImplicitIntent() {
-		ImplicitIntentImpl implicitIntent = new ImplicitIntentImpl();
-		return implicitIntent;
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case IntentPackage.EXTRA_TYPE:
+				return convertExtraTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -104,9 +102,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoubleExtra createDoubleExtra() {
-		DoubleExtraImpl doubleExtra = new DoubleExtraImpl();
-		return doubleExtra;
+	public Intent createIntent() {
+		IntentImpl intent = new IntentImpl();
+		return intent;
 	}
 
 	/**
@@ -114,99 +112,9 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntExtra createIntExtra() {
-		IntExtraImpl intExtra = new IntExtraImpl();
-		return intExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CharSequenceExtra createCharSequenceExtra() {
-		CharSequenceExtraImpl charSequenceExtra = new CharSequenceExtraImpl();
-		return charSequenceExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CharExtra createCharExtra() {
-		CharExtraImpl charExtra = new CharExtraImpl();
-		return charExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BundleExtra createBundleExtra() {
-		BundleExtraImpl bundleExtra = new BundleExtraImpl();
-		return bundleExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParceableExtra createParceableExtra() {
-		ParceableExtraImpl parceableExtra = new ParceableExtraImpl();
-		return parceableExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SerializableExtra createSerializableExtra() {
-		SerializableExtraImpl serializableExtra = new SerializableExtraImpl();
-		return serializableExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FloatExtra createFloatExtra() {
-		FloatExtraImpl floatExtra = new FloatExtraImpl();
-		return floatExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ByteExtra createByteExtra() {
-		ByteExtraImpl byteExtra = new ByteExtraImpl();
-		return byteExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LongExtra createLongExtra() {
-		LongExtraImpl longExtra = new LongExtraImpl();
-		return longExtra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StringExtra createStringExtra() {
-		StringExtraImpl stringExtra = new StringExtraImpl();
-		return stringExtra;
+	public Extra createExtra() {
+		ExtraImpl extra = new ExtraImpl();
+		return extra;
 	}
 
 	/**
@@ -244,9 +152,10 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanExtra createBooleanExtra() {
-		BooleanExtraImpl booleanExtra = new BooleanExtraImpl();
-		return booleanExtra;
+	public ExtraType createExtraTypeFromString(EDataType eDataType, String initialValue) {
+		ExtraType result = ExtraType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -254,9 +163,8 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UriExtra createUriExtra() {
-		UriExtraImpl uriExtra = new UriExtraImpl();
-		return uriExtra;
+	public String convertExtraTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

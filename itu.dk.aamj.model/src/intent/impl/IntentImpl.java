@@ -2,8 +2,8 @@
  */
 package intent.impl;
 
-import intent.Bundle;
 import intent.Callback;
+import intent.Extra;
 import intent.Intent;
 import intent.IntentPackage;
 import intent.Permissions;
@@ -31,6 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link intent.impl.IntentImpl#getExtras <em>Extras</em>}</li>
+ *   <li>{@link intent.impl.IntentImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link intent.impl.IntentImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getType <em>Type</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getData <em>Data</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getSucessCallback <em>Sucess Callback</em>}</li>
@@ -41,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class IntentImpl extends NamedElementImpl implements Intent {
+public class IntentImpl extends NamedElementImpl implements Intent {
 	/**
 	 * The cached value of the '{@link #getExtras() <em>Extras</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -50,7 +52,47 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Bundle> extras;
+	protected EList<Extra> extras;
+
+	/**
+	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected String action = ACTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCategory() <em>Category</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CATEGORY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCategory() <em>Category</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategory()
+	 * @generated
+	 * @ordered
+	 */
+	protected String category = CATEGORY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -156,11 +198,53 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Bundle> getExtras() {
+	public EList<Extra> getExtras() {
 		if (extras == null) {
-			extras = new EObjectContainmentEList<Bundle>(Bundle.class, this, IntentPackage.INTENT__EXTRAS);
+			extras = new EObjectContainmentEList<Extra>(Extra.class, this, IntentPackage.INTENT__EXTRAS);
 		}
 		return extras;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAction() {
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAction(String newAction) {
+		String oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.INTENT__ACTION, oldAction, action));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCategory() {
+		return category;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCategory(String newCategory) {
+		String oldCategory = category;
+		category = newCategory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.INTENT__CATEGORY, oldCategory, category));
 	}
 
 	/**
@@ -309,6 +393,10 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				return getExtras();
+			case IntentPackage.INTENT__ACTION:
+				return getAction();
+			case IntentPackage.INTENT__CATEGORY:
+				return getCategory();
 			case IntentPackage.INTENT__TYPE:
 				return getType();
 			case IntentPackage.INTENT__DATA:
@@ -334,7 +422,13 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				getExtras().clear();
-				getExtras().addAll((Collection<? extends Bundle>)newValue);
+				getExtras().addAll((Collection<? extends Extra>)newValue);
+				return;
+			case IntentPackage.INTENT__ACTION:
+				setAction((String)newValue);
+				return;
+			case IntentPackage.INTENT__CATEGORY:
+				setCategory((String)newValue);
 				return;
 			case IntentPackage.INTENT__TYPE:
 				setType((String)newValue);
@@ -367,6 +461,12 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 			case IntentPackage.INTENT__EXTRAS:
 				getExtras().clear();
 				return;
+			case IntentPackage.INTENT__ACTION:
+				setAction(ACTION_EDEFAULT);
+				return;
+			case IntentPackage.INTENT__CATEGORY:
+				setCategory(CATEGORY_EDEFAULT);
+				return;
 			case IntentPackage.INTENT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -396,6 +496,10 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 		switch (featureID) {
 			case IntentPackage.INTENT__EXTRAS:
 				return extras != null && !extras.isEmpty();
+			case IntentPackage.INTENT__ACTION:
+				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+			case IntentPackage.INTENT__CATEGORY:
+				return CATEGORY_EDEFAULT == null ? category != null : !CATEGORY_EDEFAULT.equals(category);
 			case IntentPackage.INTENT__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case IntentPackage.INTENT__DATA:
@@ -420,7 +524,11 @@ public abstract class IntentImpl extends NamedElementImpl implements Intent {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
+		result.append(" (action: ");
+		result.append(action);
+		result.append(", category: ");
+		result.append(category);
+		result.append(", type: ");
 		result.append(type);
 		result.append(", data: ");
 		result.append(data);
