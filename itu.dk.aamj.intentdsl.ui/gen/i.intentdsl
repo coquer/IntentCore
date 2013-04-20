@@ -19,20 +19,24 @@ Model {
 		},
 		ActionWebSearch {
 			action "android.intent.action.WEB_SEARCH"
+			category "android.intent.category.DEFAULT"
 			extras {
 				String "query" "Insert query or URL"
 			}
 		},
 		ActionCall {
 			action "android.intent.action.CALL"
+			category "android.intent.category.DEFAULT"
 			data "tel:555-555-5555"
 		},
 		ActionDial {
 			action "android.intent.action.DIAL"
+			category "android.intent.category.DEFAULT"
 			data "tel:555-555-5555"
 		},
 		ActionSendText {
 			action "android.intent.action.SEND"
+			category "android.intent.category.DEFAULT"
 			type "text/plain"
 			extras {
 				String "android.intent.extra.TEXT" "Put your text here"
@@ -40,10 +44,16 @@ Model {
 		},
 		ActionSendStream {
 			action "android.intent.action.SEND"
+			category "android.intent.category.DEFAULT"
 			type "image/jpeg"
 			extras {
 				Uri "android.intent.extra.STREAM" "file:///path/to/your/file"
 			}
-		}
+		},
+		ActionPickImage {
+			action "android.intent.action.PICK"
+			category "android.intent.category.DEFAULT"
+			type "image/*"
+			callback "BROWSE_IMAGE_REQUEST_CODE"
 	}
 }

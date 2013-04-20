@@ -256,20 +256,59 @@ public class IntentHandler {
 			
 		}
 		
+		//TODO Again WHY?! It won't work if you take this out
+		instanceName = ast.newSimpleName(instanceNameString);
+		
 		//Start the intent
 		//TODO We need a Broadcast intent that will use "sendBroadcast"
 		Callback callback = intent.getSucessCallback();
 		if(callback != null) {
 			
+			//TODO Again WHY?! It won't work if you take this out
+			MethodInvocation startAct = ast.newMethodInvocation();
+			startAct.setName(ast.newSimpleName("startActivityForResult"));
+			startAct.arguments().add(instanceName);
+			startAct.arguments().add(ast.newSimpleName(callback.getName()));
+			statementsList.add(++index, ast.newExpressionStatement(startAct));
 			
+			//Find the method onActivityResult
+//			MethodDeclaration methodDecl = null;
+//			
+//			List<BodyDeclaration> decls = ((TypeDeclaration)astRoot.types().get(0)).bodyDeclarations();
+//			
+//			astRoot.
+//					
+//			for (Iterator<BodyDeclaration> iterator = decls.iterator(); iterator.hasNext();){
+//				
+//				BodyDeclaration decl = (BodyDeclaration) iterator.next();
+//				System.out.println(decl.getE);
+//				if((decl instanceof MethodDeclaration)) {
+//				}
+//				
+//			}
+			
+			//Method not found, create it
+			
+			//Add to the method
+			
+//		     protected void onActivityResult(int requestCode, int resultCode,
+//		             Intent data) {
+//		         if (requestCode == PICK_CONTACT_REQUEST) {
+//		             if (resultCode == RESULT_OK) {
+//		                 // A contact was picked.  Here we will just display it
+//		                 // to the user.
+//		                 startActivity(new Intent(Intent.ACTION_VIEW, data));
+//		             }
+//		         }
+//		     }
 			
 		}
 		else {
 			
-//			MethodInvocation startAct = ast.newMethodInvocation();
-//			startAct.setName(ast.newSimpleName("startActivity"));
-//			startAct.arguments().add(instanceName);
-//			statementsList.add(++index, ast.newExpressionStatement(startAct));
+			MethodInvocation startAct = ast.newMethodInvocation();
+			startAct.setName(ast.newSimpleName("startActivity"));
+			startAct.arguments().add(instanceName);
+			statementsList.add(++index, ast.newExpressionStatement(startAct));
 			
 		}
 			

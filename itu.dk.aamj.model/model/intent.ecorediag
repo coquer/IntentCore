@@ -34,7 +34,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_WI4vwIGgEeKHc-kMMC6Ieg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Intent"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WI4vwYGgEeKHc-kMMC6Ieg" x="324" y="180" height="129"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WI4vwYGgEeKHc-kMMC6Ieg" x="351" y="333" height="129"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_X3e_kIGgEeKHc-kMMC6Ieg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_X3fmoIGgEeKHc-kMMC6Ieg" type="4001"/>
@@ -58,15 +58,11 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_X3e_kYGgEeKHc-kMMC6Ieg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Extra"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X3e_koGgEeKHc-kMMC6Ieg" x="585" y="189"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X3e_koGgEeKHc-kMMC6Ieg" x="612" y="342"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_9f7icJIFEeKBJd-I1bK_MQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_9gEFUJIFEeKBJd-I1bK_MQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_9gFTcJIFEeKBJd-I1bK_MQ" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_-8IasJIFEeKBJd-I1bK_MQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="intent.ecore#//Callback/data"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_-8IasZIFEeKBJd-I1bK_MQ"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_9gFTcZIFEeKBJd-I1bK_MQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_9gFTcpIFEeKBJd-I1bK_MQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9gFTc5IFEeKBJd-I1bK_MQ"/>
@@ -78,7 +74,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_9f7icZIFEeKBJd-I1bK_MQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Callback"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9f7icpIFEeKBJd-I1bK_MQ" x="171" y="54"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9f7icpIFEeKBJd-I1bK_MQ" x="198" y="207"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_FZJbQJSUEeKuz9-oqIPJeQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_FZKpYJSUEeKuz9-oqIPJeQ" type="4001"/>
@@ -94,7 +90,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_FZJbQZSUEeKuz9-oqIPJeQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Permissions"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZJbQpSUEeKuz9-oqIPJeQ" x="420" y="63"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZJbQpSUEeKuz9-oqIPJeQ" x="447" y="216"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4seZgJbyEeKEKazYcWHfFg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_4shc0JbyEeKEKazYcWHfFg" type="4001"/>
@@ -114,7 +110,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4seZgZbyEeKEKazYcWHfFg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//NamedElement"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4seZgpbyEeKEKazYcWHfFg" x="324" y="9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4seZgpbyEeKEKazYcWHfFg" x="351" y="162"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_pIaZwKHqEeKb984pmI3U7g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_pIbn4KHqEeKb984pmI3U7g" type="4001"/>
@@ -130,7 +126,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_pIaZwaHqEeKb984pmI3U7g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Model"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pIaZwqHqEeKb984pmI3U7g" x="122" y="230"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pIaZwqHqEeKb984pmI3U7g" x="149" y="383"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="__H0IkKj2EeKdTZPOm7FoUw" type="1005">
     <children xmi:type="notation:Node" xmi:id="__IFOUKj2EeKdTZPOm7FoUw" type="4010"/>
@@ -193,7 +189,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="__H0Ikaj2EeKdTZPOm7FoUw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="intent.ecore#//ExtraType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__H0Ikqj2EeKdTZPOm7FoUw" x="729" y="36"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__H0Ikqj2EeKdTZPOm7FoUw" x="756" y="189"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kS96wYGeEeKOCrKKGwEt7w"/>
   <element xmi:type="ecore:EPackage" href="intent.ecore#/"/>

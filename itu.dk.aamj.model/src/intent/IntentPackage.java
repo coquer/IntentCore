@@ -250,22 +250,13 @@ public interface IntentPackage extends EPackage {
 	int CALLBACK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALLBACK__DATA = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Callback</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALLBACK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CALLBACK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.PermissionsImpl <em>Permissions</em>}' class.
@@ -484,17 +475,6 @@ public interface IntentPackage extends EPackage {
 	EClass getCallback();
 
 	/**
-	 * Returns the meta object for the attribute '{@link intent.Callback#getData <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data</em>'.
-	 * @see intent.Callback#getData()
-	 * @see #getCallback()
-	 * @generated
-	 */
-	EAttribute getCallback_Data();
-
-	/**
 	 * Returns the meta object for class '{@link intent.Permissions <em>Permissions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,14 +667,6 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CALLBACK = eINSTANCE.getCallback();
-
-		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CALLBACK__DATA = eINSTANCE.getCallback_Data();
 
 		/**
 		 * The meta object literal for the '{@link intent.impl.PermissionsImpl <em>Permissions</em>}' class.

@@ -259,15 +259,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCallback_Data() {
-		return (EAttribute)callbackEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPermissions() {
 		return permissionsEClass;
 	}
@@ -360,7 +351,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		createEAttribute(extraEClass, EXTRA__TYPE);
 
 		callbackEClass = createEClass(CALLBACK);
-		createEAttribute(callbackEClass, CALLBACK__DATA);
 
 		permissionsEClass = createEClass(PERMISSIONS);
 
@@ -424,7 +414,6 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEAttribute(getExtra_Type(), this.getExtraType(), "type", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callbackEClass, Callback.class, "Callback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCallback_Data(), ecorePackage.getEString(), "data", null, 0, 1, Callback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(permissionsEClass, Permissions.class, "Permissions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

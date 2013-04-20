@@ -19,7 +19,7 @@ Intent returns Intent:
 		('data' data=EString)?
 		('exceptionName' exceptionName=EString)?
 		('extras' '{' extras+=Extra ( "," extras+=Extra)* '}' )?
-		('sucessCallback' sucessCallback=Callback)?
+		('callback' sucessCallback=Callback)?
 		('permissions' '{' permissions+=Permissions ( "," permissions+=Permissions)* '}' )?
 	'}';
 
@@ -34,11 +34,9 @@ enum ExtraType:
 EString returns ecore::EString:
 	STRING | ID;
 	
-//Before: Callback functioname { data anotherstring }
-//After: Callback functioname(anotherstring);
 Callback returns Callback:
 	{Callback}
-	'Callback' name=EString ('(' 'data' data=EString ')')? ';';
+	name=EString;
 
 Permissions returns Permissions:
 	{Permissions}
