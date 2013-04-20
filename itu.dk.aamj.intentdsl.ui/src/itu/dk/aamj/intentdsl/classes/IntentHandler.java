@@ -266,10 +266,10 @@ public class IntentHandler {
 		}
 		else {
 			
-			MethodInvocation startAct = ast.newMethodInvocation();
-			startAct.setName(ast.newSimpleName("startActivity"));
-			startAct.arguments().add(instanceName);
-			statementsList.add(++index, ast.newExpressionStatement(startAct));
+//			MethodInvocation startAct = ast.newMethodInvocation();
+//			startAct.setName(ast.newSimpleName("startActivity"));
+//			startAct.arguments().add(instanceName);
+//			statementsList.add(++index, ast.newExpressionStatement(startAct));
 			
 		}
 			
