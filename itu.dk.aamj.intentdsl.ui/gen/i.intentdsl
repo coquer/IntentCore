@@ -1,13 +1,13 @@
 Model {
 	intents {
-		PickFile {
+		Intent "Pick File" {
 			action "org.openintents.action.PICK_FILE"
 			data "file:///path/to/your/file.txt"
 			extras {
 				String "org.openintents.extra.TITLE" "Please select a value"
 			}
 		},
-		FlashLight {
+		Intent "Flash Light" {
 			action "com.telsacoilsw.intent.FLASHLIGHT"
 			extras {
 				boolean "on" "false",
@@ -17,24 +17,24 @@ Model {
 				int "strobe" "0"
 			}
 		},
-		ActionWebSearch {
+		Intent "Action Web Search" {
 			action "android.intent.action.WEB_SEARCH"
 			category "android.intent.category.DEFAULT"
 			extras {
 				String "query" "Insert query or URL"
 			}
 		},
-		ActionCall {
+		Intent "Action Call" {
 			action "android.intent.action.CALL"
 			category "android.intent.category.DEFAULT"
 			data "tel:555-555-5555"
 		},
-		ActionDial {
+		Intent "Action Dial" {
 			action "android.intent.action.DIAL"
 			category "android.intent.category.DEFAULT"
 			data "tel:555-555-5555"
 		},
-		ActionSendText {
+		Intent "Action Send Text" {
 			action "android.intent.action.SEND"
 			category "android.intent.category.DEFAULT"
 			type "text/plain"
@@ -42,7 +42,7 @@ Model {
 				String "android.intent.extra.TEXT" "Put your text here"
 			}
 		},
-		ActionSendStream {
+		Intent "Action Send Stream" {
 			action "android.intent.action.SEND"
 			category "android.intent.category.DEFAULT"
 			type "image/jpeg"
@@ -50,10 +50,14 @@ Model {
 				Uri "android.intent.extra.STREAM" "file:///path/to/your/file"
 			}
 		},
-		ActionPickImage {
+		Intent "Action Pick Image" {
 			action "android.intent.action.PICK"
 			category "android.intent.category.DEFAULT"
 			type "image/*"
 			callback "BROWSE_IMAGE_REQUEST_CODE"
+		},
+		Broadcast "Fake Broadcast Intent" {
+			action "itu.dk.aamj.broadcastintent"
+		}
 	}
 }

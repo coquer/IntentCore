@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link intent.Intent#getExtras <em>Extras</em>}</li>
  *   <li>{@link intent.Intent#getAction <em>Action</em>}</li>
+ *   <li>{@link intent.Intent#getIntentType <em>Intent Type</em>}</li>
  *   <li>{@link intent.Intent#getCategory <em>Category</em>}</li>
  *   <li>{@link intent.Intent#getType <em>Type</em>}</li>
  *   <li>{@link intent.Intent#getData <em>Data</em>}</li>
@@ -69,6 +70,35 @@ public interface Intent extends NamedElement {
 	 * @generated
 	 */
 	void setAction(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Intent Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link intent.IntentType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intent Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intent Type</em>' attribute.
+	 * @see intent.IntentType
+	 * @see #setIntentType(IntentType)
+	 * @see intent.IntentPackage#getIntent_IntentType()
+	 * @model required="true"
+	 * @generated
+	 */
+	IntentType getIntentType();
+
+	/**
+	 * Sets the value of the '{@link intent.Intent#getIntentType <em>Intent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intent Type</em>' attribute.
+	 * @see intent.IntentType
+	 * @see #getIntentType()
+	 * @generated
+	 */
+	void setIntentType(IntentType value);
 
 	/**
 	 * Returns the value of the '<em><b>Category</b></em>' attribute.

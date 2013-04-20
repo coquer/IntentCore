@@ -26,16 +26,24 @@ import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
+import org.eclipse.jdt.core.dom.BlockComment;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
+import org.eclipse.jdt.core.dom.CatchClause;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.IfStatement;
+import org.eclipse.jdt.core.dom.InfixExpression;
 import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.Modifier;
+import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.StringLiteral;
+import org.eclipse.jdt.core.dom.TryStatement;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
@@ -125,7 +133,7 @@ public class IntentHandler {
 		
 	}
 	
-	public int InsertIntent(String intentName) throws Exception {
+	public int InsertIntent(String intentName, boolean handleExceptions) throws Exception {
 		
 		//Get the intent
 		Intent intent = findIntentByName(intentName);
@@ -149,11 +157,7 @@ public class IntentHandler {
 		ISelection selection = texteditor.getSelectionProvider().getSelection();
 
 		//Parse as AST
-		ASTParser parser = ASTParser.newParser(AST.JLS4);
-		parser.setKind(ASTParser.K_COMPILATION_UNIT);
-		parser.setSource(compilationUnit);
-		parser.setResolveBindings(true);
-		CompilationUnit astRoot = (CompilationUnit) parser.createAST(null);
+		CompilationUnit astRoot = parse(compilationUnit);
 		astRoot.recordModifications();
 		AST ast = astRoot.getAST();
 		
@@ -172,9 +176,16 @@ public class IntentHandler {
 		List<Statement> statementsList = method.getBody().statements();
 		
 		
+		//Generate the variable name
+		StringBuilder sb = new StringBuilder();
+		for(String s : intent.getName().split(" ")) {
+			
+			sb.append(s.substring(0, 1).toLowerCase());
+			
+		}
+		String instanceNameString = sb.toString(); // Note that using a string here isntead of newSimpleName is important as it gets overridden for some reason
+
 		//Create the class call
-		//TODO We should change this for every intent
-		String instanceNameString = "i"; // Note that using a string here isntead of newSimpleName is important as it gets overridden for some reason
 		VariableDeclarationFragment vdf = ast.newVariableDeclarationFragment();  
 		vdf.setName(ast.newSimpleName(instanceNameString));  
 		ClassInstanceCreation cc = ast.newClassInstanceCreation();  
@@ -272,43 +283,113 @@ public class IntentHandler {
 			statementsList.add(++index, ast.newExpressionStatement(startAct));
 			
 			//Find the method onActivityResult
-//			MethodDeclaration methodDecl = null;
-//			
-//			List<BodyDeclaration> decls = ((TypeDeclaration)astRoot.types().get(0)).bodyDeclarations();
-//			
-//			astRoot.
-//					
-//			for (Iterator<BodyDeclaration> iterator = decls.iterator(); iterator.hasNext();){
-//				
-//				BodyDeclaration decl = (BodyDeclaration) iterator.next();
-//				System.out.println(decl.getE);
-//				if((decl instanceof MethodDeclaration)) {
-//				}
-//				
-//			}
+			MethodDeclaration methodDecl = null;
 			
-			//Method not found, create it
+			MethodVisitor visitor = new MethodVisitor();
+			astRoot.accept(visitor);
+
+			for (MethodDeclaration methodDec : visitor.getMethods()) {
+				
+				if(methodDec.getName().toString().equalsIgnoreCase("onActivityResult"))
+					methodDecl = methodDec;
+				
+			}
 			
+			if(methodDecl == null) {
+				
+				//http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.jdt.doc.isv/guide/jdt_api_manip.htm
+				//Method not found, create it
+				methodDecl = ast.newMethodDeclaration();
+				methodDecl.setConstructor(false);
+				List modifiers = methodDecl.modifiers();
+				modifiers.add(ast.newModifier(Modifier.ModifierKeyword.PROTECTED_KEYWORD));
+				methodDecl.setName(ast.newSimpleName("onActivityResult"));
+				methodDecl.setReturnType2(ast.newPrimitiveType(PrimitiveType.VOID));
+				
+				SingleVariableDeclaration variableDeclaration = ast.newSingleVariableDeclaration();
+				variableDeclaration.setType(ast.newPrimitiveType(PrimitiveType.INT));
+				variableDeclaration.setName(ast.newSimpleName("requestCode"));
+				methodDecl.parameters().add(variableDeclaration);
+				
+				variableDeclaration = ast.newSingleVariableDeclaration();
+				variableDeclaration.setType(ast.newPrimitiveType(PrimitiveType.INT));
+				variableDeclaration.setName(ast.newSimpleName("resultCode"));
+				methodDecl.parameters().add(variableDeclaration);
+				
+				variableDeclaration = ast.newSingleVariableDeclaration();
+				variableDeclaration.setType(ast.newSimpleType(ast.newSimpleName("Intent")));
+				variableDeclaration.setName(ast.newSimpleName("data"));
+				methodDecl.parameters().add(variableDeclaration);
+				
+				((TypeDeclaration)astRoot.types().get(0)).bodyDeclarations().add(methodDecl);
+				
+			}
+			
+			InfixExpression equalsName = methodDecl.getAST().newInfixExpression();
+			equalsName.setOperator(InfixExpression.Operator.EQUALS);
+			equalsName.setLeftOperand(ast.newSimpleName("requestCode"));
+			equalsName.setRightOperand(ast.newSimpleName(callback.getName()));
+			
+			IfStatement ifStatement = methodDecl.getAST().newIfStatement();
+			ifStatement.setExpression(equalsName);
+			
+			InfixExpression equalsResultOK = ifStatement.getAST().newInfixExpression();
+			equalsResultOK.setOperator(InfixExpression.Operator.EQUALS);
+			equalsResultOK.setLeftOperand(ast.newSimpleName("resultCode"));
+			equalsResultOK.setRightOperand(ast.newSimpleName("RESULT_OK"));
+			
+			IfStatement secondIfStatement = methodDecl.getAST().newIfStatement();
+			secondIfStatement.setExpression(equalsResultOK);
+			ifStatement.setThenStatement(secondIfStatement);
+			
+//			TODO Not sure how to add this comment. The docs say that comments don't work well and are not intended for client use
+//			LineComment comment = secondIfStatement.getAST().newLineComment();
+//			StringLiteral comment = secondIfStatement.getAST().newStringLiteral();
+//			comment.setLiteralValue("// Success");
+//			secondIfStatement.setThenStatement(secondIfStatement.getAST().newEmptyStatement().set);
+
 			//Add to the method
-			
-//		     protected void onActivityResult(int requestCode, int resultCode,
-//		             Intent data) {
-//		         if (requestCode == PICK_CONTACT_REQUEST) {
-//		             if (resultCode == RESULT_OK) {
-//		                 // A contact was picked.  Here we will just display it
-//		                 // to the user.
-//		                 startActivity(new Intent(Intent.ACTION_VIEW, data));
-//		             }
-//		         }
-//		     }
+			if(methodDecl.getBody() == null) {
+				
+				Block block = methodDecl.getAST().newBlock();
+				block.statements().add(ifStatement);
+				methodDecl.setBody(block);
+				
+			} else
+				methodDecl.getBody().statements().add(ifStatement);
 			
 		}
 		else {
 			
+			//Exception handling
+			//http://stackoverflow.com/questions/10152252/android-emulator-intent-createchooser-says-no-application-can-perform-this-ac
+			//http://svn.svnkit.com/repos/svnkit/branches/1.7-script/src/org/tmatesoft/refactoring/split/core/SplitDelegateChanges.java
+			
 			MethodInvocation startAct = ast.newMethodInvocation();
-			startAct.setName(ast.newSimpleName("startActivity"));
+			startAct.setName(ast.newSimpleName(
+				intent.getIntentType().toString().equalsIgnoreCase("broadcast") ? "sendBroadcast" : "startActivity"
+			));
 			startAct.arguments().add(instanceName);
-			statementsList.add(++index, ast.newExpressionStatement(startAct));
+			
+			if(handleExceptions) {
+				
+				TryStatement tryStatement = ast.newTryStatement();
+				tryStatement.getBody().statements().add(ast.newExpressionStatement(startAct));
+				
+				SingleVariableDeclaration exception = ast.newSingleVariableDeclaration();
+				exception.setType(ast.newSimpleType(ast.newSimpleName("ActivityNotFoundException")));
+				exception.setName(ast.newSimpleName("e"));
+				
+				List<CatchClause> catchClauses = tryStatement.catchClauses();
+				CatchClause catchClause = ast.newCatchClause();
+				catchClause.setException(exception);
+				tryStatement.catchClauses().add(catchClause);
+				
+				statementsList.add(++index, tryStatement);
+				
+			}
+			else
+				statementsList.add(++index, ast.newExpressionStatement(startAct));
 			
 		}
 			
@@ -322,6 +403,30 @@ public class IntentHandler {
 		// Success
 		return 1;
 
+	}
+	
+	public class MethodVisitor extends ASTVisitor {
+		List<MethodDeclaration> methods = new ArrayList<MethodDeclaration>();
+
+		@Override
+		public boolean visit(MethodDeclaration node) {
+			methods.add(node);
+			return super.visit(node);
+		}
+
+		public List<MethodDeclaration> getMethods() {
+			return methods;
+		}
+	}
+	
+	private CompilationUnit parse(ICompilationUnit compilationUnit) {
+		
+		ASTParser parser = ASTParser.newParser(AST.JLS4);
+		parser.setKind(ASTParser.K_COMPILATION_UNIT);
+		parser.setSource(compilationUnit);
+		parser.setResolveBindings(true);
+		return (CompilationUnit) parser.createAST(null);
+		
 	}
 	
 	/**

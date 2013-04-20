@@ -77,6 +77,8 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 		switch (eDataType.getClassifierID()) {
 			case IntentPackage.EXTRA_TYPE:
 				return createExtraTypeFromString(eDataType, initialValue);
+			case IntentPackage.INTENT_TYPE:
+				return createIntentTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +94,8 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 		switch (eDataType.getClassifierID()) {
 			case IntentPackage.EXTRA_TYPE:
 				return convertExtraTypeToString(eDataType, instanceValue);
+			case IntentPackage.INTENT_TYPE:
+				return convertIntentTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -164,6 +168,26 @@ public class IntentFactoryImpl extends EFactoryImpl implements IntentFactory {
 	 * @generated
 	 */
 	public String convertExtraTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntentType createIntentTypeFromString(EDataType eDataType, String initialValue) {
+		IntentType result = IntentType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIntentTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

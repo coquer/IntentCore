@@ -7,6 +7,10 @@
         <element xmi:type="ecore:EAttribute" href="intent.ecore#//Intent/action"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_uCOBwYaVEeKayLK4EOJSjg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="__a0-wKn0EeKIxYEg-h05UQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="intent.ecore#//Intent/intentType"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__a0-wan0EeKIxYEg-h05UQ"/>
+      </children>
       <children xmi:type="notation:Node" xmi:id="_zzQzUIaVEeKayLK4EOJSjg" type="2001">
         <element xmi:type="ecore:EAttribute" href="intent.ecore#//Intent/category"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_zzQzUYaVEeKayLK4EOJSjg"/>
@@ -58,7 +62,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_X3e_kYGgEeKHc-kMMC6Ieg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="intent.ecore#//Extra"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X3e_koGgEeKHc-kMMC6Ieg" x="612" y="342"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X3e_koGgEeKHc-kMMC6Ieg" x="612" y="234"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_9f7icJIFEeKBJd-I1bK_MQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_9gEFUJIFEeKBJd-I1bK_MQ" type="4001"/>
@@ -191,6 +195,25 @@
     <element xmi:type="ecore:EEnum" href="intent.ecore#//ExtraType"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="__H0Ikqj2EeKdTZPOm7FoUw" x="756" y="189"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_Al1ZUKn1EeKIxYEg-h05UQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_Al31kKn1EeKIxYEg-h05UQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_Al4coKn1EeKIxYEg-h05UQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_CkCLYKn1EeKIxYEg-h05UQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//IntentType/Standard"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CkCLYan1EeKIxYEg-h05UQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Dm6ksKn1EeKIxYEg-h05UQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="intent.ecore#//IntentType/Broadcast"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Dm6ksan1EeKIxYEg-h05UQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Al4coan1EeKIxYEg-h05UQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Al4coqn1EeKIxYEg-h05UQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Al4co6n1EeKIxYEg-h05UQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Al1ZUan1EeKIxYEg-h05UQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="intent.ecore#//IntentType"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Al1ZUqn1EeKIxYEg-h05UQ" x="617" y="422"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kS96wYGeEeKOCrKKGwEt7w"/>
   <element xmi:type="ecore:EPackage" href="intent.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_huKJwIGgEeKHc-kMMC6Ieg" type="3002" source="_WI4IsIGgEeKHc-kMMC6Ieg" target="_X3e_kIGgEeKHc-kMMC6Ieg">
@@ -262,7 +285,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_9gQRkZbyEeKEKazYcWHfFg" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_9gQRkpbyEeKEKazYcWHfFg" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9gQRk5byEeKEKazYcWHfFg" points="[-6, -5, 174, 163]$[-178, -185, 2, -17]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9gQRk5byEeKEKazYcWHfFg" points="[48, -5, 229, 52]$[48, -53, 229, 4]$[-168, -53, 13, 4]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9gRfsJbyEeKEKazYcWHfFg" id="(0.06862745098039216,0.09230769230769231)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9gRfsZbyEeKEKazYcWHfFg" id="(0.8725490196078431,0.42857142857142855)"/>
   </edges>

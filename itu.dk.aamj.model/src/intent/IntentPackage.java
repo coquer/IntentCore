@@ -122,13 +122,22 @@ public interface IntentPackage extends EPackage {
 	int INTENT__ACTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Intent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__INTENT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Category</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__CATEGORY = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int INTENT__CATEGORY = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -137,7 +146,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int INTENT__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' attribute.
@@ -146,7 +155,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__DATA = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int INTENT__DATA = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Sucess Callback</b></em>' containment reference.
@@ -155,7 +164,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__SUCESS_CALLBACK = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int INTENT__SUCESS_CALLBACK = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Exception Name</b></em>' attribute.
@@ -164,7 +173,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__EXCEPTION_NAME = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int INTENT__EXCEPTION_NAME = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
@@ -173,7 +182,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__PERMISSIONS = NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int INTENT__PERMISSIONS = NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Intent</em>' class.
@@ -182,7 +191,7 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int INTENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link intent.impl.ExtraImpl <em>Extra</em>}' class.
@@ -335,6 +344,17 @@ public interface IntentPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link intent.IntentType <em>Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see intent.IntentType
+	 * @see intent.impl.IntentPackageImpl#getIntentType()
+	 * @generated
+	 */
+	int INTENT_TYPE = 7;
+
+
+	/**
 	 * Returns the meta object for class '{@link intent.Intent <em>Intent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,6 +385,17 @@ public interface IntentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIntent_Action();
+
+	/**
+	 * Returns the meta object for the attribute '{@link intent.Intent#getIntentType <em>Intent Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Intent Type</em>'.
+	 * @see intent.Intent#getIntentType()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EAttribute getIntent_IntentType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link intent.Intent#getCategory <em>Category</em>}'.
@@ -537,6 +568,16 @@ public interface IntentPackage extends EPackage {
 	EEnum getExtraType();
 
 	/**
+	 * Returns the meta object for enum '{@link intent.IntentType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Type</em>'.
+	 * @see intent.IntentType
+	 * @generated
+	 */
+	EEnum getIntentType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -583,6 +624,14 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTENT__ACTION = eINSTANCE.getIntent_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Intent Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENT__INTENT_TYPE = eINSTANCE.getIntent_IntentType();
 
 		/**
 		 * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
@@ -723,6 +772,16 @@ public interface IntentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum EXTRA_TYPE = eINSTANCE.getExtraType();
+
+		/**
+		 * The meta object literal for the '{@link intent.IntentType <em>Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see intent.IntentType
+		 * @see intent.impl.IntentPackageImpl#getIntentType()
+		 * @generated
+		 */
+		EEnum INTENT_TYPE = eINSTANCE.getIntentType();
 
 	}
 

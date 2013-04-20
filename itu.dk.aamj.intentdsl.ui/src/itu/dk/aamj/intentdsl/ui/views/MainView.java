@@ -10,6 +10,7 @@ import itu.dk.aamj.intentdsl.classes.IntentHandler;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.mwe.internal.core.ast.util.converter.StringArrayConverter;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -47,7 +48,6 @@ public class MainView extends ViewPart {
 	public MainView() {
 		
 		super();
-		System.out.println("in MainView");
 
 		intentHandler = new IntentHandler();
 		intentHandler.getModel();
@@ -176,7 +176,7 @@ public class MainView extends ViewPart {
 				try {
 
 					System.out.println(obj.toString());
-					int result = intentHandler.InsertIntent(obj.toString());
+					int result = intentHandler.InsertIntent(obj.toString(), false);
 
 					// Add more error checking here
 					if(result == -1) {

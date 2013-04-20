@@ -8,6 +8,7 @@ import intent.ExtraType;
 import intent.Intent;
 import intent.IntentFactory;
 import intent.IntentPackage;
+import intent.IntentType;
 import intent.Model;
 import intent.NamedElement;
 import intent.Permissions;
@@ -75,6 +76,13 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	private EEnum extraTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum intentTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -169,7 +177,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Category() {
+	public EAttribute getIntent_IntentType() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -178,7 +186,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Type() {
+	public EAttribute getIntent_Category() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -187,7 +195,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntent_Data() {
+	public EAttribute getIntent_Type() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -196,8 +204,17 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIntent_Data() {
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getIntent_SucessCallback() {
-		return (EReference)intentEClass.getEStructuralFeatures().get(5);
+		return (EReference)intentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -206,7 +223,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	public EAttribute getIntent_ExceptionName() {
-		return (EAttribute)intentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)intentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -215,7 +232,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * @generated
 	 */
 	public EReference getIntent_Permissions() {
-		return (EReference)intentEClass.getEStructuralFeatures().get(7);
+		return (EReference)intentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -313,6 +330,15 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getIntentType() {
+		return intentTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IntentFactory getIntentFactory() {
 		return (IntentFactory)getEFactoryInstance();
 	}
@@ -339,6 +365,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		intentEClass = createEClass(INTENT);
 		createEReference(intentEClass, INTENT__EXTRAS);
 		createEAttribute(intentEClass, INTENT__ACTION);
+		createEAttribute(intentEClass, INTENT__INTENT_TYPE);
 		createEAttribute(intentEClass, INTENT__CATEGORY);
 		createEAttribute(intentEClass, INTENT__TYPE);
 		createEAttribute(intentEClass, INTENT__DATA);
@@ -362,6 +389,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 
 		// Create enums
 		extraTypeEEnum = createEEnum(EXTRA_TYPE);
+		intentTypeEEnum = createEEnum(INTENT_TYPE);
 	}
 
 	/**
@@ -402,6 +430,7 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntent_Extras(), this.getExtra(), null, "extras", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Action(), ecorePackage.getEString(), "action", null, 1, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntent_IntentType(), this.getIntentType(), "intentType", null, 1, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Category(), ecorePackage.getEString(), "category", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Type(), ecorePackage.getEString(), "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntent_Data(), ecorePackage.getEString(), "data", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -438,6 +467,10 @@ public class IntentPackageImpl extends EPackageImpl implements IntentPackage {
 		addEEnumLiteral(extraTypeEEnum, ExtraType.DOUBLE);
 		addEEnumLiteral(extraTypeEEnum, ExtraType.URI);
 		addEEnumLiteral(extraTypeEEnum, ExtraType.BOOLEAN);
+
+		initEEnum(intentTypeEEnum, IntentType.class, "IntentType");
+		addEEnumLiteral(intentTypeEEnum, IntentType.STANDARD);
+		addEEnumLiteral(intentTypeEEnum, IntentType.BROADCAST);
 
 		// Create resource
 		createResource(eNS_URI);

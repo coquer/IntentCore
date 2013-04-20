@@ -12,7 +12,7 @@ Model returns Model:
 
 Intent returns Intent:
 	{Intent}
-	name=EString '{'
+	intentType=IntentType name=EString '{'
 		'action' action=EString
 		('category' category=EString)?
 		('type' type=EString)?
@@ -26,6 +26,9 @@ Intent returns Intent:
 Extra returns Extra:
 	{Extra}
 	type=ExtraType name=EString value=EString;
+	
+enum IntentType:
+	Standard = "Intent" | Broadcast = "Broadcast";
 
 enum ExtraType:
 	String = 'String' | Serializable = 'Serializable' | Float = 'float' | Byte = 'byte' | Long = 'long' |

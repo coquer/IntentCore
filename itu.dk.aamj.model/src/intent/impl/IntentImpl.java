@@ -6,6 +6,7 @@ import intent.Callback;
 import intent.Extra;
 import intent.Intent;
 import intent.IntentPackage;
+import intent.IntentType;
 import intent.Permissions;
 
 import java.util.Collection;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link intent.impl.IntentImpl#getExtras <em>Extras</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link intent.impl.IntentImpl#getIntentType <em>Intent Type</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getType <em>Type</em>}</li>
  *   <li>{@link intent.impl.IntentImpl#getData <em>Data</em>}</li>
@@ -73,6 +75,26 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 	 * @ordered
 	 */
 	protected String action = ACTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIntentType() <em>Intent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final IntentType INTENT_TYPE_EDEFAULT = IntentType.STANDARD;
+
+	/**
+	 * The cached value of the '{@link #getIntentType() <em>Intent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected IntentType intentType = INTENT_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCategory() <em>Category</em>}' attribute.
@@ -224,6 +246,27 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 		action = newAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.INTENT__ACTION, oldAction, action));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntentType getIntentType() {
+		return intentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIntentType(IntentType newIntentType) {
+		IntentType oldIntentType = intentType;
+		intentType = newIntentType == null ? INTENT_TYPE_EDEFAULT : newIntentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IntentPackage.INTENT__INTENT_TYPE, oldIntentType, intentType));
 	}
 
 	/**
@@ -395,6 +438,8 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 				return getExtras();
 			case IntentPackage.INTENT__ACTION:
 				return getAction();
+			case IntentPackage.INTENT__INTENT_TYPE:
+				return getIntentType();
 			case IntentPackage.INTENT__CATEGORY:
 				return getCategory();
 			case IntentPackage.INTENT__TYPE:
@@ -426,6 +471,9 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 				return;
 			case IntentPackage.INTENT__ACTION:
 				setAction((String)newValue);
+				return;
+			case IntentPackage.INTENT__INTENT_TYPE:
+				setIntentType((IntentType)newValue);
 				return;
 			case IntentPackage.INTENT__CATEGORY:
 				setCategory((String)newValue);
@@ -464,6 +512,9 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 			case IntentPackage.INTENT__ACTION:
 				setAction(ACTION_EDEFAULT);
 				return;
+			case IntentPackage.INTENT__INTENT_TYPE:
+				setIntentType(INTENT_TYPE_EDEFAULT);
+				return;
 			case IntentPackage.INTENT__CATEGORY:
 				setCategory(CATEGORY_EDEFAULT);
 				return;
@@ -498,6 +549,8 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 				return extras != null && !extras.isEmpty();
 			case IntentPackage.INTENT__ACTION:
 				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+			case IntentPackage.INTENT__INTENT_TYPE:
+				return intentType != INTENT_TYPE_EDEFAULT;
 			case IntentPackage.INTENT__CATEGORY:
 				return CATEGORY_EDEFAULT == null ? category != null : !CATEGORY_EDEFAULT.equals(category);
 			case IntentPackage.INTENT__TYPE:
@@ -526,6 +579,8 @@ public class IntentImpl extends NamedElementImpl implements Intent {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (action: ");
 		result.append(action);
+		result.append(", intentType: ");
+		result.append(intentType);
 		result.append(", category: ");
 		result.append(category);
 		result.append(", type: ");
