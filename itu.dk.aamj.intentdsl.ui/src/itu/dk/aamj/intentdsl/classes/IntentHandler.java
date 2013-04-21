@@ -1,5 +1,11 @@
 package itu.dk.aamj.intentdsl.classes;
 
+import intent.Callback;
+import intent.Extra;
+import intent.Intent;
+import intent.Model;
+import itu.dk.aamj.intentdsl.IntentDslStandaloneSetup;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,37 +14,21 @@ import java.util.List;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.swt.dnd.Clipboard;
-import org.eclipse.swt.dnd.TextTransfer;
-import org.eclipse.swt.dnd.Transfer;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import org.osgi.framework.Bundle;
-import org.eclipse.text.edits.TextEdit;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
-import org.eclipse.jdt.core.dom.BlockComment;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.CatchClause;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.InfixExpression;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.Modifier;
 import org.eclipse.jdt.core.dom.PrimitiveType;
-import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Statement;
@@ -47,26 +37,34 @@ import org.eclipse.jdt.core.dom.TryStatement;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
-import org.eclipse.ui.texteditor.ITextEditor;
+import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.text.edits.TextEdit;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.texteditor.ITextEditor;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import intent.Callback;
-import intent.Extra;
-import intent.Intent;
-import intent.IntentPackage;
-import intent.Model;
-import itu.dk.aamj.intentdsl.IntentDslStandaloneSetup;
-
 public class IntentHandler {
 	
-	private Model model;
+	private Model model = null;
 	
-	public void getModel() {
+	public Model getModel() {
+		
+		if(model != null)
+			return model;
 		
 //		IntentPackage.eINSTANCE.getClass();
 		// http://wiki.eclipse.org/Xtext/FAQ#How_do_I_load_my_model_in_a_standalone_Java_application.C2.A0.3F
@@ -84,6 +82,7 @@ public class IntentHandler {
 				URI.createURI(fileURL.toString()), true);
 		
 		model = (Model) resource.getContents().get(0);
+		return model;
 		
 	}
 	
@@ -120,25 +119,7 @@ public class IntentHandler {
 		return obj;
 	}
 	
-	private Intent findIntentByName(String intentName) {
-		
-		for(Intent intent : model.getIntents()) {
-			
-			if(intent.getName() == intentName)
-				return intent;
-			
-		}
-		
-		return null;
-		
-	}
-	
-	public int InsertIntent(String intentName, boolean handleExceptions) throws Exception {
-		
-		//Get the intent
-		Intent intent = findIntentByName(intentName);
-		if(intent == null)
-			throw new Exception("ERROR! INTENT 404 - NOT FOUND");
+	public int InsertIntent(Intent intent, boolean handleExceptions) throws Exception {
 		
 		// Get the current editor window, and the input 
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
@@ -460,7 +441,14 @@ public class IntentHandler {
 		
 		MethodDeclaration methodDecl = null;
 
-		List<BodyDeclaration> decls = ((TypeDeclaration)astRoot.types().get(0)).bodyDeclarations();
+		List clss = astRoot.types();
+		if(clss.size() == 0)
+			return null;
+		
+		List<BodyDeclaration> decls = ((TypeDeclaration) clss.get(0)).bodyDeclarations();
+		
+		if(decls.size() == 0)
+			return null;
 		
 		for (Iterator<BodyDeclaration> iterator = decls.iterator(); iterator.hasNext();){
 			
