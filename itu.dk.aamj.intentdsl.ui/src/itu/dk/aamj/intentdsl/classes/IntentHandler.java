@@ -170,12 +170,9 @@ public class IntentHandler {
 			//Not inside a method, return 0 and warn user
 			return 0;
 		}
+		
+		ArrayList<Statement> statementsList = new ArrayList<Statement>();
 
-		//find current position inside method
-		int index = findIndexInMethod(method, cursorOffset);
-		List<Statement> statementsList = method.getBody().statements();
-		
-		
 		//Generate the variable name
 		StringBuilder sb = new StringBuilder();
 		for(String s : intent.getName().split(" ")) {
@@ -201,7 +198,7 @@ public class IntentHandler {
 		vds.setType(ast.newSimpleType(ast.newSimpleName("Intent")));
 				
 		//Add this call
-		statementsList.add(++index, vds);
+		statementsList.add(vds);
 		
 		SimpleName instanceName = ast.newSimpleName(instanceNameString);
 		
@@ -217,7 +214,7 @@ public class IntentHandler {
 			methodInv.setName(ast.newSimpleName("setType"));
 			methodInv.arguments().add(data);
 			
-			statementsList.add(++index, ast.newExpressionStatement(methodInv));
+			statementsList.add(ast.newExpressionStatement(methodInv));
 			
 		}
 		
@@ -238,7 +235,7 @@ public class IntentHandler {
 			dataInv.setName(ast.newSimpleName("setData"));
 			dataInv.arguments().add(uriInv);
 			
-			statementsList.add(++index, ast.newExpressionStatement(dataInv));
+			statementsList.add(ast.newExpressionStatement(dataInv));
 			
 		}
 		
@@ -263,7 +260,7 @@ public class IntentHandler {
 			methodInv.arguments().add(data);
 			methodInv.arguments().add(value);
 			
-			statementsList.add(++index, ast.newExpressionStatement(methodInv));
+			statementsList.add(ast.newExpressionStatement(methodInv));
 			
 		}
 		
@@ -280,7 +277,7 @@ public class IntentHandler {
 			startAct.setName(ast.newSimpleName("startActivityForResult"));
 			startAct.arguments().add(instanceName);
 			startAct.arguments().add(ast.newSimpleName(callback.getName()));
-			statementsList.add(++index, ast.newExpressionStatement(startAct));
+			statementsList.add(ast.newExpressionStatement(startAct));
 			
 			//Find the method onActivityResult
 			MethodDeclaration methodDecl = null;
@@ -385,14 +382,38 @@ public class IntentHandler {
 				catchClause.setException(exception);
 				tryStatement.catchClauses().add(catchClause);
 				
-				statementsList.add(++index, tryStatement);
+				statementsList.add(tryStatement);
 				
 			}
 			else
-				statementsList.add(++index, ast.newExpressionStatement(startAct));
+				statementsList.add(ast.newExpressionStatement(startAct));
 			
 		}
 			
+		//Add new block to method
+		List<Statement> methodStatements = method.getBody().statements();
+		if(methodStatements.size() > 0) {
+			
+			int index = findIndexInMethod(method, cursorOffset);
+			for(int i = 0; i < statementsList.size(); i++) {
+				
+				Statement statement = (Statement) statementsList.get(i);
+				methodStatements.add(index++, statement);
+				
+			}
+			
+		}
+		else {
+			
+			for(int i = 0; i < statementsList.size(); i++) {
+				
+				Statement statement = (Statement) statementsList.get(i);
+				methodStatements.add(statement);
+				
+			}
+			
+		}
+		
 
 		//Rewrite the AST
 		TextEdit edits = astRoot.rewrite(document, compilationUnit.getJavaProject().getOptions(true));
@@ -462,14 +483,12 @@ public class IntentHandler {
 	}
 
 	/**
-	 * TODO This doesn't work as it should
-	 * 
 	 * Return the current statement inside a method, which the cursor currently has focus
 	 * @param method
 	 * @param offset
 	 * @return int
 	 */
-	private int findIndexInMethod(MethodDeclaration method, int offset){
+	private int findIndexInMethod(MethodDeclaration method, int offset) {
 
 		List<Statement> statements = method.getBody().statements();
 		
@@ -487,9 +506,8 @@ public class IntentHandler {
 				return 0;
 			
 			// Is cursor inside current statement
-			//TODO This needs checking as it sometimes fails
 			if(offset >= startRange && offset <= endRange)
-				return i;
+				return i+1;
 			
 		}
 

@@ -44,6 +44,7 @@ public class MainView extends ViewPart {
 	private Action InsertAction;
 	private Action CopyAction;
 	private IntentHandler intentHandler;
+	private boolean handleExceptions = false;
 	
 	public MainView() {
 		
@@ -62,15 +63,16 @@ public class MainView extends ViewPart {
 		viewer.setLabelProvider(new ViewLabelProvider());
 //		viewer.setSorter(new NameSorter());
 		viewer.setInput(getViewSite());
-
+		
 		// Create the help context id for the viewer's control
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), "itu.dk.aamj.intentdsl.ui.viewer");
 		makeActions();
 		
 		/**
-		 * set the context menu right click up
+		 * set the context menu right click up and add the actions
 		 */
 		hookContextMenu();
+		contributeToActionBars();
 
 		/**
 		 * add event listener for double click
@@ -111,6 +113,17 @@ public class MainView extends ViewPart {
 			return PlatformUI.getWorkbench().
 					getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
 		}
+	}
+	
+	private void contributeToActionBars() {
+	    
+		Action exceptionButton = new Action("Enable Exception Handling", IAction.AS_CHECK_BOX) { 
+			public void run() {    
+				handleExceptions = !handleExceptions;
+			}    
+		};
+		getViewSite().getActionBars().getToolBarManager().add(exceptionButton);
+	    
 	}
 	
 	private void hookContextMenu() {
@@ -176,7 +189,7 @@ public class MainView extends ViewPart {
 				try {
 
 					System.out.println(obj.toString());
-					int result = intentHandler.InsertIntent(obj.toString(), false);
+					int result = intentHandler.InsertIntent(obj.toString(), handleExceptions);
 
 					// Add more error checking here
 					if(result == -1) {
