@@ -5,10 +5,6 @@ import itu.dk.aamj.intentdsl.classes.IntentHandler;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.action.IMenuListener;
-import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.MenuManager;
-import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -27,11 +23,8 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
@@ -41,7 +34,6 @@ public class MainView extends ViewPart {
 
 	private TableViewer viewer;
 	private Action InsertAction;
-	private Action CopyAction;
 	private IntentHandler intentHandler;
 	private boolean handleExceptions = false;
 	private IntentFilter filter;
@@ -124,7 +116,6 @@ public class MainView extends ViewPart {
 		/**
 		 * set the context menu right click up and add the actions
 		 */
-		hookContextMenu();
 		contributeToActionBars();
 
 		/**
@@ -181,56 +172,7 @@ public class MainView extends ViewPart {
 	    
 	}
 	
-	private void hookContextMenu() {
-		MenuManager menuMgr = new MenuManager("#PopupMenu");
-		menuMgr.setRemoveAllWhenShown(true);
-		menuMgr.addMenuListener(new IMenuListener() {
-			public void menuAboutToShow(IMenuManager manager) {
-				MainView.this.fillContextMenu(manager);
-			}
-		});
-		Menu menu = menuMgr.createContextMenu(viewer.getControl());
-		viewer.getControl().setMenu(menu);
-		getSite().registerContextMenu(menuMgr, viewer);
-	}
-
-	private void fillContextMenu(IMenuManager manager) {
-		
-		if (viewer.getSelection().isEmpty())
-			return;
-		
-		manager.add(CopyAction);
-		
-		// Other plug-ins can contribute there actions here
-		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
-		
-	}
-
 	private void makeActions() {
-
-		CopyAction = new Action() {
-			public void run() {
-				
-				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-
-				try {
-
-					intentHandler.CopyIntent(obj.toString().replace(".", "_"));
-
-				} catch (Exception e) {
-
-					e.printStackTrace();
-					showMessage("ERROR: " + e);
-				}
-
-			}
-		};
-		CopyAction.setText("Copy");
-		CopyAction.setToolTipText("Copy selected Intent snippet to clipboard");
-		CopyAction.setImageDescriptor(
-				PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK)
-				);
 
 		InsertAction = new Action() {
 			public void run() {

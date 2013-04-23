@@ -41,10 +41,6 @@ import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.swt.dnd.Clipboard;
-import org.eclipse.swt.dnd.TextTransfer;
-import org.eclipse.swt.dnd.Transfer;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.text.edits.TextEdit;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -66,14 +62,10 @@ public class IntentHandler {
 		if(model != null)
 			return model;
 		
-//		IntentPackage.eINSTANCE.getClass();
 		// http://wiki.eclipse.org/Xtext/FAQ#How_do_I_load_my_model_in_a_standalone_Java_application.C2.A0.3F
-//		new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
 		Injector injector = new IntentDslStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-//		Resource resource = resourceSet.getResource(
-//		    URI.createURI("/gen/i.intentdsl"), true);
 		
 		Bundle bundle = Platform.getBundle("itu.dk.aamj.intentdsl.ui");
 		URL fileURL = bundle.getEntry("gen/i.intentdsl");
@@ -83,26 +75,6 @@ public class IntentHandler {
 		
 		model = (Model) resource.getContents().get(0);
 		return model;
-		
-	}
-	
-	/**
-	 * Copy intent code to the Clipboard 
-	 * @param intentActionName
-	 * @return
-	 * @throws Exception
-	 */
-	public void CopyIntent(String intentActionName) throws Exception {
-		
-		// Get the source
-//		String source = getSource(intentActionName);
-		String source = "";
-		
-		// Add to clipboard
-		Display display = Display.getCurrent();
-        Clipboard clipboard = new Clipboard(display);
-        clipboard.setContents(new Object[] { source }, new Transfer[] { TextTransfer.getInstance() });
-        clipboard.dispose();
 		
 	}
 	
