@@ -111,6 +111,9 @@ public class IntentHandler {
 		// Get the current editor window, and the input 
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editor = page.getActiveEditor();
+		if(editor == null)
+			return -1;
+		
 		IEditorInput input = editor.getEditorInput();
 		
 		ICompilationUnit compilationUnit = (ICompilationUnit) JavaUI.getEditorInputJavaElement(editor.getEditorInput());
