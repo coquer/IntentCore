@@ -23,6 +23,7 @@ import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.CatchClause;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.InfixExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -411,34 +412,20 @@ public class IntentHandler {
 	 */
 	private MethodDeclaration findMethod(int offset, CompilationUnit astRoot) {
 		
-		MethodDeclaration methodDecl = null;
+		MethodVisitor visitor = new MethodVisitor();
+		astRoot.accept(visitor);
 
-		List clss = astRoot.types();
-		if(clss.size() == 0)
-			return null;
-		
-		List<BodyDeclaration> decls = ((TypeDeclaration) clss.get(0)).bodyDeclarations();
-		
-		if(decls.size() == 0)
-			return null;
-		
-		for (Iterator<BodyDeclaration> iterator = decls.iterator(); iterator.hasNext();){
+		for (MethodDeclaration methodDecl : visitor.getMethods()) {
 			
-			BodyDeclaration decl = (BodyDeclaration) iterator.next();
-			if(decl instanceof MethodDeclaration) {
-				
-				methodDecl = (MethodDeclaration) decl;
-				int startRange = methodDecl.getBody().getStartPosition();
-				int endRange = methodDecl.getBody().getStartPosition() + methodDecl.getBody().getLength();
-				
-				if(offset >= startRange && offset <= endRange)
-					return methodDecl;
-				
-			}
+			int startRange = methodDecl.getBody().getStartPosition();
+			int endRange = startRange + methodDecl.getBody().getLength();
+			
+			if(offset >= startRange && offset <= endRange)
+				return methodDecl;
 			
 		}
 		
-		return methodDecl;
+		return null;
 		
 	}
 
@@ -459,7 +446,7 @@ public class IntentHandler {
 			
 			Statement statement = (Statement) statements.get(i);
 			int startRange = statement.getStartPosition();
-			int endRange = statement.getStartPosition() + statement.getLength();
+			int endRange = startRange + statement.getLength();
 			
 			//Is cursor at the start of the method?
 			if(offset <= startRange && i == 0)
