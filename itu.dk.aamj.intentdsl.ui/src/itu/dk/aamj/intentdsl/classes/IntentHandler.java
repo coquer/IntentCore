@@ -4,26 +4,36 @@ import intent.Callback;
 import intent.Extra;
 import intent.Intent;
 import intent.Model;
+import intent.Permissions;
 import itu.dk.aamj.intentdsl.IntentDslStandaloneSetup;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
-import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.CatchClause;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.InfixExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -51,6 +61,10 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.osgi.framework.Bundle;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import com.google.inject.Injector;
 
@@ -104,6 +118,12 @@ public class IntentHandler {
 		// Ensure the editor is open
 		if(!(compilationUnit instanceof ICompilationUnit)) {
 			return -1;
+		}
+		
+		ManifestHandler mh = new ManifestHandler();
+		boolean success = mh.process(intent, compilationUnit);
+		if(!success) {
+			return -2;
 		}
 
 		ITextEditor texteditor = (ITextEditor) editor;
@@ -460,6 +480,103 @@ public class IntentHandler {
 
 		// Insert at end
 		return statements.size();
+	}
+	
+	private class ManifestHandler {
+		
+//		http://developer.android.com/guide/topics/manifest/manifest-intro.html
+		public boolean process(Intent intent, ICompilationUnit compilationUnit) {
+			
+			if(intent.getPermissions().size() == 0)
+				return true;
+			
+			IJavaProject project = compilationUnit.getJavaProject();
+//			project.open(null);
+			
+			IProject p = project.getProject();
+			IFile rm = p.getFile("AndroidManifest.xml");
+
+			if(!rm.exists())
+				return false;
+			
+			File am = null;
+			try {
+				am = new File(rm.getLocationURI());
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+			if(am == null)
+				return false;
+			
+			//Load the XML
+			Document doc = null;
+			try {
+				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder builder = factory.newDocumentBuilder();
+				doc = builder.parse(am);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			if(doc == null)
+				return false;
+			
+			Node root = doc.getFirstChild();
+			Node application = doc.getElementsByTagName("application").item(0);
+			NodeList permissions = doc.getElementsByTagName("uses-permission");
+			
+			//Check for existing permissions
+			ArrayList<String> existing = new ArrayList<String>(permissions.getLength());
+			for(int i = 0; i < permissions.getLength(); i++) {
+				
+				existing.add(permissions.item(i).getAttributes().item(0).getNodeValue());
+				
+			}
+			
+			boolean changed = false;
+			
+			for(Permissions permission : intent.getPermissions()) {
+				
+				if(!existing.contains(permission.getName())) {
+					
+					Element newPerm = doc.createElement("uses-permission");
+					newPerm.setAttribute("android:name", permission.getName());
+					if(application != null)
+						root.insertBefore(newPerm, application);
+					else
+						root.appendChild(newPerm);
+					
+					
+					changed = true;
+					
+				}
+				
+			}
+			
+			// write the content into xml file
+			if(changed) {
+				
+				try {
+					TransformerFactory transformerFactory = TransformerFactory.newInstance();
+					Transformer transformer = transformerFactory.newTransformer();
+					DOMSource source = new DOMSource(doc);
+					StreamResult result = new StreamResult(new File(rm.getLocationURI()));
+					transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+					transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+					transformer.transform(source, result);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return false;
+				}
+				
+			}
+			
+			return true;
+		}
+		
 	}
 
 }

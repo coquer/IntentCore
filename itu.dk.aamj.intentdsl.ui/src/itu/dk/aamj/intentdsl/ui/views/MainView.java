@@ -192,9 +192,12 @@ public class MainView extends ViewPart {
 						
 						showMessage("Please ensure you have an editor window open.");
 						
+					} else if(result == -2) {
+
+						showMessage("/AndroidManifest.xml missing or incorrectly formatted.");
+
 					} else if(result == 0) {
 
-						// Should we create the method for them?
 						showMessage("Please create a method, and position cursor inside method.");
 
 					}

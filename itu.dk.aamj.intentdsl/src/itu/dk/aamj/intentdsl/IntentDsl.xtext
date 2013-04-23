@@ -43,5 +43,4 @@ Callback returns Callback:
 
 Permissions returns Permissions:
 	{Permissions}
-	'Permissions'
 	name=EString;

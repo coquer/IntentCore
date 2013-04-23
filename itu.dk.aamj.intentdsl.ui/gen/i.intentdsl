@@ -28,6 +28,9 @@ Model {
 			action "android.intent.action.CALL"
 			category "android.intent.category.DEFAULT"
 			data "tel:555-555-5555"
+			permissions {
+				"android.permission.CALL_PHONE"
+			}
 		},
 		Intent "Action Dial" {
 			action "android.intent.action.DIAL"
